@@ -12,4 +12,5 @@ Az előadások során áttekintjük az alábbi témaköröket:
 - Ismerje a számítógép hálózatba kapcsolásához szükséges alapvető eszközöket (lokális hálózat-LAN, switch, router, stb.)
 - Képes legyen alapvető script programok írására Linux és Windows rendszerek alatt.
 - Lássa, hogy a script programok a felhasználók, rendszeradminisztrátorok legjobb barátai!
+
 Az előadások diái elérhetők az oldalon. A diák önálló tanulásra nem alkalmasak, csak az előadások vázlatát tartalmazzák.
