@@ -1,0 +1,14 @@
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\bin\Debug\net8.0\nem volt kapas.exe
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\bin\Debug\net8.0\nem volt kapas.deps.json
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\bin\Debug\net8.0\nem volt kapas.runtimeconfig.json
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\bin\Debug\net8.0\nem volt kapas.dll
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\bin\Debug\net8.0\nem volt kapas.pdb
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\nem volt kapas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\nem volt kapas.AssemblyInfoInputs.cache
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\nem volt kapas.AssemblyInfo.cs
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\nem volt kapas.csproj.CoreCompileInputs.cache
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\nem volt kapas.dll
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\refint\nem volt kapas.dll
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\nem volt kapas.pdb
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\nem volt kapas.genruntimeconfig.cache
+C:\Users\azxx1z\Documents\prog\nem volt kapas\nem volt kapas\obj\Debug\net8.0\ref\nem volt kapas.dll

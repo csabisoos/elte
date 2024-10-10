@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\azxx1z\\Documents\\prog\\nem volt kapas\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{488E6FBA-F140-4A5B-A193-91A8576D9866}|nem volt kapas\\nem volt kapas.csproj|c:\\users\\azxx1z\\documents\\prog\\nem volt kapas\\nem volt kapas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{488E6FBA-F140-4A5B-A193-91A8576D9866}|nem volt kapas\\nem volt kapas.csproj|solutionrelative:nem volt kapas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\azxx1z\\Documents\\prog\\nem volt kapas\\nem volt kapas\\Program.cs",
+              "RelativeDocumentMoniker": "nem volt kapas\\Program.cs",
+              "ToolTip": "C:\\Users\\azxx1z\\Documents\\prog\\nem volt kapas\\nem volt kapas\\Program.cs",
+              "RelativeToolTip": "nem volt kapas\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T08:42:21.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
