@@ -1,8 +1,8 @@
 Esős napok száma:
-- https://teams.microsoft.com/l/message/19:8e2674af-cb1f-4288-b091-aa41eee85ce1_a2c72ae9-7dd3-4442-b9be-565092067923@unq.gbl.spaces/1728545067511?context=%7B%22contextType%22%3A%22chat%22%7D
+- [https://teams.microsoft.com/l/message/19:8e2674af-cb1f-4288-b091-aa41eee85ce1_a2c72ae9-7dd3-4442-b9be-565092067923@unq.gbl.spaces/1728545067511?context=%7B%22contextType%22%3A%22chat%22%7D](https://progalap.elte.hu/specifikacio/?data=H4sIAAAAAAAACkWQMWrDQBBFr%2FKZSjaLvEpws0iFTVIFUoSkiaxCslbxgrUKXrmJsUi5voVd5hy6iU4SRiKkmz%2Fz3l%2FYE7lPvTWV2eataSwpWmsFO3j%2FLLBr6sH79zQKQ5ttDhv7ZBTKgo%2BcHisFGSc2TiIp0f84DP7bDN5PggpknOyaOjXZSMgZS28VVyQPq5fVOjAJk2KChst1QhZz1PrDffW3utn3N%2FevIcGfqMPwKPAamNno8IAOUxOGyxWS10yhA7%2FCsSwAdCgLDvMFCWq1ax2p9ERl3uakCFZhyWfuUkiliJbiTgopIjn%2BAcpC4Z4E2bzWpIgEHbQ77ltS0Tk7%2FwK%2BT%2FPgUQEAAA%3D%3D)
 
 Monoton nő:
-- https://teams.microsoft.com/l/message/19:8e2674af-cb1f-4288-b091-aa41eee85ce1_a2c72ae9-7dd3-4442-b9be-565092067923@unq.gbl.spaces/1728548463127?context=%7B%22contextType%22%3A%22chat%22%7D 
+- [https://teams.microsoft.com/l/message/19:8e2674af-cb1f-4288-b091-aa41eee85ce1_a2c72ae9-7dd3-4442-b9be-565092067923@unq.gbl.spaces/1728548463127?context=%7B%22contextType%22%3A%22chat%22%7D ](https://progalap.elte.hu/specifikacio/?data=H4sIAAAAAAAACo2OMU7DQBBFr%2FI1VWIcG1OuZCMQFAhIBRQ4LlbJBq0Uj5G9jqxESe2WI1ByAS4QcZGcJBo7CKWjGY3mz%2Fv%2Fr6l6N1M7t1PtbMGkKPRQrXafeVWUxUo75AUXrmDwz8fIXMILJ%2BWEr40C79t27KPZt%2B1rGgUBZ6LcWyUIF%2Fu2fZDD7VyBk3NZn2WNI4yS%2FgUx7JteYfdViQwAnPzJMZscL1fjgY3FfhT5TWozJGhSexZlQ2FCT6ZZzHbf7I4%2BErPUHPeoCYLafxrY4VCMf3P%2BHbDUDGwhnx3TxQVBjS16Rg5ijy1OaLkf03LLs%2FjxbnxzUkdELySfnKlcRSpd00w7TYrACp0vGoX0IgP63l0BBVfWhnxinRtSRD6VpqoXjlS0yTYHXIk1vtEBAAA%3D)
 
 A nap mikor nem volt kapás
 - https://progalap.elte.hu/specifikacio/?data=H4sIAAAAAAAACk1PS2rDQAy9itAqgXEyk0AWwpNFwauULhq6crwY4jEI12qxJ8YQss9Veo7epCcpcilkpaf3kXhXHD7jmRs%2Bh8QfgoRPkUB%2B7vcXA5OO0q1WUp36kxwDAUutpK4HJmi5%2B7OOQTPPyhcNQbZeu9xL7p218P01gM19y13uN1Ytbw3BYgxiWOqlPxSvxXHBXh8ZmEquvF1qSq0AoMch2%2Bszz1I%2FKhK7RzVzaDDFIQ1I5RXrkAISghDs5sREUG6sccaarXHW7OZeWopgO8OWu384BiFI%2FSWiQQldREI02Mfh8p6Q3K26%2FQL4svSGPQEAAA%3D%3D
