@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\azxx1z\\Documents\\prog\\esos_mapok_szama_biro\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B535B55B-32BE-4E26-850A-2420B18C6B77}|esos_mapok_szama_biro\\esos_mapok_szama_biro.csproj|c:\\users\\azxx1z\\documents\\prog\\esos_mapok_szama_biro\\esos_mapok_szama_biro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B535B55B-32BE-4E26-850A-2420B18C6B77}|esos_mapok_szama_biro\\esos_mapok_szama_biro.csproj|solutionrelative:esos_mapok_szama_biro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\azxx1z\\Documents\\prog\\esos_mapok_szama_biro\\esos_mapok_szama_biro\\Program.cs",
+              "RelativeDocumentMoniker": "esos_mapok_szama_biro\\Program.cs",
+              "ToolTip": "C:\\Users\\azxx1z\\Documents\\prog\\esos_mapok_szama_biro\\esos_mapok_szama_biro\\Program.cs",
+              "RelativeToolTip": "esos_mapok_szama_biro\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T07:07:03.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

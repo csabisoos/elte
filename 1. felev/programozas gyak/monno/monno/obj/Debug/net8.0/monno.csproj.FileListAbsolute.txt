@@ -1,0 +1,14 @@
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\monno.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\monno.AssemblyInfoInputs.cache
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\monno.AssemblyInfo.cs
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\monno.csproj.CoreCompileInputs.cache
+C:\Users\azxx1z\Documents\prog\monno\monno\bin\Debug\net8.0\monno.exe
+C:\Users\azxx1z\Documents\prog\monno\monno\bin\Debug\net8.0\monno.deps.json
+C:\Users\azxx1z\Documents\prog\monno\monno\bin\Debug\net8.0\monno.runtimeconfig.json
+C:\Users\azxx1z\Documents\prog\monno\monno\bin\Debug\net8.0\monno.dll
+C:\Users\azxx1z\Documents\prog\monno\monno\bin\Debug\net8.0\monno.pdb
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\monno.dll
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\refint\monno.dll
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\monno.pdb
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\monno.genruntimeconfig.cache
+C:\Users\azxx1z\Documents\prog\monno\monno\obj\Debug\net8.0\ref\monno.dll

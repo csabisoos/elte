@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "esos_mapok_szama_biro/1.0.0": {
+        "runtime": {
+          "esos_mapok_szama_biro.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "esos_mapok_szama_biro/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

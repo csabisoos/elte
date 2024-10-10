@@ -1,0 +1,14 @@
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\bin\Debug\net8.0\esos_mapok_szama_biro.exe
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\bin\Debug\net8.0\esos_mapok_szama_biro.deps.json
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\bin\Debug\net8.0\esos_mapok_szama_biro.runtimeconfig.json
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\bin\Debug\net8.0\esos_mapok_szama_biro.dll
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\bin\Debug\net8.0\esos_mapok_szama_biro.pdb
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\esos_mapok_szama_biro.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\esos_mapok_szama_biro.AssemblyInfoInputs.cache
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\esos_mapok_szama_biro.AssemblyInfo.cs
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\esos_mapok_szama_biro.csproj.CoreCompileInputs.cache
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\esos_mapok_szama_biro.dll
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\refint\esos_mapok_szama_biro.dll
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\esos_mapok_szama_biro.pdb
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\esos_mapok_szama_biro.genruntimeconfig.cache
+C:\Users\azxx1z\Documents\prog\esos_mapok_szama_biro\esos_mapok_szama_biro\obj\Debug\net8.0\ref\esos_mapok_szama_biro.dll

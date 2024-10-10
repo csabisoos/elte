@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "monno", "monno\monno.csproj", "{0C2C39F9-CE1C-4746-A8FE-5C124A3C8D8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C2C39F9-CE1C-4746-A8FE-5C124A3C8D8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C2C39F9-CE1C-4746-A8FE-5C124A3C8D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C2C39F9-CE1C-4746-A8FE-5C124A3C8D8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C2C39F9-CE1C-4746-A8FE-5C124A3C8D8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {184413FD-AE3A-4FF7-BF10-6BBB4475423C}
+	EndGlobalSection
+EndGlobal
