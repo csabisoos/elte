@@ -1,5 +1,6 @@
 module Lesson04 where
 import Data.List
+
 ----------------------------------
 -- Rekurzió
 ----------------------------------
@@ -87,14 +88,15 @@ fact 5 ≡⟨ nem 0 ⟩
 -- Definiáld a sum' függvényt, amely összegzi egy számokat tartalmazó lista elemeit.
 -- A listáról feltehető, hogy véges.
 -- Mi lesz a legáltalánosabb típusa?
-sum' :: Num b => [b] -> b
+sum' :: Num a => [a] -> a
 sum' [] = 0
 sum' (x:xs) = x + sum' xs
+
 
 -- Definiáld a product' függvényt, amely összeszorozza egy számokat tartalmazó lista elemeit.
 -- A listáról feltehető, hogy véges.
 -- Mi lesz a legáltalánosabb típusa?
-product' :: Num b => [b] -> b
+product' :: Num a => [a] -> a
 product' [] = 1
 product' (x:xs) = x * product' xs
 
@@ -103,7 +105,7 @@ product' (x:xs) = x * product' xs
 -- Mi lesz a legáltalánosabb típusa?
 elem' :: Eq a => a -> [a] -> Bool
 elem' _ [] = False
-elem' a (x:xs) = a == x || elem a xs
+elem' e (x:xs) = e == x || elem' e xs
 
 -- SZÉP KÓD: Ha az eredmény egy Bool típusú érték, akkor felesleges bármilyen jellegű elágazást használni. A logikai műveletek elegek.
 
@@ -112,7 +114,7 @@ elem' a (x:xs) = a == x || elem a xs
 -- Mi lesz a lehető legáltalánosabb típusa?
 genericLength' :: Num b => [a] -> b
 genericLength' [] = 0
-genericLength' (x:xs) = 1 + genericLength' xs
+genericLength' (_:xs) = 1 + genericLength' xs
 -- Az eredeti függvény a Data.List modulban érhető el.
 
 -- HELYES KÓD: Nem érdemes a sima length függvényt használni, mert az csak Int-et ad vissza, amelyről megtanultuk,
@@ -123,7 +125,7 @@ genericLength' (x:xs) = 1 + genericLength' xs
 -- Segítség: a faktoriális csak 1-től n-ig a szorzata a számoknak. Hogy tudunk 1-től n-ig számokat generálni?
 --           Melyik függvényt tudjuk felhasználni utána?
 factorial :: Integral a => a -> a
-factorial n = product [1..n]
+factorial n = product' [1..n]
 
 -- Definiáld a replicateFact függvényt, amely egy adott lista elemszámának faktoriálisaszor ismétel meg egy adott elemet.
 -- replicateFact [1,2] 'a' == "aa" -- 2! = 2
@@ -133,7 +135,6 @@ factorial n = product [1..n]
 -- Csak meglévő függvényekkel definiáljuk rekurzió nélkül, de rosszul.
 -- Használjuk a replicate, factorial, length függvényeket!
 replicateFact :: [a] -> b -> [b]
-replicateFact [] _ = []
 replicateFact i e = replicate (factorial (length i)) e
 
 -- Próbáljuk ki:
@@ -176,7 +177,8 @@ Az összes ilyen függvény a Data.List modulban található!
 -- Definiáld a (+++) függvényt, amely két listát összefűz!
 (+++) :: [a] -> [a] -> [a]
 (+++) [] ys = ys
-(+++) (x:xs) ys = x : (xs +++ ys)
+(+++) (x:xs) ys = x : xs +++ ys
+--(+++) (x:xs) ys = x : (+++) xs ys
 
 infixr 5 +++
 -- Megj.: Az eredeti függvény neve (++).
@@ -184,7 +186,10 @@ infixr 5 +++
 -- Definiáld az előző óráról ismert concat' függvényt rekurzívan!
 concat' :: [[a]] -> [a]
 concat' [] = []
-concat' (x:xs) = x +++ concat' xs
+concat' (x:xs) = x ++ concat' xs
+
+concat'' :: [[a]] -> [a]
+concat'' xs = [y | x <- xs, y <- x]
 
 -- Definiáld a slowReverse függvényt, amely egy lista elemeinek sorrendjét megfordítja egy naív módon.
 -- A listáról feltehető, hogy véges.
@@ -207,12 +212,12 @@ repeat' x = x : repeat' x
 
 -- Definiáld a last' függvényt, amely visszaadja egy lista utolsó elemét.
 -- A listáról feltehető, hogy véges.
-last' :: [a] -> a
+last' :: [x] -> x
 last' [x] = x
 last' (_:xs) = last' xs
 
 -- Definiáld az init' függvényt, amely kitörli egy lista utolsó elemét; az elejét tartja meg.
-init' :: [a] -> [a]
+init' :: [x] -> [x]
 init' [x] = []
 init' (x:xs) = x : init' xs
 
@@ -220,15 +225,16 @@ init' (x:xs) = x : init' xs
 -- A függvény a rövidebb lista hosszáig működik.
 -- (Ez a továbbiakban azt jelenti, hogy ha valamelyik lista több elemű, a fennmaradó elemeket abból a listából eldobjuk.)
 zip' :: [első] -> [második] -> [(első,második)]
-zip' (x:xs) (y:ys) = (x, y) : zip' xs ys
+zip' (x:xs) (y:ys) = (x,y) : zip' xs ys
 zip' _ _ = []
 
 -- Definiáld a nub' függvényt, amely egy lista ismétlődő elemeit törli megtartva csak az elsőket.
 -- nub' [1,2,1,3,5,3,2,2,3,3,1,1,2,4,4] == [1,2,3,5,4]
 -- nub' [2,1,2,2] == [2,1]
 -- nub' [1,2,2,2] == [1,2]
-nub' :: undefined
-nub' = undefined
+nub' :: Eq a => [a] -> [a]
+nub' [] = []
+nub' (x:xs) = x : nub' [y | y <- xs, y /= x]
 
 ----------------
 -- Számozás
