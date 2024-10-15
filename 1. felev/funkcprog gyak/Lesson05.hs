@@ -84,8 +84,11 @@ pl5' x = let (y,z) = x in y + z
 -- Segítség: A where/let-in arra kell, hogy egy lokális függvényt definiáljunk (lehetne publikus is ez a függvény).
 --           Lényegében repeat jellegű dolgot kell művelni a segédfüggvényben, de mivel megszámozni szeretnénk a szavakat,
 --           a számokat valahogy növelni is kell.
-numberWords' :: undefined
-numberWords' = undefined
+numberWords' :: Num a => String -> [(a, String)]
+numberWords' xs = numWords 1 (words xs) where
+  numWords :: Num a => a -> [String] -> [(a,String)]
+  numWords _ [] = []
+  numWords i (x:xs) = (i,x) : numWords (i+1) xs
 
 -- Definiáld az intersperse' függvényt, amely egy adott elemet beszúr minden elem közé.
 -- intersperse' 0 [1,2,3] == [1,0,2,0,3]
@@ -97,8 +100,12 @@ numberWords' = undefined
 -- Segítség: a where vagy let-in itt arra fog kelleni, hogy jól tudjuk az elemet beszúrni az elemek közé.
 --           Ez azt jelenti, hogy fel kell ismerni, hogy a függvény működése két állapotból áll.
 --           (Vagy egy lépésből átmegyünk a másikba és a végéig rekurzív; vagy az elején rekurzív, kivéve a legutolsó lépést.)
-intersperse' :: undefined
-intersperse' = undefined
+intersperse' :: a -> [a] -> [a]
+intersperse' _ [] = []
+-- interperse' _ [x] = [x]
+intersperse' y (x : xs) = x:interhelper y xs where
+  interhelper _ [] = []
+  interhelper y (x:xs) = y:x:interhelper y xs
 
 -- Definiáld a showList' függvényt, amely egy listát szépen megjelenít; lényegében ahogy ki kéne írnia a ghci-be.
 -- showList' [1,2,3] == "[1,2,3]"
@@ -106,8 +113,12 @@ intersperse' = undefined
 -- showList' [True] == "[True]"
 
 -- Segítség: A where/let-in itt arra kell, hogy két alapesetet különböztessünk meg, lényegében hasonló az intersperse-hez.
-showList' :: undefined
-showList' = undefined
+showList' :: Show a => [a] -> String
+-- showList' xs = show xs
+showList' [] = "[]" --"[]"
+showList' (x:xs) = "[" ++ show x ++ showhelper xs ++ "]" where -- "," ++ showList' xs
+  showhelper [] = ""
+  showhelper (x:xs) = "," ++ show x ++ showhelper xs
 
 -- Definiáld az unzip' függvényt, amely egy párok listáját szétszed listák párjává úgy,
 -- hogy a rendezett párok első fele az eredmény pár első listája lesz, a rendezett párok második fele
