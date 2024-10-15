@@ -250,5 +250,6 @@ az adott feladatnak megfelelően fel lehet használni a számokat, számozott sz
 
 -- Feladat:
 -- Számozzuk meg egy szövegnek az egyes szavait 1-től kezdve. Az eredmény legyen egy rendezett párokból álló lista, az első komponens a szó száma, a második maga a szó.
-numberWords :: undefined
-numberWords = undefined
+-- segitseg: words, zip
+numberWords :: String -> [(Integer, String)]
+numberWords s = zip [1..] (words s)
