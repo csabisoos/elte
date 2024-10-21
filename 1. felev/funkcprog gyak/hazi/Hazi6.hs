@@ -1,25 +1,56 @@
 module Hazi6 where
 
+import Data.Char
+
 toUpperThird :: String -> String
-toUpperThird = undefined
+toUpperThird (a:b:c:ds) = a:b:toUpper c:ds
+toUpperThird as = as
 
 isSorted :: Ord a => [a] -> Bool
-isSorted = undefined
+isSorted (a:b:cs) = a<=b && isSorted(b:cs)
+isSorted _ = True
 
 (!!!) :: Integral b => [a] -> b -> a
-(!!!) = undefined
+-- [] !!! _ = ? -- ures lista esete
+-- positive
+(a:_) !!! 0 = a
+(_:as) !!! b | b>0 = as !!! (b-1)
+-- negative
+as !!! b | b<0 = reverse as !!! (-b-1)
 
 format :: Integral b => b -> String -> String
-format = undefined
+format a b
+    | a<0 = format 0 b
+    | a==0 = b
+format a [] = ' ':format(a-1) []
+format a (c:ds) = c:format(a-1) ds
 
 mightyGale :: (Num a, Ord b, Num b, Integral c) => [(String, a, b, c)] -> String
-mightyGale = undefined
+mightyGale [] = ""
+mightyGale ((nev,ho,seb,szam):as)
+    | seb>110 = nev
+    | otherwise = mightyGale as
 
--- cipher :: 
--- cipher = undefined
+cipher :: String -> String
+cipher [] = ""
+cipher (a:b:c:ds)
+    | isDigit c = [a,b]
+    | otherwise = cipher (b:c:ds)
+cipher (_:as) = cipher as
 
 doubleElements :: [a] -> [a]
-doubleElements = undefined
+doubleElements [] = []
+doubleElements (a:as) = a:a:doubleElements as
 
 deleteDuplicateSpaces :: String -> String
-deleteDuplicateSpaces = undefined
+deleteDuplicateSpaces [] = []
+deleteDuplicateSpaces as = f (b as)
+    where
+        b [] = []
+        b (' ':[]) = []
+        b (a:[]) = [a]
+        b (a:c:ds)
+            | a == ' ' && c == ' ' = b (c:ds)
+            | otherwise = a:b (c:ds)
+        f (' ':as) = as
+        f as = as
