@@ -1,11 +1,16 @@
 module Lesson06 where
 
+import Data.List
+
+-- [(x:xs)] : []
+
 -- Feladatok:
 -- Definiáld a tails' függvényt, előállítja egy lista összes lehetséges végződését!
 -- tails' [1,2,3] == [[1,2,3],[2,3],[3],[]]
 -- tails' "abcd" == ["abcd","bcd","cd","d",""]
-tails' :: undefined
-tails' = undefined
+tails' :: [a] -> [[a]]
+tails' [] = [[]]
+tails' xs = xs : tails' (tail xs)
 -- A függvény a Data.List modulban található!
 
 --------------------------------------------
@@ -16,9 +21,25 @@ tails' = undefined
 -- inits' [1,2,3] == [[],[1],[1,2],[1,2,3]]
 -- inits' "ab" == ["","a","ab"]
 -- inits' [5,10,9,1,0] == [[],[5],[5,10],[5,10,9],[5,10,9,1],[5,10,9,1,0]]
-inits' :: undefined
-inits' = undefined
+inits' :: [a] -> [[a]]
+inits' [] = [[]]
+inits' xs = inits' (init xs) ++ [xs]
 -- A függvény a Data.List modulban található!
+
+----------------------------
+-- Definiáld az unzip' függvényt, amely egy párok listáját szétszed listák párjává úgy,
+-- hogy a rendezett párok első fele az eredmény pár első listája lesz, a rendezett párok második fele
+-- az eredmény pár második listája lesz.
+-- unzip' [(0,'0'),(1,'1'),(2,'2')] == ([0,1,2],"012")
+-- unzip' [] == ([],[])
+-- unzip' [(3,0),(4,1),(0,2),(9,9),(8,10)] == ([3,4,0,9,8],[0,1,2,9,10])
+
+-- Segítség: Most a where/let-in mintaillesztésre fog kelleni.
+unzip' :: [(a,b)] -> ([a],[b])
+unzip' = [] = ([],[])
+unzip' ((a,b):xs) = (a:aa,b:bb) where
+    (aa,bb) = unzip' xs
+----------------------------
 
 -- Definiáld a quickSort függvényt, amely a quick sort műveletét végzi el, azon módszerrel rendezi a lista elemeit.
 -- A quick sort úgy rendezi az elemeket, hogy először választunk egy összehasonlítási pontot, értéket (angolul "pivot"),
@@ -26,8 +47,21 @@ inits' = undefined
 -- Az így keletkezett két részt természetesen ugyanúgy rendezni kell az azonos algoritmussal.
 -- A "pivot" az első elem legyen, láncolt lista esetén az a legegyszerűbb választás.
 -- A listáról feltehető, hogy véges.
-quickSort :: undefined
-quickSort = undefined
+quickSort :: Ord a => [a] -> [a]
+quickSort [] = []
+quickSort (pivot:xs) = quickSort (lesser xs) ++ [pivot] ++ quickSort (greater xs) where
+    --lesser = [y | y <- xs, y <= pivot]
+    --greater = [y | y <- xs, y > pivot]
+    lesser [] = []
+    lesser (x:xs)
+        | x <= pivot = x : lesser xs
+        | otherwise = lesser xs
+    greater [] = []
+    greater (x:xs)
+        | x > pivot = x : greater xs
+        | otherwise = greater xs
+    -- opcionalis halado megoldas: jarjuk vegig 1x a listat (segitseg: unzip)
+    -- (lesser,greater) = 
 
 -- Definiáld a mergeSort függvényt, amely egy lista elemeit rendezi az összefésüléses rendezés algoritmusát használva.
 -- Az összefésüléses rendezés úgy működik, hogy a kezdeti listát két részre bontjuk, majd mindkét részlistán ugyanezt az algoritmust használjuk
@@ -46,7 +80,12 @@ quickSort = undefined
 mergeSort :: undefined
 mergeSort = undefined
 
-
+merge :: Ord a => [a] -> [a] -> [a] -- rendezett listak osszefesulese
+merge xs [] = xs
+merge [] ys = ys
+merge (x:xs) (y:ys)
+    | x<y = x:merge xs (y:ys)
+    | otherwise = y:merge (x:xs) ys
 -------------------------
 -- Típusszinonimák
 -------------------------
