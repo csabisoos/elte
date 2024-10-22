@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void feltoltr(int tomb[]){
+void rfeltolt(int tomb[]){
     
 }
 
