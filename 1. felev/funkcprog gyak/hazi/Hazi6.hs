@@ -12,10 +12,10 @@ isSorted _ = True
 
 (!!!) :: Integral b => [a] -> b -> a
 -- [] !!! _ = ? -- ures lista esete
--- positive
+--p
 (a:_) !!! 0 = a
 (_:as) !!! b | b>0 = as !!! (b-1)
--- negative
+--n
 as !!! b | b<0 = reverse as !!! (-b-1)
 
 format :: Integral b => b -> String -> String
