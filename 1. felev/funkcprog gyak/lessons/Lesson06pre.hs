@@ -1,11 +1,16 @@
 module Lesson06 where
 
+import Data.List
+
+-- [(x:xs)] : []
+
 -- Feladatok:
 -- Definiáld a tails' függvényt, előállítja egy lista összes lehetséges végződését!
 -- tails' [1,2,3] == [[1,2,3],[2,3],[3],[]]
 -- tails' "abcd" == ["abcd","bcd","cd","d",""]
-tails' :: undefined
-tails' = undefined
+tails' :: [a] -> [[a]]
+tails' [] = [[]]
+tails' xs = xs : tails' (tail xs)
 -- A függvény a Data.List modulban található!
 
 --------------------------------------------
@@ -16,8 +21,9 @@ tails' = undefined
 -- inits' [1,2,3] == [[],[1],[1,2],[1,2,3]]
 -- inits' "ab" == ["","a","ab"]
 -- inits' [5,10,9,1,0] == [[],[5],[5,10],[5,10,9],[5,10,9,1],[5,10,9,1,0]]
-inits' :: undefined
-inits' = undefined
+inits' :: [a] -> [[a]]
+inits' [] = [[]]
+inits' xs = inits' (init xs) ++ [xs]
 -- A függvény a Data.List modulban található!
 
 -- Definiáld a quickSort függvényt, amely a quick sort műveletét végzi el, azon módszerrel rendezi a lista elemeit.
