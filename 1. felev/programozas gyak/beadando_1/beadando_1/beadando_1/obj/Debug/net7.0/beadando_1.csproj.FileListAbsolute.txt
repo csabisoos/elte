@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/bin/Debug/net7.0/beadando_1
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/bin/Debug/net7.0/beadando_1.deps.json
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/bin/Debug/net7.0/beadando_1.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/bin/Debug/net7.0/beadando_1.dll
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/bin/Debug/net7.0/beadando_1.pdb
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.csproj.AssemblyReference.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.dll
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/refint/beadando_1.dll
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.pdb
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/beadando_1.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/obj/Debug/net7.0/ref/beadando_1.dll
