@@ -42,7 +42,7 @@ class Program
                 maxert = varosok[i].tav;
                 minar = varosok[i].ar;
             }
-            if (maxert == varosok[i].tav && minar > varosok[i].ar){
+            else if (maxert == varosok[i].tav && minar > varosok[i].ar){
                 minar = varosok[i].ar;
             }
             /**/
