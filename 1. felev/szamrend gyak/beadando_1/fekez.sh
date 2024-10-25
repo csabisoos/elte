@@ -10,9 +10,3 @@ K=$1
 
 # fajl neve
 file="test.txt"
-
-utolso_idopont=""
-megallas=0
-
-while read -r line; do
-    
