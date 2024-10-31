@@ -1,12 +1,10 @@
 #!/bin/bash
-
-# K check
-if [[ $# -ne 1 ]]; then
-    echo "Használat: ./fekez.sh <távolság_méterben>"
-    exit 1
-fi
-
+#
+file="test.txt"
 K=$1
 
-# fajl neve
-file="test.txt"
+while IFS=',' read idop seb tave tavh || [ -n "$idop" ]; do
+    if (( tave < K )); then
+        echo $idop
+    fi
+done < "$file"
