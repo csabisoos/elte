@@ -1,4 +1,4 @@
 # Számítógépes rendszerek gyakorlat
 
-(mokus)[mokus.web.elte.hu](http://mokus.web.elte.hu)
+[mokus](http://mokus.web.elte.hu)
 
