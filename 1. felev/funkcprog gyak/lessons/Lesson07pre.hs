@@ -150,7 +150,7 @@ instance Eq Colour where
 ```    
 
 Definiáljuk az `isGray :: Colour -> Bool` függvényt, amely eldönti, hogy a paraméterként megadott szín a szürke egy árnyalata-e! Ez akkor teljesül, ha a szín három komponense egyenlő, de nem a fehér (rgb = (255, 255, 255)) illetve nem a fekete (rgb = (0, 0, 0)).
-
+-}
 -----------------
 
 -- Definiáld a Fruit típust, amelynek legyen három konstruktora: Grape, Apple, Pear.

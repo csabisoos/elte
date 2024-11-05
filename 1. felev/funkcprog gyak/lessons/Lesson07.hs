@@ -41,15 +41,22 @@ Nem kötelező típusváltozót megadni (de lehet, arról is lesz szó), tovább
 -- Feladatok:
 -- Definiáld a Day típust, amelynek 7 paraméter nélküli konstruktora van: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
 
-
+data Day = Mon | Tue | Wed | Thu | Fri | Sat | Sun 
+    --deriving Show
 
 -- Kérdezzük meg ghci-től, hogy mi lesz a Fri konstruktor típusa!
 -- A konstruktorok ugyanolyan értékek/függvények, mint a többi. Annyiban speciálisak a konstruktorok, hogy ezekre lehet mintailleszteni.
 
 -- Definiáld a nextDay függvényt, amely egy adott napnak megadja, hogy mi a rákövetkező napja.
 -- Segítség: Konstruktorokkal mit lehet csinálni?
-nextDay :: undefined
-nextDay = undefined
+nextDay :: Day -> Day
+nextDay Mon = Tue
+nextDay Tue = Wed
+nextDay Wed = Thu
+nextDay Thu = Fri
+nextDay Fri = Sat
+nextDay Sat = Sun
+nextDay Sun = Mon
 
 {-
 Próbáljuk meg a ghci-ben meghívni a nextDay függvényt.
@@ -115,9 +122,28 @@ Ebből két dolgot is látni:
              de a legsűrűbb esetben nem érdemes vaggyal elválasztott függvény mindkét felét implementálni.
 -}
 
+-- Show
+
+instance Show Day where
+    show Mon = "Monday"
+    show Tue = "Tuesday"
+    show Wed = "Wedsday"
+    show Thu = "Thursday"
+    show Fri = "Friday"
+    show Sat = "Saturday"
+    show Sun = "Sunday"
+
 -- Példányosítsuk kézzel az Eq osztályt a Day típusra!
 
-
+instance Eq Day where
+    (==) Mon Mon = True
+    (==) Tue Tue = True
+    (==) Wed Wed = True
+    (==) Thu Thu = True
+    (==) Fri Fri = True
+    (==) Sat Sat = True
+    (==) Sun Sun = True
+    (==) _ _ = False
 
 ------------------------------------------
 -- Paraméteres konstruktorok
@@ -130,9 +156,13 @@ Ahogy a rendezett pároknak, meg ahogy a listáknak is vannak olyan konstruktora
 -}
 
 
---Definiáljuk a `Colour` adattípust, amely segítségével színeket reprezentálhatunk RGB (piros, zöld, kék) formátumban. Legyen egy konstruktora (RGB), amely három Integer paraméterrel rendelkezik.
+--Definiáljuk a `Colour` adattípust, amely segítségével színeket reprezentálhatunk RGB (piros, zöld, kék) formátumban.
+--Legyen egy konstruktora (RGB), amely három Integer paraméterrel rendelkezik.
 
-{-
+data Colour = RGB Integer Integer Integer
+    --deriving Show
+
+
 red :: Colour
 red = RGB 255 0 0
 
@@ -143,13 +173,21 @@ blue :: Colour
 blue = RGB 0 0 255
 
 instance Show Colour where
-    show = undefined
+    show (RGB r g b) = show r ++ " " ++ show g ++ " " ++ show b
 
 instance Eq Colour where
-    (==) = undefined
-```    
+    (==) (RGB r g b) (RGB r2 g2 b2) = r==r2 && g==g2 && b==b2 
+  --RGB r g b == RGB r2 g2 b2 = r==r2 && g==g2 && b==b2
 
-Definiáljuk az `isGray :: Colour -> Bool` függvényt, amely eldönti, hogy a paraméterként megadott szín a szürke egy árnyalata-e! Ez akkor teljesül, ha a szín három komponense egyenlő, de nem a fehér (rgb = (255, 255, 255)) illetve nem a fekete (rgb = (0, 0, 0)).
+{-
+Definiáljuk az `isGray :: Colour -> Bool` függvényt, amely eldönti, hogy a paraméterként megadott szín a szürke egy árnyalata-e!
+Ez akkor teljesül, ha a szín három komponense egyenlő, de nem a fehér (rgb = (255, 255, 255)) illetve nem a fekete (rgb = (0, 0, 0)).
+-}
+
+isGray :: Colour -> Bool
+isGray (RGB 255 255 255) = False
+isGray (RGB 0 0 0) = False
+isGray (RGB r g b) = r==g && g==b
 
 -----------------
 
@@ -159,20 +197,30 @@ Definiáljuk az `isGray :: Colour -> Bool` függvényt, amely eldönti, hogy a p
 -- A konstruktoroknak szóközzel elválasztva kell átadni a paramétereit, a paraméterek az értékek típusai kell legyenek a konstruktornál.
 -- Megjegyzés: Ki fog derülni a következő feladatból, hogy így azért nem az igazi ez a típus; meg lehet ezt oldani jobban is.
 
-
+data Fruit = Grape | Apple | Pear deriving Show
+data FruitBatch = FruitBatch Fruit Integer deriving Show
 
 -- Kérdezzük meg ghci-től, hogy mi lesz a FruitBatch konstruktor típusa!
 
 -- Definiáld a sumFruits függvényt, amely megszámolja egy listányi FruitBatch-ben, hogy hány darab gyümölcsünk van.
 -- Nem válogatjuk külön a gyümölcsöket, csak a gyümölcsök száma az érdekes összesen.
-sumFruits :: undefined
-sumFruits = undefined
+sumFruits :: [FruitBatch] -> Integer
+sumFruits [] = 0
+sumFruits (FruitBatch _ x:xs) = x+sumFruits xs
 
 -- Definiáld az sumDifferentFruits függvényt, amely összeadja egy listányi FruitBatch-ben, hogy a különböző gyümölcsökből hány darabunk van.
 -- Ez előtt tegyük egy kicsit beszédesebbé a típust. Definiálj 3 típusszinonimát Integer-re: NumberOfApples', NumberOfGrapes', NumberOfPears'
 
--- sumDifferentFruits :: [FruitBatch] -> (NumberOfApples',NumberOfGrapes',NumberOfPears')
-sumDifferentFruits = undefined
+type NumberOfApples' = Integer
+type NumberOfGrapes' = Integer
+type NumberOfPears' = Integer
+
+sumDifferentFruits :: [FruitBatch] -> (NumberOfApples',NumberOfGrapes',NumberOfPears')
+sumDifferentFruits xs = fruitHelper xs (0,0,0) where
+    fruitHelper [] sums = sums
+    fruitHelper ((FruitBatch Apple x):xs) (a,g,p) = fruitHelper xs (a+x,g,p)
+    fruitHelper ((FruitBatch Grape x):xs) (a,g,p) = fruitHelper xs (a,g+x,p)
+    fruitHelper ((FruitBatch Pear x):xs) (a,g,p) = fruitHelper xs (a,g,p+x)
 
 -- A függvény írása közben esetleg tapasztalható, hogy senki nem állít meg abban, hogy az almát hozzáadjam a körtékhez.
 
