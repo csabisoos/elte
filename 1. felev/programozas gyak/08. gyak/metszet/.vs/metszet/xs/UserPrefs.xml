@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{CA732DC7-E103-4B1D-8207-A4A723E3E9C7}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="metszet/Program.cs">
+    <Files>
+      <File FileName="metszet/Program.cs" Line="27" Column="31" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="metszet" expanded="True">
+            <Node name="metszet">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.metszet PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
