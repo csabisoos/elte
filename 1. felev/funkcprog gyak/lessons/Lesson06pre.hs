@@ -1,4 +1,4 @@
-module Lesson06 where
+opmodule Lesson06 where
 
 -- Feladatok:
 -- Definiáld a tails' függvényt, előállítja egy lista összes lehetséges végződését!
