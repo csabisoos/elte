@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "hajok_a_kikotoben_biro/1.0.0": {
+        "runtime": {
+          "hajok_a_kikotoben_biro.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "hajok_a_kikotoben_biro/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
