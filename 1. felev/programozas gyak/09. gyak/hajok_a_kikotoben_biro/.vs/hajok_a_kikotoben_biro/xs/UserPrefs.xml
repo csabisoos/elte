@@ -1,4 +1,25 @@
 ﻿<Properties StartupConfiguration="{6DDF000F-B1B7-4D59-B686-B3D25D7A8ACF}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.hajok__a__kikotoben__biro FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="hajok_a_kikotoben_biro/Program.cs">
+    <Files>
+      <File FileName="hajok_a_kikotoben_biro/Program.cs" Line="207" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="hajok_a_kikotoben_biro" expanded="True">
+            <Node name="hajok_a_kikotoben_biro">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.hajok__a__kikotoben__biro PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
