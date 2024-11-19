@@ -1,3 +1,5 @@
+module Lesson08zs where
+
 -- Paraméteres data
 
 {- 
@@ -143,18 +145,24 @@ filter' p (x:xs)
 -- Definiáld a ($$) függvényt, amely egy függvényt alkalmaz egy értékre.
 infixr 0 $$
 ($$) :: (a -> b) -> a -> b
-f $$ a = undefined
+f $$ a = f a
 -- Az eredeti függvény a ($).
 
 -- Definiáld a takeWhile' függvényt, amely egy lista elejéről addig tartja meg az elemeket, amíg egy adott tulajdonság folyamatosan teljesül.
-takeWhile' :: undefined
-takeWhile' = undefined
+takeWhile' :: (a -> Bool) -> [a] -> [a]
+takeWhile' f [] = []
+takeWhile' f (x:xs)
+    | f x = x:(takeWhile' f xs)
+    | otherwise = []
 
 -- Definiáld a dropWhile' függvényt, amely egy lista elejéről addig dobálja el az elemeket, amíg egy adott tulajdonság folyamatosan teljesül.
-dropWhile' :: undefined
-dropWhile' = undefined
+dropWhile' :: (a -> Bool) -> [a] -> [a]
+dropWhile' f [] = []
+dropWhile' f (x:xs)
+    | f x = dropWhile' f xs
+    | otherwise = x dropWhile' f xs
 
 -- Definiáld a find' függvényt, amely visszaadja az első adott tulajdonságú elemet egy listából, ha létezik olyan.
-find' :: undefined
-find' = undefined
+find' :: (a -> Bool) -> [a] -> A
+find' hasProperty list = head (filter hasProperty list)
 -- Az eredeti függvény a Data.List-ben található.
