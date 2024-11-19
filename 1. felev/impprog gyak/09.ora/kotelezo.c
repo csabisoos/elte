@@ -121,11 +121,12 @@ char toUpper(char c)
 
 void otos(void)
 {
-    char* fileName = "file";
-
-    FILE* f = fopen(fileName, "r");
+    char *fileName = "file";
+    
+    FILE *f = fopen(fileName, "r");
 
     char b[BUFFER];
+
     fgets(b, BUFFER, f);
 
     for (unsigned i = 0; i< BUFFER; ++i)
@@ -142,7 +143,7 @@ void hatos(void)
 {
     char* fileName = "file";
 
-    FILE* f = fopen(fileName, "rw");
+    FILE* f = fopen(fileName, "r");
 
     char b[BUFFER];
     fgets(b, BUFFER, f);
