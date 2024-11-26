@@ -2,6 +2,7 @@ module NagyBead where
 
 import Data.Either
 import Data.Maybe
+import Text.Read
 
 basicInstances = 0 -- Mágikus tesztelőnek kell ez, NE TÖRÖLD!
 
@@ -101,5 +102,46 @@ data Dir = InfixR | InfixL
 
 data Tok a = BrckOpen | BrckClose | TokLit a | TokBinOp (a -> a -> a) Char Int Dir
 
-{- instance Show Tok where
-  show  -}
+instance Show a => Show (Tok a) where
+  show BrckOpen = "BrckOpen"
+  show BrckClose = "BrckClose"
+  show (TokLit a) = "TokLit " ++ show a
+  show (TokBinOp _ a b c) = "TokBinOp '" ++ [a] ++ "' " ++ show b ++ " " ++ show c
+
+instance Eq a => Eq (Tok a) where
+  BrckOpen == BrckOpen = True
+  BrckClose == BrckClose = True
+  (TokLit a) == (TokLit b) = a == b
+  (TokBinOp _ a b c) == (TokBinOp _ x y z) = a == x && b == y && c == z
+  _ == _ = False
+
+{- Az egyszerűség kedvéért a tesztekben az alábbi függvényt
+ fogjuk használni (Ezt a függvényt a megoldásban ne 
+ használjuk fel): -}
+getOp :: Floating a => Char -> Maybe (Tok a) 
+getOp = operatorFromChar operatorTable
+
+operatorFromChar :: OperatorTable a -> Char -> Maybe (Tok a)
+operatorFromChar [] _ = Nothing
+operatorFromChar ((a, (b, c, d)) : e) f
+  | a == f = Just (TokBinOp b f c d)
+  | otherwise = operatorFromChar e f
+
+-- ha ures listat kapunk akkor Nothingot adunk vissza mivel nincs eleg informacio 
+-- mintaillesztes: 
+  -- - elso elem: (a, (b, c, d))
+  -- - maradek: rest
+-- ha a == f: megvan a keresett elem -> Just (TokBinOp b f c d)
+-- ha nem egyenlo: rekurzivan meghivja onmagara a lista maradek elemeivel
+
+{- Az egyszerűség kedvéért a tesztekben az 
+ alábbi függvényeket fogjuk használni: -}
+parse :: String -> Maybe [Tok Double] 
+parse = parseTokens operatorTable
+
+parseTokens :: Read a => OperatorTable a -> String -> Maybe [Tok a]
+parseTokens = undefined
+{- parseTokens x y 
+  | not (null y) && head x == '(' && mindennyitott x = Just (replicate (length y) BrckOpen)
+  | not (null y) && head y == ')' && mindenzart y = Just (replicate (length y) BrckClose)
+ -}  
