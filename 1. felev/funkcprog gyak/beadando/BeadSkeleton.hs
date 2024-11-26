@@ -100,3 +100,6 @@ data Dir = InfixR | InfixL
   deriving (Show, Eq, Ord)
 
 data Tok a = BrckOpen | BrckClose | TokLit a | TokBinOp (a -> a -> a) Char Int Dir
+
+{- instance Show Tok where
+  show  -}
