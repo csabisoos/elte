@@ -87,6 +87,40 @@ char* reverse5(const char *str)
     return reversed;
 }
 
+void t6(void){
+    char** words = NULL;
+    unsigned size = 0;
+    char* curWord = NULL;
+    unsigned curSize = 0;
+    char c;
+    while ((c == getchar()) != EOF)
+    {
+        if (isSpace(c) && curSize != 0)
+        {
+            curWord = realloc(curWord, ++curSize);
+            curWord[curSize-1] = '\0';
+
+            words = realloc(words, ++size * sizeof(char*));
+            words[size-1] = malloc(curSize);
+            strcpy(words[size-1], curWord);
+
+            free(curWord);
+            curWord = NULL;
+            curSize = 0;
+        }
+        if (!isSpace(c))
+        {
+            curWord = realloc(curWord, ++curSize);
+            curWord[curSize-1] = c;
+        }
+    }
+    for (unsigned i = 0; i < size; ++i)
+    {
+        printf("%s\n", words[i]);
+        free(words[i]);
+    }
+}
+
 int main()
 {
     harmas();
