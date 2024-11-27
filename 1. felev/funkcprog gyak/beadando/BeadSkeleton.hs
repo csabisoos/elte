@@ -24,21 +24,21 @@ operatorTable =
     , ('^', ((**), 8, InfixR))
     ]
 
---getOp :: (Floating a) => Char -> Maybe (Tok a)
---getOp = operatorFromChar operatorTable
---
---parse :: String -> Maybe [Tok Double]
---parse = parseTokens operatorTable
---
---parseAndEval :: (String -> Maybe [Tok a]) -> ([Tok a] -> ([a], [Tok a])) -> String -> Maybe ([a], [Tok a])
---parseAndEval parse eval input = maybe Nothing (Just . eval) (parse input)
---
---syNoEval :: String -> Maybe ([Double], [Tok Double])
---syNoEval = parseAndEval parse shuntingYardBasic
---
---syEvalBasic :: String -> Maybe ([Double], [Tok Double])
---syEvalBasic = parseAndEval parse (\t -> shuntingYardBasic $ BrckOpen : (t ++ [BrckClose]))
---
+getOp :: (Floating a) => Char -> Maybe (Tok a)
+getOp = operatorFromChar operatorTable
+
+parse :: String -> Maybe [Tok Double]
+parse = parseTokens operatorTable
+
+parseAndEval :: (String -> Maybe [Tok a]) -> ([Tok a] -> ([a], [Tok a])) -> String -> Maybe ([a], [Tok a])
+parseAndEval parse eval input = maybe Nothing (Just . eval) (parse input)
+
+syNoEval :: String -> Maybe ([Double], [Tok Double])
+syNoEval = parseAndEval parse shuntingYardBasic
+
+syEvalBasic :: String -> Maybe ([Double], [Tok Double])
+syEvalBasic = parseAndEval parse (\t -> shuntingYardBasic $ BrckOpen : (t ++ [BrckClose]))
+
 --syEvalPrecedence :: String -> Maybe ([Double], [Tok Double])
 --syEvalPrecedence = parseAndEval parse (\t -> shuntingYardPrecedence $ BrckOpen : (t ++ [BrckClose]))
 
@@ -97,7 +97,7 @@ syComplete = parseAndEvalSafe
 
 ---------------------------------
 
-data Dir = InfixR | InfixL
+data Dir = InfixL | InfixR
   deriving (Show, Eq, Ord)
 
 data Tok a = BrckOpen | BrckClose | TokLit a | TokBinOp (a -> a -> a) Char Int Dir
@@ -115,11 +115,6 @@ instance Eq a => Eq (Tok a) where
   (TokBinOp _ a b c) == (TokBinOp _ x y z) = a == x && b == y && c == z
   _ == _ = False
 
-{- Az egyszerűség kedvéért a tesztekben az alábbi függvényt
- fogjuk használni (Ezt a függvényt a megoldásban ne 
- használjuk fel): -}
-getOp :: Floating a => Char -> Maybe (Tok a) 
-getOp = operatorFromChar operatorTable
 
 operatorFromChar :: OperatorTable a -> Char -> Maybe (Tok a)
 operatorFromChar [] _ = Nothing
@@ -134,14 +129,38 @@ operatorFromChar ((a, (b, c, d)) : e) f
 -- ha a == f: megvan a keresett elem -> Just (TokBinOp b f c d)
 -- ha nem egyenlo: rekurzivan meghivja onmagara a lista maradek elemeivel
 
-{- Az egyszerűség kedvéért a tesztekben az 
- alábbi függvényeket fogjuk használni: -}
-parse :: String -> Maybe [Tok Double] 
-parse = parseTokens operatorTable
 
 parseTokens :: Read a => OperatorTable a -> String -> Maybe [Tok a]
-parseTokens = undefined
-{- parseTokens x y 
-  | not (null y) && head x == '(' && mindennyitott x = Just (replicate (length y) BrckOpen)
-  | not (null y) && head y == ')' && mindenzart y = Just (replicate (length y) BrckClose)
- -}  
+parseTokens tabla bemenet = bemenetboltoken tabla (words bemenet)
+
+bemenetboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]
+bemenetboltoken _ [] = Just []
+bemenetboltoken tabla (x:xs) = do
+  token <- szoboltoken tabla x -- elso elembol token
+  tobbitoken <- bemenetboltoken tabla xs -- tobbi elembol token rekurzivan
+  Just (token ++ tobbitoken) -- osszefuzes
+
+szoboltoken :: Read a => OperatorTable a -> String -> Maybe [Tok a]
+szoboltoken tabla szo
+  | not (null szo) && head szo == '(' && csakNyitoZarojel szo = Just(replicate (length szo) BrckOpen)
+  | not (null szo) && head szo == ')' && csakCsukoZarojel szo = Just(replicate (length szo) BrckClose)
+  | length szo == 1 = case operatorFromChar tabla (szo!!0) of
+    Just tok -> Just [tok]
+    Nothing -> case readMaybe szo of
+      Just n -> Just [TokLit n]
+      Nothing -> Nothing
+  | otherwise = case readMaybe szo of
+    Just n -> Just [TokLit n]
+    Nothing -> Nothing
+
+csakNyitoZarojel :: String -> Bool
+csakNyitoZarojel [] = True
+csakNyitoZarojel (x:xs) = (x == '(') && csakNyitoZarojel xs
+
+csakCsukoZarojel :: String -> Bool
+csakCsukoZarojel [] = True
+csakCsukoZarojel (x:xs) = (x == ')') && csakCsukoZarojel xs
+
+
+shuntingYardBasic :: [Tok a] -> ([a], [Tok a])
+shuntingYardBasic = undefined
