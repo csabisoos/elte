@@ -29,7 +29,7 @@ Uf: ∀i∈[1..m]: (orsegek[lista[i]] = 1) és
 ```groovy
 MÁSOL: ∀i∈[e..u]:(y[i-e+1]=f(i))
 e..u     ~ 1..m
-y[i-e+1] ~ falak[lista[i]]
+y[i-e+1] ~ orsegek[lista[i]]
 f(i)     ~ 1
 
 KIVÁLOGAT:
@@ -41,7 +41,7 @@ f(i) ~ i
 MÁSOL: ∀i∈[e..u]:(y[i-e+1]=f(i))
 e..u     ~ 2..m
 y[i-e+1] ~ kul[i]
-f(i)     ~ ujlista[i] - ujlista[i-1] - 1
+f(i)     ~ orsegszamok[i] - orsegszamok[i-1] - 1
 
 DARAB:
 db   ~ db
@@ -89,3 +89,28 @@ f(i) ~ hiany[i]/2
 4
 7
 ```
+
+## Másik megoldás
+### [Specifikáció](https://progalap.elte.hu/specifikacio/?data=H4sIAAAAAAAAE42S207jMBCGX2WUKyKZErvlZDUrFYEQgrISpwvSXCQk1bo0BpHkAqFKrPamr7LPwZv0SRh74uJqhbRRI4%2FH%2F%2Fj%2FZpq3oH4uH9RUPWSNetKBDI5KCXq1XF4yqGiZq7rJTJjwXq9KJ%2Fo6k%2FBS6uIrx%2BCxnfvbXyrTry5R5JgpcrOd6HMloZ1RfDKVsMWHsYaPvzXoYcyjKLSxyVY2qvA4nOjbKXkmPIUYxmeXWyo2Xh1eotKwJ0zBRAM%2Bq%2BW7Qo9EGBw0WS3%2FGE%2FCw729Sm3zdEhRar26OKYrZ2kYft2IDZK3o9gG%2Fr2fUau1Whn12tJUehcXOcqOR1ejo3VLVP3DV9mBovD87O7j98XP09HNP2oXbQyinWHR9f3teDyigiLv%2Fh1U7giato51wIKmrJs6kMlbUGRNhp8CaAl8F%2B%2BpJBziYsciIdlj0GfABb5oOmCwy%2BAAN7jwAX4ftlXU9d3hHp3zrmhgtEaHvCjDVOR%2BKBEuiIykyCUIXC2yFQuTbmeURmydVSXCYvRS1u28CSRfsM0eIuph4PUgLNs%2Bg0MPeDNJdNxB8dTHcGy8g%2BH%2FRXJAIH0PhCa471F4GUKIrL%2FY8O%2F2bjx2Ht8gpItPvPyibOYDAAA%3D)
+```groovy
+Be: n∈N, m∈N, lista∈N[1..m]
+Sa: rend∈N[1..m], kul∈N[1..m], hiany∈N[1..db], db∈N
+Ki: uj∈N
+Ef: (1<=n és n<=100) és (1<=m és m<=n)
+Uf: rend[1] = MIN(i=1..m, lista[i]).2 és
+    ∀i∈[2..m]: (∃j∈[1..m]: (rend[i-1]<rend[i] és rend[i]=lista[j])) és
+    kul[1] = rend[1] - 1 és
+    ∀i∈[2..m]: (kul[i] = rend[i] - rend[i-1] - 1) és
+    db = DARAB(i=1..m, kul[i]>1) és
+    hiany = KIVÁLOGAT(i=1..m, kul[i]>1, kul[i]).2 és
+    uj = SZUMMA(i=1..db, hiany[i]/2) és n=n
+```
+***Ezt a stukiban nem lehet megírni, mivel nem tudunk olyan elemre hivatlkozni aminek még nem adtunk értéket.  
+Ebbe a megoldásban annyi eltérés van, hogy egy segédlistával kevesebbet használ és egyel több fajta programozási mintát.***
+
+### [Stuktogram](https://progalap.elte.hu/stuki/?data=H4sIAAAAAAAAE7VZ63LaOhB%2BlY4702mnNMfcL538gACBlCSQcAuZ%2FDC2jA3GJr5w6%2BSB%2Bhx9sSMJtJJPoKlaDn9YFun7vt3VSjJ8V2xDKSnqWbZQSObTGbWQzefSalpJKJa3RH4Tf%2BtGjpNQAuQgPUQG97iegQKl9F3JpXvpq6S6ITaFA0dCWWg%2BckM%2BybINA7lKydScACWUcLNAeEKAniPk6ghP0C3bMfCcpoGxH5XZg9lMJQ3yzXhi21ZKLWIzN812B43CGpu3d8lKZ458bHa3czcaoXtsDgpmtmrV5tisPfcLk8b6GptLa7Cp2kETmx23MB0OM1VslpurzbCfvcLmRePyW1Wrq9hMzeat1IVFzFqg25HpTJWnFwGZBStQ8WDFFBwJOdRCNMfD8YgQrUPsmkXOY%2FKpdI5BDGx8SSqYr10N3U5YnwEfOGJ8QpSyKZ54rYfF%2BuGGhgc4jE4AlglvhTkol%2Bcadmh7eIBin6fOzkiexp6xud%2FracZiwgpADlMAjpgCIQ1SCbZZgu2nL7v3LyzVsDwYs7BeZGI%2FwGyMS%2Bcq4RjdLfTtZdsCDnDEOITlKVvO8XBteBO9S8sJOIxOAJYJ6XA5k0fKCTFhBebUr1zq1wNQAI6YAlAtHzBajsLp%2FXOGBpwNGi2nlaoBHThidJtGc7Bt9ypH6VzPWxD5MJDhCTNPIx8EEvmAw%2BgEYIFOWDSH6WzzP8XaLf0Pk%2FBrkqxKP0IVX3N1K1Y3oTQU7sAQCB%2BLhcQzseCIiRVQpfrFGH%2BmbQn7M6MRNmyZNXyAxrI1d1M6f3yiKzU%2FrKfRsM1XKnPEeIQzQrbUaDGxvcZsQksNOIxOAJYJS641ISasYHVtZXJ3Zb7TgiOmAFTLB3wzqt9GwdUDDXhx0fc27cYa6MARz29%2FO4i60%2BjN1oSBkEA%2B8zTyQSCRDziw2jmwuNr5ojllawqlOdaaED4WC4lnYsEREyugyvZM%2F%2BePyc8fPvpIPyfe7aL4RMjh6sTIhbuUzMo%2BQB5N9%2BfofdlerquTHnCAI34tYlc3%2BeJ7uW7oZzf7axHDgWsRB5YJ6WizGuND3QpBYQmgh0kAR0yCkAeprEbTz7SSuIj%2FpAgf3KYZn3C9lgn58D2Mbbp21JzrrR6%2FHoDj758dcv3loPhwZ9EKwoMEIxKeLP4yHHKNZPHAQwoc4Pyp5QQ09PnAsfG32CJ8V8V8YLhJ3ujgiPPxBybZLKJa56KW2qZpFgEHHvU4sEx4co8HEBPZ2dKokOzc5PjOxhzxXZ%2Bplg%2F4drmerwYjmwbcHtU39VavzB%2B%2FmCNGp6ut2%2BtKoXyUjh1aMJDhCTNPIx8E0kOL4cChxYEFOmHR%2FOahtVuD%2BNhywq%2F7hakcPbyEEh07vCANWDQUgIkGR0y0gPqnPWTTHloEmetOZ8F3VnDEFzXbTuRrUvy2vLzvl3d3fMCBHuLAAp2wEZ6ihyAmsknVhlHrvnnBNynmiCkA1fIB6%2BlK5GeaLg04tbir6K7Lf8IAR%2FwyUtj2ts93wZs9BAPh3spnnkY%2BCCTyAYfRCcACnbBofrOHfPbzAzSR%2FYsmEmp0rIkgD2SjYRWAjYY5YqoFVKkmEi6A5GPiHWsoegP0021nqvVHQA6OGLk6QOPuRab%2BZsVhIMMTZgp4wm%2BBshXPrVTDdaxdhwIObEAc%2BP875SAmcvm6WS%2Fn4Q2vHjjiCexc2f1Kefl2AtlASCCfKUbEsiCfQKevTvTuc48msJrprKJKMgl04IjRbTJuYVa7mb8pHwYyPGHmaeSDQLpDMxzYoTmwzPL9y44XanSs4yEPWDVUgKkGh9ya%2BYOOx%2BwBDkIPvYmvzUlCvyuuNido15rtfnRLNTwz2CbezcGi0%2FefqP1p%2FwHTLjXf1sYO%2BXtBwR99z3vVcYHlrRpIM0iXkvztPH0%2BkQb1kgAhv4AVjloRdp%2BWg7hPpLCO59NDaJelR%2BW9aar4hWHek3eTlB%2F7dPCN1SxYJrXyalrVqKUjzSzkladd0iuaPpv4XuQae%2BBxapwiw8g7A0Y686G8rjHLpJaR0VWUInDkf5pXcDp%2BUVb8YnBmivmQaejH4IRCv0Ilr33Mv4VvmsXi7ltVLejFLLEQQhkjJ2bk5eVfvjzGvacaAAA%3D)
+***A stukija valahogy így nézne ki, de ezen tisztán látszik, hogy nem működik rendesen.***
+![STUKI](rossz_stuki.png)
+
+### +Sablon
+![MINIMUM sablon](min.png)
