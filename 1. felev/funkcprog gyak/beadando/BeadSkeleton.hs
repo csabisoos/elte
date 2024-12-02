@@ -3,6 +3,7 @@ module NagyBead where
 import Data.Either
 import Data.Maybe
 import Text.Read
+import Data.Char
 
 basicInstances = 0 -- Mágikus tesztelőnek kell ez, NE TÖRÖLD!
 
@@ -132,6 +133,16 @@ operatorFromChar ((a, (b, c, d)) : e) f
 
 parseTokens :: Read a => OperatorTable a -> String -> Maybe [Tok a]
 parseTokens tabla bemenet = bemenetboltoken tabla (words bemenet)
+
+{- parseTokens :: Read a => OperatorTable a -> String -> Maybe [Tok a]
+parseTokens tabla bemenet = parseh (words bemenet) where
+  parseh (x:xs) 
+    | x == "(" = Just (BrckOpen:parseh xs)
+    | x == ")" = Just (BrckClose:parseh xs)
+    | elem x (map fst operatorTable) = Just (operatorFromChar x)
+    | isDigit x = Just (TokLit (readMaybe x):parseh xs)
+    | otherwise = Nothing -}
+
 
 bemenetboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]
 bemenetboltoken _ [] = Just []
