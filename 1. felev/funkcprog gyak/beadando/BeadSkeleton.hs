@@ -139,8 +139,18 @@ operatorkeres ((a, (b, c, d)) : e) f
 parseTokens :: Read a => OperatorTable a -> String -> Maybe [Tok a]
 parseTokens tabla bemenet = szoboltoken tabla (words bemenet) 
 
-
 szoboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]
+szoboltoken _ [] = Just []
+szoboltoken tabla (x:xs)
+  | head x == '(' && csakNyitoZarojel x && null xs = Just (replicate (length x) BrckOpen)
+  | head x == ')' && csakCsukoZarojel x && null xs = Just (replicate (length x) BrckClose)
+  | x == "(" && length x == 1 = (BrckOpen :) <$> szoboltoken tabla xs
+  | x == ")" && length x == 1 = (BrckClose :) <$> szoboltoken tabla xs
+  | head x == '(' && not (csakNyitoZarojel x) && null xs = (BrckOpen :) <$> szoboltoken tabla ([tail x])
+  | head x == ')' && not (csakCsukoZarojel x) && null xs = (BrckClose :) <$> szoboltoken tabla ([tail x])
+
+
+{- szoboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]
 szoboltoken _ [] = Just []
 szoboltoken tabla (x:xs)
   --  ha csak zarojel
@@ -153,6 +163,7 @@ szoboltoken tabla (x:xs)
   | head x == '(' && x!!1 == ')' && length x == 2 = (BrckOpen :) <$> (BrckClose :) <$> szoboltoken tabla xs
   | head x == '(' && x!!1 == '(' && length x == 2 = (BrckOpen :) <$> (BrckOpen :) <$> szoboltoken tabla xs
   | head x == ')' && x!!1 == ')' && length x == 2 = (BrckClose :) <$> (BrckClose :) <$> szoboltoken tabla xs
+  | head x == ')' && x!!1 == '(' = (BrckClose :) <$> (BrckOpen :) <$> szoboltoken tabla xs
   -- ha helytelen a bemenet
   | head x == '('  && not (x!!1 == ')') && length x == 2 = Nothing
   -- ha vegtelen listaval tallakoznank
@@ -169,7 +180,7 @@ szoboltoken tabla (x:xs)
   | otherwise = case readMaybe x of
     Just t -> (TokLit t :) <$> szoboltoken tabla xs
     Nothing -> Nothing
-    
+ -}    
     
     {- case operatorFromChar tabla (head x) of
     Just t -> (t :) <$> szoboltoken tabla xs
