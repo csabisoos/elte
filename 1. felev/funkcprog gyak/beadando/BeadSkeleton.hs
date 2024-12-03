@@ -122,13 +122,13 @@ operatorFromChar [] _ = Nothing
 operatorFromChar ((a, (b, c, d)) : e) f
   | a == f = Just (TokBinOp b f c d)
   | otherwise = operatorFromChar e f
-
+{- 
 operatorkeres :: OperatorTable a -> Char -> Char
 operatorkeres [] _ = Nothing
 operatorkeres ((a, (b, c, d)) : e) f
   | a == f = b
   | otherwise = operatorkeres e f
-
+ -}
 -- ha ures listat kapunk akkor Nothingot adunk vissza mivel nincs eleg informacio 
 -- mintaillesztes: 
   -- - elso elem: (a, (b, c, d))
@@ -144,33 +144,47 @@ szoboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]
 szoboltoken _ [] = Just []
 szoboltoken tabla (x:xs)
   --  ha csak zarojel
-  | {- not (null x) && -} null xs && head x == '(' && csakNyitoZarojel x = Just (replicate (length x) BrckOpen)
-  | {- not (null x) && -} null xs && head x == ')' && csakCsukoZarojel x = Just (replicate (length x) BrckClose)
+  | {- not (null x) && -} head x == '(' && null xs &&  csakNyitoZarojel x = Just (replicate (length x) BrckOpen)
+  | {- not (null x) && -} head x == ')' && null xs && csakCsukoZarojel x = Just (replicate (length x) BrckClose)
   -- ha szimpla zarojel
-  | length x == 1 && x == "(" = (BrckOpen :) <$> szoboltoken tabla xs
-  | length x == 1 && x == ")" = (BrckClose :) <$> szoboltoken tabla xs
+  | x == "(" && length x == 1 = (BrckOpen :) <$> szoboltoken tabla xs
+  | x == ")" && length x == 1 = (BrckClose :) <$> szoboltoken tabla xs
   -- ha egymas mellett vannak a zarojelek
-  | length x == 2 && head x == '(' && x!!1 == ')' = (BrckOpen :) <$> (BrckClose :) <$> szoboltoken tabla xs
-  | length x == 2 && head x == '(' && x!!1 == '(' = (BrckOpen :) <$> (BrckOpen :) <$> szoboltoken tabla xs
-  | length x == 2 && head x == ')' && x!!1 == ')' = (BrckClose :) <$> (BrckClose :) <$> szoboltoken tabla xs
+  | head x == '(' && x!!1 == ')' && length x == 2 = (BrckOpen :) <$> (BrckClose :) <$> szoboltoken tabla xs
+  | head x == '(' && x!!1 == '(' && length x == 2 = (BrckOpen :) <$> (BrckOpen :) <$> szoboltoken tabla xs
+  | head x == ')' && x!!1 == ')' && length x == 2 = (BrckClose :) <$> (BrckClose :) <$> szoboltoken tabla xs
   -- ha helytelen a bemenet
-  | length x == 2 && head x == '('  && not (x!!1 == ')') = Nothing
+  | head x == '('  && not (x!!1 == ')') && length x == 2 = Nothing
   -- ha vegtelen listaval tallakoznank
+  {- | legalabbtiz x = case operatorFromChar tabla (head x) of
+    Just _ -> Nothing
+    Nothing -> case readMaybe x of
+      Just t -> (TokLit t :) <$> szoboltoken tabla xs
+      Nothing -> Nothing -}
   | length x == 1 = case operatorFromChar tabla (head x) of
     Just t -> (t :) <$> szoboltoken tabla xs
     Nothing -> case readMaybe x of
       Just t -> (TokLit t :) <$> szoboltoken tabla xs
       Nothing -> Nothing
-  -- | legalabbketelem x && null xs && not ((operatorFromChar tabla (head x)) == Just ()) = Nothing -- case operatorFromChar tabla (head x) of
-    {- Just _ -> Nothing
-    Nothing -> Nothing -}
   | otherwise = case readMaybe x of
     Just t -> (TokLit t :) <$> szoboltoken tabla xs
     Nothing -> Nothing
+    
+    
+    {- case operatorFromChar tabla (head x) of
+    Just t -> (t :) <$> szoboltoken tabla xs
+    Nothing -> case readMaybe x of
+      Just t -> (TokLit t :) <$> szoboltoken tabla xs
+      Nothing -> Nothing -}
+    
+    
+    {- case readMaybe x of
+    Just t -> (TokLit t :) <$> szoboltoken tabla xs
+    Nothing -> Nothing -}
 
-legalabbketelem :: String -> Bool
-legalabbketelem (x:y:_) = True
-legalabbketelem _ = False
+legalabbtiz :: String -> Bool
+legalabbtiz (x:y:z:zs:a:b:c:d:q:w:_) = True
+legalabbtiz _ = False
 
 {-
 bemenetboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]

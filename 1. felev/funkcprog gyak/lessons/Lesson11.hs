@@ -22,20 +22,24 @@ any p (x:xs) = p x || any p xs
 (x:xs) ++ ys = x : xs ++ ys
 -}
 
-elemViaAny :: undefined
-elemViaAny = undefined
+elemViaAny :: Eq a => a -> [a] -> Bool
+-- elemViaAny e xs = any (\x -> x == e) xs
+elemViaAny e = any (==e)
 
 -- Definiáld az all' függvényt, amely ellenőrzi, hogy egy adott tulajdonság az összes listaelemre teljesül-e.
-all' :: undefined
-all' = undefined
+all' :: (a -> Bool) -> [a] -> Bool
+all' _ [] = True
+all' p (x:xs) = p x && all' p xs
 
 -- Definiáld az or' függvényt, amely egy listányi Bool-t összevagyol.
-or' :: undefined
-or' = undefined
+or' :: [Bool] -> Bool
+or' [] = False
+or' (x:xs) = x || or' xs
 
 -- Definiáld az and' függvényt, amely egy listányi Bool-t összeésel.
-and' :: undefined
-and' = undefined
+and' :: [Bool] -> Bool
+and' [] = True
+and' (x:xs) = x && and' xs
 
 -- Mindegyik függvény definíciója gyakorlatilag ugyanúgy néz ki.
 -- Valami az üres listára, meg valami a legalább egy elemre. A rekurzió mindegyikben mindig az egy elemmel kevesebb maradék lista.
@@ -44,8 +48,9 @@ and' = undefined
 
 -- Próbáljuk meg lépésenként általánosítani.
 -- Amikor hiányzik valami, akkor vegyük hozzá a típushoz, meg a definícióhoz.
-generalisedIdeaR :: undefined
-generalisedIdeaR = undefined
+generalisedIdeaR :: (a -> b -> b) -> b -> [a] -> b
+generalisedIdeaR _ acc [] = acc
+generalisedIdeaR f acc (x:xs) = x `f`generalisedIdeaR f acc xs
 
 -- Ezt a függvényt hívják foldr-nek!
 -- Létezik a foldr' függvény is, amely a foldr-nek a mohó változata és amely a Data.Foldable modulban található.
@@ -68,8 +73,12 @@ Látszik a hasonlóság a függvények között?
 
 Általánosítsuk ennek az ötletét is!
 -}
-generalisedIdeaL :: undefined
-generalisedIdeaL = undefined
+generalisedIdeaL :: (b -> a -> b) -> b -> [a] -> b
+generalisedIdeaL _ acc [] = acc
+generalisedIdeaL f acc (x:xs) = generalisedIdeaL f (acc `f` x) xs 
+
+sum'' :: Num a => [a] -> a
+sum'' xs = generalisedIdeaL (+) 0 xs
 
 -- Ezt a függvényt hívják foldl-nek.
 -- Létezik a foldl' függvény is, amely a foldl-nek a mohó változata és amely a Data.Foldable modulban található.
@@ -89,20 +98,22 @@ generalisedIdeaL = undefined
 
 -- Definiáljuk újra a fenti függvényeket foldr-et vagy foldl-et használva.
 
-sumViaFold :: undefined
-sumViaFold = undefined
+sumViaFold :: Num a => [a] -> a
+-- sumViaFold xs = foldl (\acc x -> acc + x) 0 xs
+sumViaFold xs = foldl (+) 0 xs
 
-productiaFold :: undefined
-productiaFold = undefined
+productiaFold :: Num a => [a] -> a
+productiaFold xs = foldl (\acc x -> acc * x) 1 xs
 
-(+++) :: undefined
-(+++) = undefined
+(+++) :: [a] -> [a] -> [a]
+(+++) xs ys = foldr (\x acc -> x:acc) ys xs
 
-concatViaFold :: undefined
-concatViaFold = undefined
+concatViaFold :: [[a]] -> [a]
+concatViaFold xs = foldr (++) [] xs
 
-reverseViaFold :: undefined
-reverseViaFold = undefined
+reverseViaFold :: [a] -> [a]
+reverseViaFold xs = foldl (\acc x -> x : acc) [] xs
+reverseViaFold xs = foldl (flip(:)) [] xs
 
 elemViaFold :: undefined
 elemViaFold = undefined
