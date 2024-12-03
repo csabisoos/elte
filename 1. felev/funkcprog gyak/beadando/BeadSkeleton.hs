@@ -40,8 +40,8 @@ syNoEval = parseAndEval parse shuntingYardBasic
 syEvalBasic :: String -> Maybe ([Double], [Tok Double])
 syEvalBasic = parseAndEval parse (\t -> shuntingYardBasic $ BrckOpen : (t ++ [BrckClose]))
 
-syEvalPrecedence :: String -> Maybe ([Double], [Tok Double])
-syEvalPrecedence = parseAndEval parse (\t -> shuntingYardPrecedence $ BrckOpen : (t ++ [BrckClose]))
+-- syEvalPrecedence :: String -> Maybe ([Double], [Tok Double])
+-- syEvalPrecedence = parseAndEval parse (\t -> shuntingYardPrecedence $ BrckOpen : (t ++ [BrckClose]))
 
 -- eqError-t vedd ki a kommentből, ha megcsináltad az 1 pontos "Hibatípus definiálása" feladatot
 -- eqError = 0 -- Mágikus tesztelőnek szüksége van rá, NE TÖRÖLD!
@@ -302,4 +302,27 @@ csukofeldolgoz :: [a] -> [Tok a] -> ([a], [Tok a])
 csukofeldolgoz lits (BrckOpen : ops) = (lits, ops)
 csukofeldolgoz (a:b:xs) (TokBinOp f _ _ _ : ops) = csukofeldolgoz (f b a : xs) ops
 
+{- -- shuntingYardPrecedence végrehajtása
 shuntingYardPrecedence :: [Tok a] -> ([a], [Tok a])
+shuntingYardPrecedence = feldolgozPrecedence [] []
+
+-- Feldolgozó függvény a precedenciával rendelkező operátorokhoz
+feldolgozPrecedence :: [Tok a] -> [a] -> [Tok a] -> ([a], [Tok a])
+feldolgozPrecedence [] lits ops = (lits, ops)
+feldolgozPrecedence (TokLit x : xs) lits ops = feldolgozPrecedence xs (x:lits) ops
+feldolgozPrecedence (BrckOpen : xs) lits ops = feldolgozPrecedence xs lits (BrckOpen:ops)
+feldolgozPrecedence (TokBinOp f op ero irany : xs) lits ops =
+    let (lits', ops') = popOperator lits ops in
+    feldolgozPrecedence xs lits' (TokBinOp f op ero irany : ops')
+feldolgozPrecedence (BrckClose : xs) lits ops = feldolgozPrecedence xs (fst (csukofeldolgoz lits ops)) (snd (csukofeldolgoz lits ops))
+
+-- Helper function to pop the operator stack
+popOperator :: [a] -> [Tok a] -> ([a], [Tok a])
+popOperator lits (TokBinOp f _ _ _ : ops) = popOperator (f (head lits) (lits !! 1) : tail lits) ops
+popOperator lits ops = (lits, ops)
+
+-- Get the precedence of the top operator in the stack
+topPrecedence :: [Tok a] -> Int
+topPrecedence (TokBinOp _ _ precedence _ : _) = precedence
+topPrecedence _ = 0
+ -}
