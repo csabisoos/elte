@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/bin/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/bin/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.deps.json
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/bin/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/bin/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.dll
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/bin/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.pdb
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.csproj.AssemblyReference.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.dll
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/refint/uj_orseg_kuldese_a_kinai_nagy_falra.dll
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.pdb
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/uj_orseg_kuldese_a_kinai_nagy_falra.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_2/uj_orseg_kuldese_a_kinai_nagy_falra/uj_orseg_kuldese_a_kinai_nagy_falra/obj/Debug/net7.0/ref/uj_orseg_kuldese_a_kinai_nagy_falra.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "uj_orseg_kuldese_a_kinai_nagy_falra/1.0.0": {
+        "runtime": {
+          "uj_orseg_kuldese_a_kinai_nagy_falra.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "uj_orseg_kuldese_a_kinai_nagy_falra/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
