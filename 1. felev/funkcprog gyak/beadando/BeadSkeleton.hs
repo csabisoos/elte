@@ -40,13 +40,13 @@ syNoEval = parseAndEval parse shuntingYardBasic
 syEvalBasic :: String -> Maybe ([Double], [Tok Double])
 syEvalBasic = parseAndEval parse (\t -> shuntingYardBasic $ BrckOpen : (t ++ [BrckClose]))
 
--- syEvalPrecedence :: String -> Maybe ([Double], [Tok Double])
--- syEvalPrecedence = parseAndEval parse (\t -> shuntingYardPrecedence $ BrckOpen : (t ++ [BrckClose]))
+syEvalPrecedence :: String -> Maybe ([Double], [Tok Double])
+syEvalPrecedence = parseAndEval parse (\t -> shuntingYardPrecedence $ BrckOpen : (t ++ [BrckClose]))
 
 -- eqError-t vedd ki a kommentből, ha megcsináltad az 1 pontos "Hibatípus definiálása" feladatot
--- eqError = 0 -- Mágikus tesztelőnek szüksége van rá, NE TÖRÖLD!
+eqError = 0 -- Mágikus tesztelőnek szüksége van rá, NE TÖRÖLD!
 
-{-
+
 -- Ezt akkor vedd ki a kommentblokkból, ha a 3 pontos "A parser és az algoritmus újradefiniálása" feladatot megcsináltad.
 parseAndEvalSafe ::
     (String -> ShuntingYardResult [Tok a]) ->
@@ -58,7 +58,7 @@ sySafe :: String -> ShuntingYardResult ([Double], [Tok Double])
 sySafe = parseAndEvalSafe
   (parseSafe operatorTable)
   (\ts -> shuntingYardSafe (BrckOpen : ts ++ [BrckClose]))
--}
+
 
 {-
 -- Ezt akkor vedd ki a kommentblokkból, ha az 1 pontos "Függvénytábla és a típus kiegészítése" feladatot megcsináltad.
@@ -122,13 +122,6 @@ operatorFromChar [] _ = Nothing
 operatorFromChar ((a, (b, c, d)) : e) f
   | a == f = Just (TokBinOp b f c d)
   | otherwise = operatorFromChar e f
-{- 
-operatorkeres :: OperatorTable a -> Char -> Char
-operatorkeres [] _ = Nothing
-operatorkeres ((a, (b, c, d)) : e) f
-  | a == f = b
-  | otherwise = operatorkeres e f
- -}
 -- ha ures listat kapunk akkor Nothingot adunk vissza mivel nincs eleg informacio 
 -- mintaillesztes: 
   -- - elso elem: (a, (b, c, d))
@@ -194,6 +187,9 @@ szoboltoken tabla (x:xs)
         Just n -> (TokLit n :) <$> szoboltoken tabla xs
         Nothingn -> Nothing  -}
 
+legalabbketto :: String -> Bool
+legalabbketto (x:y:_) = True
+legalabbketto _ = False
 
       
       
@@ -254,31 +250,7 @@ szoboltoken tabla (x:xs)
     Just t -> (TokLit t :) <$> szoboltoken tabla xs
     Nothing -> Nothing -}
 
-legalabbketto :: String -> Bool
-legalabbketto (x:y:_) = True
-legalabbketto _ = False
 
-{-
-bemenetboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]
-bemenetboltoken _ [] = Just []
-bemenetboltoken tabla (x:xs) = do
-  token <- szoboltoken tabla x -- elso elembol token
-  tobbitoken <- bemenetboltoken tabla xs -- tobbi elembol token rekurzivan
-  Just (token ++ tobbitoken) -- osszefuzes
-
-szoboltoken :: Read a => OperatorTable a -> String -> Maybe [Tok a]
-szoboltoken tabla szo
-  | not (null szo) && head szo == '(' && csakNyitoZarojel szo = Just(replicate (length szo) BrckOpen)
-  | not (null szo) && head szo == ')' && csakCsukoZarojel szo = Just(replicate (length szo) BrckClose)
-  | length szo == 1 = case operatorFromChar tabla (szo!!0) of
-    Just tok -> Just [tok]
-    Nothing -> case readMaybe szo of
-      Just n -> Just [TokLit n]
-      Nothing -> Nothing
-  | otherwise = case readMaybe szo of
-    Just n -> Just [TokLit n]
-    Nothing -> Nothing
--}
 csakNyitoZarojel :: String -> Bool
 csakNyitoZarojel [] = True
 csakNyitoZarojel (x:xs) = (x == '(') && csakNyitoZarojel xs
@@ -302,27 +274,95 @@ csukofeldolgoz :: [a] -> [Tok a] -> ([a], [Tok a])
 csukofeldolgoz lits (BrckOpen : ops) = (lits, ops)
 csukofeldolgoz (a:b:xs) (TokBinOp f _ _ _ : ops) = csukofeldolgoz (f b a : xs) ops
 
-{- -- shuntingYardPrecedence végrehajtása
-shuntingYardPrecedence :: [Tok a] -> ([a], [Tok a])
-shuntingYardPrecedence = feldolgozPrecedence [] []
 
--- Feldolgozó függvény a precedenciával rendelkező operátorokhoz
-feldolgozPrecedence :: [Tok a] -> [a] -> [Tok a] -> ([a], [Tok a])
-feldolgozPrecedence [] lits ops = (lits, ops)
-feldolgozPrecedence (TokLit x : xs) lits ops = feldolgozPrecedence xs (x:lits) ops
-feldolgozPrecedence (BrckOpen : xs) lits ops = feldolgozPrecedence xs lits (BrckOpen:ops)
-feldolgozPrecedence (TokBinOp f op ero irany : xs) lits ops =
-    let (lits', ops') = popOperator lits ops in
-    feldolgozPrecedence xs lits' (TokBinOp f op ero irany : ops')
-feldolgozPrecedence (BrckClose : xs) lits ops = feldolgozPrecedence xs (fst (csukofeldolgoz lits ops)) (snd (csukofeldolgoz lits ops))
+-- shuntingYardPrecedence típusának módosítása, hogy Show a típusosztály legyen benne
+shuntingYardPrecedence :: [Tok a] -> ([a], [Tok a])
+shuntingYardPrecedence tokens = process tokens [] []
+
+-- process függvény, hozzáadva a Show a kontextus
+process :: [Tok a] -> [a] -> [Tok a] -> ([a], [Tok a])
+process [] lits ops = (megold lits ops, [])
+process (TokLit x : xs) lits ops = process xs (x:lits) ops
+process (BrckOpen : xs) lits ops = process xs lits (BrckOpen : ops)
+process (TokBinOp f op p dir : xs) lits ops =
+    let (lits', ops') = popOperatorPrecedence lits ops (TokBinOp f op p dir)
+    in process xs lits' (TokBinOp f op p dir : ops')
+process (BrckClose : xs) lits ops =
+    let (lits', ops') = popUntilOpenBrack lits ops
+    in process xs lits' ops'
 
 -- Helper function to pop the operator stack
-popOperator :: [a] -> [Tok a] -> ([a], [Tok a])
-popOperator lits (TokBinOp f _ _ _ : ops) = popOperator (f (head lits) (lits !! 1) : tail lits) ops
-popOperator lits ops = (lits, ops)
+popOperatorPrecedence :: [a] -> [Tok a] -> Tok a -> ([a], [Tok a])
+popOperatorPrecedence lits (TokBinOp f _ pTop dirTop : ops) (TokBinOp _ _ pNew dirNew)
+    | pTop > pNew || (pTop == pNew && dirNew == InfixL) =
+        let (a:b:lits') = lits
+        in popOperatorPrecedence (f b a : lits') ops (TokBinOp undefined undefined pNew dirNew)
+popOperatorPrecedence lits ops _ = (lits, ops)
 
--- Get the precedence of the top operator in the stack
-topPrecedence :: [Tok a] -> Int
-topPrecedence (TokBinOp _ _ precedence _ : _) = precedence
-topPrecedence _ = 0
- -}
+
+popUntilOpenBrack :: [a] -> [Tok a] -> ([a], [Tok a])
+popUntilOpenBrack lits (BrckOpen : ops) = (lits, ops)
+popUntilOpenBrack (a:b:lits') (TokBinOp f _ _ _ : ops) = popUntilOpenBrack (f b a : lits') ops
+
+
+megold :: [a] -> [Tok a] -> [a]
+megold lits [] = lits
+megold (a:b:lits') (TokBinOp f _ _ _ : ops) =
+    megold (f b a : lits') ops
+
+{- data ShuntingYardError = OperatorOrClosingParenExpected | LiteralOrOpeningParenExpected | NoClosingParen | NoOpeningParen | ParseError
+  deriving (Show, Eq)
+
+type ShuntingYardResult a = Either ShuntingYardError a
+
+parseSafe :: Read a => OperatorTable a -> String -> ShuntingYardResult [Tok a]
+parseSafe tabla bemenet = case parseTokens tabla bemenet of
+  Just tokens -> Right tokens
+  Nothing -> Left ParseError
+
+
+shuntingYardSafe :: [Tok a] -> ShuntingYardResult ([a], [Tok a])
+shuntingYardSafe tokenek = feldolgozPrecedenceSafe tokenek [] []
+
+feldolgozPrecedenceSafe :: [Tok a] -> [a] -> [Tok a] -> ShuntingYardResult ([a], [Tok a])
+feldolgozPrecedenceSafe [] lits ops = Right (lits, ops)
+feldolgozPrecedenceSafe (TokLit x : xs) lits ops = feldolgozPrecedenceSafe xs (x:lits) ops
+feldolgozPrecedenceSafe (BrckOpen : xs) lits ops = feldolgozPrecedenceSafe xs lits (BrckOpen:ops)
+feldolgozPrecedenceSafe (TokBinOp f op p dir : xs) lits ops = 
+  if validOperatorSequence (head ops) then
+    feldolgozPrecedenceSafe xs lits (TokBinOp f op p dir : ops)
+  else 
+    Left OperatorOrClosingParenExpected
+feldolgozPrecedenceSafe (BrckClose : xs) lits ops = 
+  if hasOpeningParen ops then
+    feldolgozPrecedenceSafe xs lits (tail ops)
+  else 
+    Left NoOpeningParen
+
+validOperatorSequence :: Tok a -> Bool
+validOperatorSequence (TokBinOp _ _ _ _) = True
+validOperatorSequence _ = False
+
+hasOpeningParen :: [Tok a] -> Bool
+hasOpeningParen (BrckOpen:_) = True
+hasOpeningParen _ = False
+
+bindE :: Either e a -> (a -> Either e b) -> Either e b
+bindE (Left e) _ = Left e
+bindE (Right x) f = f x -}
+
+data ShuntingYardError =
+    OperatorOrClosingParenExpected
+  | LiteralOrOpeningParenExpected
+  | NoClosingParen
+  | NoOpeningParen
+  | ParseError
+  deriving (Show, Eq)
+
+type ShuntingYardResult a = Either ShuntingYardError a
+
+parseSafe :: Read a => OperatorTable a -> String -> ShuntingYardResult [Tok a]
+parseSafe = undefined
+
+shuntingYardSafe :: [Tok a] -> ShuntingYardResult ([a], [Tok a])
+shuntingYardSafe = undefined

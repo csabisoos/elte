@@ -18,11 +18,6 @@ namespace uj_orseg_kuldese_a_kinai_nagy_falra
             {
                 orsegek[lista[i]-1] = 1;
             }
-            foreach (int elem in lista)
-            {
-                orsegek[elem] = 1;
-            }
-            
         }
     }
 }
