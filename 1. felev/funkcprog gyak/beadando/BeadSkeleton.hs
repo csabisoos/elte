@@ -130,10 +130,7 @@ operatorFromChar ((a, (b, c, d)) : e) f
 -- ha a == f: megvan a keresett elem -> Just (TokBinOp b f c d)
 -- ha nem egyenlo: rekurzivan meghivja onmagara a lista maradek elemeivel
 
--- segedfuggveny, hogy tovab tudjak haladni a vegtelen hosszu operatortablakat korlatozza
-vegestabla :: OperatorTable a -> OperatorTable a
-vegestabla = take 10000
-
+------------------------------------------------------------
 
 parseTokens :: Read a => OperatorTable a -> String -> Maybe [Tok a]
 parseTokens tabla bemenet = szoboltoken tabla (words bemenet) 
@@ -155,17 +152,9 @@ szoboltoken tabla (x:xs)
   | head x == '(' && (x!!1 == '(' || x!!1 == ')') = (BrckOpen :) <$> szoboltoken tabla ((tail x):xs)
   | head x == ')' && (x!!1 == '(' || x!!1 == ')') = (BrckClose :) <$> szoboltoken tabla ((tail x):xs)
   -- vegtelen lista esete es a legalabb ket karakterbol allo elemek esete
-  -- EZ AZ ESET CSAK IDEIGLES KI KELL JAVITANI
-  | legalabbketto x = case operatorFromChar (vegestabla tabla) (head x) of
-      Just _ -> case operatorFromChar (vegestabla tabla) (x!!1) of
-        Just _ -> Nothing
-        Nothing -> case readMaybe x of
-          Just n -> (TokLit n :) <$> szoboltoken tabla xs
-          Nothing -> Nothing
-      Nothing -> case readMaybe x of
-        Just n -> (TokLit n :) <$> szoboltoken tabla xs
-        Nothing -> Nothing
-
+  | legalabbketto x = case readMaybe x of
+    Just n -> (TokLit n :) <$> szoboltoken tabla xs
+    Nothing -> Nothing
   | otherwise = case operatorFromChar tabla (head x) of
     Just t -> (t :) <$> szoboltoken tabla xs
     Nothing -> case readMaybe x of
