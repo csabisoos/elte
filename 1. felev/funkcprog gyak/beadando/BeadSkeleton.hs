@@ -48,6 +48,7 @@ eqError = 0 -- Mágikus tesztelőnek szüksége van rá, NE TÖRÖLD!
 
 
 -- Ezt akkor vedd ki a kommentblokkból, ha a 3 pontos "A parser és az algoritmus újradefiniálása" feladatot megcsináltad.
+{- 
 parseAndEvalSafe ::
     (String -> ShuntingYardResult [Tok a]) ->
     ([Tok a] -> ShuntingYardResult ([a], [Tok a])) ->
@@ -58,7 +59,7 @@ sySafe :: String -> ShuntingYardResult ([Double], [Tok Double])
 sySafe = parseAndEvalSafe
   (parseSafe operatorTable)
   (\ts -> shuntingYardSafe (BrckOpen : ts ++ [BrckClose]))
-
+ -}
 
 {-
 -- Ezt akkor vedd ki a kommentblokkból, ha az 1 pontos "Függvénytábla és a típus kiegészítése" feladatot megcsináltad.
@@ -144,8 +145,8 @@ szoboltoken tabla (x:xs)
   | head x == '(' && csakNyitoZarojel x && null xs = Just (replicate (length x) BrckOpen)
   | head x == ')' && csakCsukoZarojel x && null xs = Just (replicate (length x) BrckClose)
   -- ha a bemenet nem feltetlen egy elembol all es a viszgalt elem az egy "(" vagy egy ")"
-  | x == "(" {- && length x == 1 -} = (BrckOpen :) <$> szoboltoken tabla xs
-  | x == ")" {- && length x == 1 -} = (BrckClose :) <$> szoboltoken tabla xs
+  | x == "(" = (BrckOpen :) <$> szoboltoken tabla xs
+  | x == ")" = (BrckClose :) <$> szoboltoken tabla xs
   -- ha a bemenet csak egy elembol all amit zarojelek alkotnak
   | head x == '(' && not (csakNyitoZarojel x) && null xs = (BrckOpen :) <$> szoboltoken tabla ([tail x])
   | head x == ')' && not (csakCsukoZarojel x) && null xs = (BrckClose :) <$> szoboltoken tabla ([tail x])
@@ -170,86 +171,10 @@ szoboltoken tabla (x:xs)
     Nothing -> case readMaybe x of
       Just n -> (TokLit n :) <$> szoboltoken tabla xs
       Nothing -> Nothing
-    {- where
-        opkezel (Just _) (Just _) = Nothing
-        opkezel (Just _) Nothing = readkezel x
-        opkezel Nothing _ = readkezel x
-
-        readkezel s = case readMaybe s of 
-          Just n -> (TokLit n :) <$> szoboltoken tabla xs
-          Nothing -> Nothing -}
-
-  {- | legalabbketto x = {- opkezel (operatorFromChar tabla (head x)) (operatorFromChar tabla (x!!1)) -}
-      case readMaybe x of
-        Just n -> (TokLit n :) <$> szoboltoken tabla xs
-        Nothing -> Nothing
-      opkezel Nothing _ = case readMaybe x of 
-        Just n -> (TokLit n :) <$> szoboltoken tabla xs
-        Nothingn -> Nothing  -}
 
 legalabbketto :: String -> Bool
 legalabbketto (x:y:_) = True
 legalabbketto _ = False
-
-      
-      
-      
-   {-    Nothing
-    Nothing -> case readMaybe x of
-      Just n -> (TokLit n :) <$> szoboltoken tabla xs
-      Nothing -> Nothing -}
-  -- ha egy karakter megnezzuk, hogy operator-e
-  {- -- ha nem egy karakterbol all az adott elem
-  | otherwise = case operatorFromChar tabla (head x) of 
-    Just _ -> Nothing
-    Nothing -> case readMaybe x of
-      Just n -> (TokLit n :) <$> szoboltoken tabla xs
-      Nothing -> Nothing -}
-
-
-{- szoboltoken :: Read a => OperatorTable a -> [String] -> Maybe [Tok a]
-szoboltoken _ [] = Just []
-szoboltoken tabla (x:xs)
-  --  ha csak zarojel
-  | {- not (null x) && -} head x == '(' && null xs &&  csakNyitoZarojel x = Just (replicate (length x) BrckOpen)
-  | {- not (null x) && -} head x == ')' && null xs && csakCsukoZarojel x = Just (replicate (length x) BrckClose)
-  -- ha szimpla zarojel
-  | x == "(" && length x == 1 = (BrckOpen :) <$> szoboltoken tabla xs
-  | x == ")" && length x == 1 = (BrckClose :) <$> szoboltoken tabla xs
-  -- ha egymas mellett vannak a zarojelek
-  | head x == '(' && x!!1 == ')' && length x == 2 = (BrckOpen :) <$> (BrckClose :) <$> szoboltoken tabla xs
-  | head x == '(' && x!!1 == '(' && length x == 2 = (BrckOpen :) <$> (BrckOpen :) <$> szoboltoken tabla xs
-  | head x == ')' && x!!1 == ')' && length x == 2 = (BrckClose :) <$> (BrckClose :) <$> szoboltoken tabla xs
-  | head x == ')' && x!!1 == '(' = (BrckClose :) <$> (BrckOpen :) <$> szoboltoken tabla xs
-  -- ha helytelen a bemenet
-  | head x == '('  && not (x!!1 == ')') && length x == 2 = Nothing
-  -- ha vegtelen listaval tallakoznank
-  {- | legalabbtiz x = case operatorFromChar tabla (head x) of
-    Just _ -> Nothing
-    Nothing -> case readMaybe x of
-      Just t -> (TokLit t :) <$> szoboltoken tabla xs
-      Nothing -> Nothing -}
-  | length x == 1 = case operatorFromChar tabla (head x) of
-    Just t -> (t :) <$> szoboltoken tabla xs
-    Nothing -> case readMaybe x of
-      Just t -> (TokLit t :) <$> szoboltoken tabla xs
-      Nothing -> Nothing
-  | otherwise = case readMaybe x of
-    Just t -> (TokLit t :) <$> szoboltoken tabla xs
-    Nothing -> Nothing
- -}    
-    
-    {- case operatorFromChar tabla (head x) of
-    Just t -> (t :) <$> szoboltoken tabla xs
-    Nothing -> case readMaybe x of
-      Just t -> (TokLit t :) <$> szoboltoken tabla xs
-      Nothing -> Nothing -}
-    
-    
-    {- case readMaybe x of
-    Just t -> (TokLit t :) <$> szoboltoken tabla xs
-    Nothing -> Nothing -}
-
 
 csakNyitoZarojel :: String -> Bool
 csakNyitoZarojel [] = True
@@ -258,6 +183,8 @@ csakNyitoZarojel (x:xs) = (x == '(') && csakNyitoZarojel xs
 csakCsukoZarojel :: String -> Bool
 csakCsukoZarojel [] = True
 csakCsukoZarojel (x:xs) = (x == ')') && csakCsukoZarojel xs
+
+----------------------------------------------------------------
 
 
 shuntingYardBasic :: [Tok a] -> ([a], [Tok a])
@@ -274,95 +201,39 @@ csukofeldolgoz :: [a] -> [Tok a] -> ([a], [Tok a])
 csukofeldolgoz lits (BrckOpen : ops) = (lits, ops)
 csukofeldolgoz (a:b:xs) (TokBinOp f _ _ _ : ops) = csukofeldolgoz (f b a : xs) ops
 
+-------------------------------------------------------------------------
 
--- shuntingYardPrecedence típusának módosítása, hogy Show a típusosztály legyen benne
 shuntingYardPrecedence :: [Tok a] -> ([a], [Tok a])
-shuntingYardPrecedence tokens = process tokens [] []
+shuntingYardPrecedence tokenek = feldolgozPrecedence tokenek [] []
 
--- process függvény, hozzáadva a Show a kontextus
-process :: [Tok a] -> [a] -> [Tok a] -> ([a], [Tok a])
-process [] lits ops = (megold lits ops, [])
-process (TokLit x : xs) lits ops = process xs (x:lits) ops
-process (BrckOpen : xs) lits ops = process xs lits (BrckOpen : ops)
-process (TokBinOp f op p dir : xs) lits ops =
-    let (lits', ops') = popOperatorPrecedence lits ops (TokBinOp f op p dir)
-    in process xs lits' (TokBinOp f op p dir : ops')
-process (BrckClose : xs) lits ops =
-    let (lits', ops') = popUntilOpenBrack lits ops
-    in process xs lits' ops'
+feldolgozPrecedence :: [Tok a] -> [a] -> [Tok a] -> ([a], [Tok a])
+feldolgozPrecedence [] lits ops = (lits, ops)
+feldolgozPrecedence (TokLit x : xs) lits ops = feldolgozPrecedence xs (x:lits) ops
+feldolgozPrecedence (BrckOpen : xs) lits ops = feldolgozPrecedence xs lits (BrckOpen : ops)
+feldolgozPrecedence (TokBinOp f op p dir : xs) lits ops = feldolgozPrecedence xs lits' (TokBinOp f op p dir : ops')
+  where (lits', ops') = megoldPrecedence lits ops (TokBinOp f op p dir)
+feldolgozPrecedence (BrckClose : xs) lits ops = feldolgozPrecedence xs lits' ops'
+  where (lits', ops') = megoldNyitoig lits ops
 
--- Helper function to pop the operator stack
-popOperatorPrecedence :: [a] -> [Tok a] -> Tok a -> ([a], [Tok a])
-popOperatorPrecedence lits (TokBinOp f _ pTop dirTop : ops) (TokBinOp _ _ pNew dirNew)
-    | pTop > pNew || (pTop == pNew && dirNew == InfixL) =
-        let (a:b:lits') = lits
-        in popOperatorPrecedence (f b a : lits') ops (TokBinOp undefined undefined pNew dirNew)
-popOperatorPrecedence lits ops _ = (lits, ops)
+-- az aktualis operator prioritasa alapjan donti el, hogy a verem tetejen levo operatorok kiertekelesre keruljenek-e
+-- ha a verem tetejen levo operator prioritasa nagyobb vagy a prioritas megegyezik es az uj operator balra koto akkor a verem tetejen levo operatort kiertekeli 
+megoldPrecedence :: [a] -> [Tok a] -> Tok a -> ([a], [Tok a])
+megoldPrecedence lits (TokBinOp f _ pTop dirTop : ops) (TokBinOp _ _ pUj dirUj)
+  | pTop > pUj || (pTop == pUj && dirUj == InfixL) = 
+      megoldPrecedence (f b a : lits') ops (TokBinOp undefined undefined pUj dirUj)
+    where (a:b:lits') = lits
+megoldPrecedence lits ops _ = (lits, ops)
 
+-- ha a verem tetejen operator talalhato akkor azt kiertekeli
+-- nyitozarjoelnel veget er
+megoldNyitoig :: [a] -> [Tok a] -> ([a], [Tok a])
+megoldNyitoig lits (BrckOpen : ops) = (lits, ops)
+megoldNyitoig (a:b:lits') (TokBinOp f _ _ _ : ops) = megoldNyitoig (f b a : lits') ops
 
-popUntilOpenBrack :: [a] -> [Tok a] -> ([a], [Tok a])
-popUntilOpenBrack lits (BrckOpen : ops) = (lits, ops)
-popUntilOpenBrack (a:b:lits') (TokBinOp f _ _ _ : ops) = popUntilOpenBrack (f b a : lits') ops
+-----------------------------------------------------------
 
-
-megold :: [a] -> [Tok a] -> [a]
-megold lits [] = lits
-megold (a:b:lits') (TokBinOp f _ _ _ : ops) =
-    megold (f b a : lits') ops
-
-{- data ShuntingYardError = OperatorOrClosingParenExpected | LiteralOrOpeningParenExpected | NoClosingParen | NoOpeningParen | ParseError
+data ShuntingYardError = OperatorOrClosingParenExpected | LiteralOrOpeningParenExpected | NoClosingParen | NoOpeningParen | ParseError
   deriving (Show, Eq)
 
 type ShuntingYardResult a = Either ShuntingYardError a
 
-parseSafe :: Read a => OperatorTable a -> String -> ShuntingYardResult [Tok a]
-parseSafe tabla bemenet = case parseTokens tabla bemenet of
-  Just tokens -> Right tokens
-  Nothing -> Left ParseError
-
-
-shuntingYardSafe :: [Tok a] -> ShuntingYardResult ([a], [Tok a])
-shuntingYardSafe tokenek = feldolgozPrecedenceSafe tokenek [] []
-
-feldolgozPrecedenceSafe :: [Tok a] -> [a] -> [Tok a] -> ShuntingYardResult ([a], [Tok a])
-feldolgozPrecedenceSafe [] lits ops = Right (lits, ops)
-feldolgozPrecedenceSafe (TokLit x : xs) lits ops = feldolgozPrecedenceSafe xs (x:lits) ops
-feldolgozPrecedenceSafe (BrckOpen : xs) lits ops = feldolgozPrecedenceSafe xs lits (BrckOpen:ops)
-feldolgozPrecedenceSafe (TokBinOp f op p dir : xs) lits ops = 
-  if validOperatorSequence (head ops) then
-    feldolgozPrecedenceSafe xs lits (TokBinOp f op p dir : ops)
-  else 
-    Left OperatorOrClosingParenExpected
-feldolgozPrecedenceSafe (BrckClose : xs) lits ops = 
-  if hasOpeningParen ops then
-    feldolgozPrecedenceSafe xs lits (tail ops)
-  else 
-    Left NoOpeningParen
-
-validOperatorSequence :: Tok a -> Bool
-validOperatorSequence (TokBinOp _ _ _ _) = True
-validOperatorSequence _ = False
-
-hasOpeningParen :: [Tok a] -> Bool
-hasOpeningParen (BrckOpen:_) = True
-hasOpeningParen _ = False
-
-bindE :: Either e a -> (a -> Either e b) -> Either e b
-bindE (Left e) _ = Left e
-bindE (Right x) f = f x -}
-
-data ShuntingYardError =
-    OperatorOrClosingParenExpected
-  | LiteralOrOpeningParenExpected
-  | NoClosingParen
-  | NoOpeningParen
-  | ParseError
-  deriving (Show, Eq)
-
-type ShuntingYardResult a = Either ShuntingYardError a
-
-parseSafe :: Read a => OperatorTable a -> String -> ShuntingYardResult [Tok a]
-parseSafe = undefined
-
-shuntingYardSafe :: [Tok a] -> ShuntingYardResult ([a], [Tok a])
-shuntingYardSafe = undefined
