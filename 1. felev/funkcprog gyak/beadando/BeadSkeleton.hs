@@ -61,7 +61,7 @@ sySafe = parseAndEvalSafe
   (\ts -> shuntingYardSafe (BrckOpen : ts ++ [BrckClose]))
  -}
 
-{-
+
 -- Ezt akkor vedd ki a kommentblokkból, ha az 1 pontos "Függvénytábla és a típus kiegészítése" feladatot megcsináltad.
 tSin, tCos, tLog, tExp, tSqrt :: Floating a => Tok a
 tSin = TokFun sin "sin"
@@ -79,7 +79,7 @@ functionTable =
     , ("sqrt", sqrt)
     , ("round", (\x -> fromIntegral (round x :: Integer)))
     ]
--}
+
 
 {-
 -- Ezt akkor vedd ki a kommentblokkból, ha a 2 pontos "Függvények parse-olása és kiértékelése" feladatot megcsináltad.
@@ -102,19 +102,21 @@ syComplete = parseAndEvalSafe
 data Dir = InfixL | InfixR
   deriving (Show, Eq, Ord)
 
-data Tok a = BrckOpen | BrckClose | TokLit a | TokBinOp (a -> a -> a) Char Int Dir
+data Tok a = BrckOpen | BrckClose | TokLit a | TokBinOp (a -> a -> a) Char Int Dir | TokFun (a -> a) String
 
 instance Show a => Show (Tok a) where
   show BrckOpen = "BrckOpen"
   show BrckClose = "BrckClose"
   show (TokLit a) = "TokLit " ++ show a
   show (TokBinOp _ a b c) = "TokBinOp '" ++ [a] ++ "' " ++ show b ++ " " ++ show c
+  show (TokFun _ a) = "TokFun " ++ a
 
 instance Eq a => Eq (Tok a) where
   BrckOpen == BrckOpen = True
   BrckClose == BrckClose = True
   (TokLit a) == (TokLit b) = a == b
   (TokBinOp _ a b c) == (TokBinOp _ x y z) = a == x && b == y && c == z
+  (TokFun _ a) == (TokFun _ x) = a == x
   _ == _ = False
 
 
@@ -226,3 +228,11 @@ data ShuntingYardError = OperatorOrClosingParenExpected | LiteralOrOpeningParenE
 
 type ShuntingYardResult a = Either ShuntingYardError a
 
+------------------------------------------------------------
+
+type FunctionTable a = [(String, a -> a)]
+
+tRound :: (Floating a, RealFrac a) => Tok a
+tRound = TokFun (\x -> fromIntegral (round x :: Integer)) "round"
+
+------------------------------------------------------------
