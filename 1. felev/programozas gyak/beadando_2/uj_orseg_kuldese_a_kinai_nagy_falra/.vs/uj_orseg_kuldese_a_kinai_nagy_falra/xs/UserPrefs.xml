@@ -1,25 +1,21 @@
 ﻿<Properties StartupConfiguration="{D9622A38-0C8A-4628-9B5D-A64301276931}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.uj__orseg__kuldese__a__kinai__nagy__falra PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="uj_orseg_kuldese_a_kinai_nagy_falra/Program.cs">
     <Files>
-      <File FileName="uj_orseg_kuldese_a_kinai_nagy_falra/Program.cs" Line="19" Column="1" />
+      <File FileName="uj_orseg_kuldese_a_kinai_nagy_falra/Program.cs" Line="48" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="uj_orseg_kuldese_a_kinai_nagy_falra">
-            <Node name="uj_orseg_kuldese_a_kinai_nagy_falra">
-              <Node name="Program.cs" selected="True" />
-            </Node>
-          </Node>
+          <Node name="uj_orseg_kuldese_a_kinai_nagy_falra" expanded="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.uj__orseg__kuldese__a__kinai__nagy__falra PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
