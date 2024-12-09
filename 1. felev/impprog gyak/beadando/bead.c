@@ -110,7 +110,7 @@ void free_img(image img)
 
 typedef struct {image frames[GIF_FRAME_COUNT];} gif;
 
-gif load_gif(const char* base_filename) {
+gif load_gif(char* base_filename) {
     gif g;
     for (int i = 0; i < GIF_FRAME_COUNT; ++i) {
         char file_name[50];
@@ -148,7 +148,7 @@ int main()
 
 
     char base_filename[50];
-    printf("Add meg a fájl nevét (pl. 'input'): ");
+    printf("Add meg a fajl nevet (pl. 'input'): ");
     scanf("%s", base_filename);
 
     gif g = load_gif(base_filename);
@@ -156,5 +156,6 @@ int main()
     print_gif(g); 
 
     free_gif(g); 
+
     return 0;
 }
