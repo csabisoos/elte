@@ -136,7 +136,7 @@ void free_gif(gif g) {
     }
 }
 
-int main()
+int main(void)
 {
     color_print(YELLOW);
     printf("\n");
