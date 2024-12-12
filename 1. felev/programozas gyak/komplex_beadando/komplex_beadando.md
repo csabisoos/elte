@@ -31,7 +31,8 @@ e..u ~ 2..m
 T(i) ~ homerseklet[i,j-1]-homerseklet[i,j]>=10 vagy homerseklet[i,j]-homerseklet[i,j-1]>=10
 ```
 
-### Algoritmus
+### [Algoritmus](https://progalap.elte.hu/stuki/?data=H4sIAAAAAAAAE61W627aMBh9FeRK1abRygTKbeJHadeWbrRV0wsU8cOxHZISHJYEaKl4oD3HXmyfU2xMC1qjLX8wx5%2FPOd8llxfkM1RHeL9cKmOrWqlVqriMMT5AeeSFUx61YFtMgiCPYh5wmnAmETS2up5ld%2BYQJkLGY1R%2FQdfVy%2BN27cmW65RVA3k0JhEXyYrM8xnjAtVdEsQ8j5LnMYcDMf854YJyOEA9P2BwpsWAu4eO7eOTm%2FvODez4R9%2BuaKf2HfUX%2BRWuNI3AlabpZItyQhI%2BgnCISPhTAhBz6g2MQMO%2BuqvNDpunWkMDaxraV%2FbsHg%2BvrKOWfQ075%2Fim%2BxAUS7C8nXmJmIOiTFSzKxOGXJZEZ6CcOggF8xM%2FFJKqUdjfFwA6IXu2ly5ba5mCA21SOTBcGw6M4ny41H69YUmJ4unUi%2B%2F8ppbQwJqEUaOslT67PA0GHechranmUXIGcZaMNtZ0N0i%2BNka537%2FinOCj3CcvHPEo5sOAJz0%2F%2F7hX6O%2B9gfq7AzhSwLkpGTzn3m6%2BjQaCZfznTZ3TlYM8ddIqTw2s5WkUO0vn%2FC8FKTK%2BbdliXLjXIhpYE7kYVtvNCT3aKiLCcCz5dKDiM04afPomyT4LPx4v7GrxMh0u9TiTYxGV5s2ToP2klTWwptxl5w%2Bd7pD8NRMdqPiMk%2F8nE21Q2tc8Ss4gzjLVvrt5pGXzowlvRkRQb23mjA6lVBtCdOpgVNdfGTUbkmFitjy7mbMcTNVbPZird9c%2FysRhFM%2FJKBz2mNOHOwEtQC%2BG6tAkHERkJJvzggQZyfNt4stn7JREPnEC%2BcpE8DcKw3dP7tgLZ3ersKUNiZ5xwni0hBZ92Z8APMjUXi310I7rwvsbA82O%2FHVlFwGjGnPwgV656aqCi5ikK8qJW62g%2FmuGTUKHgyicCLYkdizHkmHyVxFzqjBeoUSt3HTFShRzS9LJj4R3dBSuVBUuRedaCuMuo9vojBq%2FY5XXMucP8bturfa6i3GV1uSXzw7nvMTKZkUWiz%2BSqNkkKwkAAA%3D%3D)
+![Stuktogram](stuki.png)
 
 ### Kód (C#)
 
