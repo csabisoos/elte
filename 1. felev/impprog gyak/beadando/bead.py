@@ -17,6 +17,7 @@ class Color(Enum):
 
 def color_print(color):
     print(f"{color.value} ", end=Color.RESET.value)
+
 #endregion
 
 #region Kepek fajlbol
@@ -34,16 +35,15 @@ def image_print(img):
 
 def read_image(file_path):
     with open(file_path, 'r') as f:
-        width = int(f.readline().strip())
-        height = int(f.readline().strip())
+        width = int(f.readline())
+        height = int(f.readline())
         
         if width > MAX_SIZE or height > MAX_SIZE:
-            raise ValueError("Tul nagy a kep!")
+            print("Tul nagy a kep!")
         
         matrix = []
         for _ in range(height):
             row = list(map(int, f.readline().split()))
-            # Színek hozzárendelése a mátrix elemeihez
             matrix.append([
                 Color.BLACK if x == 0 else
                 Color.RED if x == 1 else
@@ -56,6 +56,7 @@ def read_image(file_path):
                 for x in row
             ])
     return Image(width, height, matrix)
+
 #endregion
 
 #region Gif fajlbol
@@ -63,11 +64,11 @@ class Gif:
     def __init__(self, frames):
         self.frames = frames
 
-def print_gif(gif, delay=0.5):
+def print_gif(gif):
     for frame in gif.frames:
         print("\033[2J\033[H", end="")
         image_print(frame)
-        time.sleep(delay)
+        time.sleep(0.2)
 
 def load_gif(file):
     frames=[]
@@ -78,6 +79,7 @@ def load_gif(file):
 
 #endregion
 
+#region main
 color_print(Color.YELLOW)
 print()
 
@@ -86,10 +88,7 @@ image_print(image)
 
 base = input("Add meg a fajl nevet (pl. 'input'): ")
 
-try:
-    gif = load_gif(base)
-    print_gif(gif, delay=0.5)
-except FileNotFoundError as e:
-    print(f"Hiba: {e}")
-except Exception as e:
-    print(f"Hiba: {e}")
+gif = load_gif(base)
+print_gif(gif)
+
+#endregion
