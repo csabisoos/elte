@@ -19,7 +19,10 @@
 
 #define GIF_FRAME_COUNT 10
 
-typedef enum {BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE} color;
+#pragma region Szinek a konzolon
+enum color {BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE};
+
+typedef enum color color;
 
 void color_print(color c) {
     switch (c) {
@@ -47,13 +50,15 @@ void color_print(color c) {
         case WHITE:
             printf("%s ", BG_WHITE);
             break;
-        default:
-            break;
     }
     printf("%s", RESET);
 }
+#pragma endregion
 
-typedef struct {color** matrix; int width; int height;} image;
+#pragma region Kepek fajlbol
+struct image {color** matrix; int width; int height;};
+
+typedef struct image image;
 
 image read_image(char *filename)
 {
@@ -107,7 +112,9 @@ void free_img(image img)
     }
     free(img.matrix);
 }
+#pragma endregion
 
+#pragma region Gif fajlbol
 typedef struct {image frames[GIF_FRAME_COUNT];} gif;
 
 gif load_gif(char* base_filename) {
@@ -135,6 +142,7 @@ void free_gif(gif g) {
         free_img(g.frames[i]);
     }
 }
+#pragma endregion
 
 int main(void)
 {
@@ -152,9 +160,7 @@ int main(void)
     scanf("%s", base_filename);
 
     gif g = load_gif(base_filename);
-
     print_gif(g); 
-
     free_gif(g); 
 
     return 0;
