@@ -53,6 +53,7 @@ void print_game(char jatekter[SOROK][OSZLOPOK], int kigyo[KIGYOHOSSZ][2])
     {
         munka[kigyo[i][0]][kigyo[i][1]] = '0';
     }
+    printf("\n");
     for (int i=-1; i<=SOROK; ++i)
     {
         for (int j=-1; j<= OSZLOPOK; ++j)
@@ -137,12 +138,14 @@ int main(void)
     {
         printf("Adj meg egy irányt (w/a/s/d): ");
         char irany = getchar();
+        //printf("\n");
         if (irany==EOF)
         {
             printf("\nKiléptél a játékból.\n");
             break;
         }
         if (irany == '\n') continue; // Newline figyelmen kívül hagyása
+        
         if (irany != 'w' && irany != 'a' && irany != 's' && irany != 'd') {
             printf("Érvénytelen irány: '%c'\n", irany);
             continue;
