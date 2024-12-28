@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{C2D48EEF-ADBB-4077-8D11-858A213DBCE7}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="nagy_valtozasu_telepulesek/Program.cs">
     <Files>
-      <File FileName="nagy_valtozasu_telepulesek/Program.cs" Line="9" Column="7" />
+      <File FileName="nagy_valtozasu_telepulesek/Program.cs" Line="11" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="nagy_valtozasu_telepulesek" expanded="True">
+          <Node name="nagy_valtozasu_telepulesek">
             <Node name="nagy_valtozasu_telepulesek">
               <Node name="Program.cs" selected="True" />
             </Node>
@@ -16,10 +17,9 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.nagy__valtozasu__telepulesek PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
