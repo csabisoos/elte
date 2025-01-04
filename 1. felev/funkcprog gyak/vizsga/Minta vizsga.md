@@ -158,7 +158,7 @@ take 15 (combineListsIf (\x y -> y > x) (\x y -> y) [1..] [4..]) == [4,5,6,7,8,9
 
 ## **Tömegközlekedés (3 pont)**
 
-#### **Algebrai adatszerkezet**
+### **Algebrai adatszerkezet**
 
 Egy város tömegközlekedését buszok és villamosok szolgálják ki. Sok járat van, minden járat sok, de véges számú megállóval rendelkezik, illetve egy megállóban akár több járat is megállhat. Definiáld a `Line` algebrai adattípust, amellyel a járatokat adja meg. A típusnak két konstruktora legyen, melyek az alábbiak:
 
@@ -170,7 +170,7 @@ Bus :: Integer -> [String] -> Line
 ```
 Mindkét tömegközlekedési eszköz esetében az `Integer` a járatszámot, a `[String]` pedig a járat megállóinak a neveit tartalmazza. Kérjük meg a fordítót, hogy példányosítsa az `Eq` és `Show` típusosztályokat az új típusunkra.
 
-#### **Melyik busz áll meg az adott megállóban**
+### **Melyik busz áll meg az adott megállóban**
 
 Definiáld a `whichBusStop` függvényt, amely megadja hogy a tömegközlekedési hálózat mely **busz**járata(i) áll(nak) meg egy adott megállóban!
 

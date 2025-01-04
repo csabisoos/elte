@@ -6,8 +6,6 @@ type Apple = (Bool, Int)
 type Tree = [Apple]
 type Garden = [Tree]
 
--- nev ido, hibapont
--- 100-ido/2-hibapont
 points :: Integral a => [(String, a, a)] -> [(String, a)]
 points [] = []
 points ((n,i,h):xs)
