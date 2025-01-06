@@ -1,0 +1,15 @@
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepulesek.exe
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepulesek.deps.json
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepulesek.runtimeconfig.json
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepulesek.dll
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepulesek.pdb
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.AssemblyInfoInputs.cache
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.AssemblyInfo.cs
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.csproj.CoreCompileInputs.cache
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.sourcelink.json
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.dll
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\refint\nagy_valtozasu_telepulesek.dll
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.pdb
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\nagy_valtozasu_telepulesek.genruntimeconfig.cache
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek\obj\Debug\net8.0\ref\nagy_valtozasu_telepulesek.dll

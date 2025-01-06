@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1706.14
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nagy_valtozasu_telepulesek", "nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek.csproj", "{C2D48EEF-ADBB-4077-8D11-858A213DBCE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nagy_valtozasu_telepulesek", "nagy_valtozasu_telepulesek\nagy_valtozasu_telepulesek.csproj", "{AD7E9F1E-9AC8-43BE-8062-9FE440F35EE0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,12 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C2D48EEF-ADBB-4077-8D11-858A213DBCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C2D48EEF-ADBB-4077-8D11-858A213DBCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C2D48EEF-ADBB-4077-8D11-858A213DBCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C2D48EEF-ADBB-4077-8D11-858A213DBCE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD7E9F1E-9AC8-43BE-8062-9FE440F35EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7E9F1E-9AC8-43BE-8062-9FE440F35EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7E9F1E-9AC8-43BE-8062-9FE440F35EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7E9F1E-9AC8-43BE-8062-9FE440F35EE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {051D2FBD-828C-4F0F-AB76-FAE1DE3DA337}
 	EndGlobalSection
 EndGlobal
