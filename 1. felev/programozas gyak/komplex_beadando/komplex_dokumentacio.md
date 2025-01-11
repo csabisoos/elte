@@ -64,17 +64,17 @@ A program az nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepule
 
 Az nagy_valtozasu_telepulesek.exe fájl elindításával a program az adatokat a billentyűzetről olvassa be a következő sorrendben:
 
-|#|Adat|Magyarázat|
-|-|----|----------|
-|**1.**|Települések száma (N)| 1≤N≤1000|
-|**2.**|Napok száma (M)|1≤M≤1000 |
-|**3.**|1. településen az 1. napon jósolt hőmérséklet|-50≤H<sub>i,j</sub>≤50 innentől|
-|**4.**|1. településen a 2. napon jósolt hőmérséklet||
-|...|...||
-||1. településen az m. napon jósolt hőmérséklet||
-||2. településen az 1. napon jósolt hőmérséklet||
-||...||
-||n. településen az m. napon jósolt hőmérséklet||
+| #      | Adat                                          | Magyarázat                      |
+| ------ | --------------------------------------------- | ------------------------------- |
+| **1.** | Települések száma (N)                         | 1≤N≤1000                        |
+| **2.** | Napok száma (M)                               | 1≤M≤1000                        |
+| **3.** | 1. településen az 1. napon jósolt hőmérséklet | -50≤H<sub>i,j</sub>≤50 innentől |
+| **4.** | 1. településen a 2. napon jósolt hőmérséklet  |                                 |
+| ...    | ...                                           |                                 |
+|        | 1. településen az m. napon jósolt hőmérséklet |                                 |
+|        | 2. településen az 1. napon jósolt hőmérséklet |                                 |
+|        | ...                                           |                                 |
+|        | n. településen az m. napon jósolt hőmérséklet |                                 |
 
 #### *A program használata fájlból való bevitel esetén*
 
@@ -151,20 +151,20 @@ IBM PC, exe futtatására alkalmas operációs rendszer (pl. Windows 11 Home). V
 
 A teljes fejlesztői anyag –kicsomagolás után– az `nagy_valtozasu_telepulesek` nevű könyvtárban található meg. A fejlesztés során használt könyvtár-struktúra:
 
-|Állomány|Magyarázat|
-|--------|----------|
-|`nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepulesek.exe`|futtatható kód (a futtatáshoz szükségesfájlokkal)|
-|`nagy_valtozasu_telepulesek\obj\`|mappa fordításhoz szükséges kódokkal|
-|||
-|`nagy_valtozasu_telepulesek\Program.cs`|C# forráskód|
-|||
-|`nagy_valtozasu_telepulesek\teszt1.txt`|teszt-bemeneti fájl<sub>1</sub>|
-|`nagy_valtozasu_telepulesek\teszt2.txt`|teszt-bemeneti fájl<sub>2</sub>|
-|`nagy_valtozasu_telepulesek\teszt3.txt`|teszt-bemeneti fájl<sub>3</sub>|
-|`nagy_valtozasu_telepulesek\teszt4.txt`|teszt-bemeneti fájl<sub>4</sub>|
-|`nagy_valtozasu_telepulesek\teszt5.txt`|teszt-bemeneti fájl<sub>5</sub>|
-|||
-|`nagy_valtozasu_telepulesek\doksi\nagy_valtozasu_telepulesek.docx`|dokumentációk (ez a fájl)|
+| Állomány                                                                     | Magyarázat                                        |
+| ---------------------------------------------------------------------------- | ------------------------------------------------- |
+| `nagy_valtozasu_telepulesek\bin\Debug\net8.0\nagy_valtozasu_telepulesek.exe` | futtatható kód (a futtatáshoz szükségesfájlokkal) |
+| `nagy_valtozasu_telepulesek\obj\`                                            | mappa fordításhoz szükséges kódokkal              |
+|                                                                              |                                                   |
+| `nagy_valtozasu_telepulesek\Program.cs`                                      | C# forráskód                                      |
+|                                                                              |                                                   |
+| `nagy_valtozasu_telepulesek\teszt1.txt`                                      | teszt-bemeneti fájl<sub>1</sub>                   |
+| `nagy_valtozasu_telepulesek\teszt2.txt`                                      | teszt-bemeneti fájl<sub>2</sub>                   |
+| `nagy_valtozasu_telepulesek\teszt3.txt`                                      | teszt-bemeneti fájl<sub>3</sub>                   |
+| `nagy_valtozasu_telepulesek\teszt4.txt`                                      | teszt-bemeneti fájl<sub>4</sub>                   |
+| `nagy_valtozasu_telepulesek\teszt5.txt`                                      | teszt-bemeneti fájl<sub>5</sub>                   |
+|                                                                              |                                                   |
+| `nagy_valtozasu_telepulesek\doksi\nagy_valtozasu_telepulesek.docx`           | dokumentációk (ez a fájl)                         |
 
 ### Megoldás
 
@@ -258,18 +258,41 @@ namespace nagy_valtozasu_telepulesek
             }
             return homerseklet;
         }
-        static void Main(string[] args)
+
+        static void kiir(int db, List<int> sorszamok)
         {
-            int[,] homerseklet;
+            if (Console.IsOutputRedirected)
+            {
+                Console.Write($"{db} ");
+                Console.Write(String.Join(' ', sorszamok));
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                if (db == 0)
+                {
+                    Console.WriteLine("Nincs a feltételnek megfelelő település!");
+                }
+                else
+                {
+                    Console.WriteLine("{0} darab feltételnek megfelelő település is van, sorszámaik: ", db);
+                    Console.WriteLine(String.Join(", ", sorszamok));
+                }
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.Write("Kérem, nyomjon ENTER-t a folytatáshoz!");
+                Console.ResetColor();
+                Console.ReadLine();
+            }
+        }
+        static (int db, List<int> sorszamok) megold(int[,] homerseklet)
+        {
             int db = 0;
             List<int> sorszamok = new List<int>();
-
-            homerseklet = beolvas();
-
             for (int i = 0; i < homerseklet.GetLength(0); i++)
             {
                 int j = 1;
-                while (j < homerseklet.GetLength(1) && !(homerseklet[i, j - 1] - homerseklet[i, j] >= 10 || homerseklet[i, j] - homerseklet[i, j - 1] >= 10))
+                while (j < homerseklet.GetLength(1) && Math.Abs(homerseklet[i, j - 1] - homerseklet[i,j])<10)
                 {
                     j += 1;
                 }
@@ -279,8 +302,19 @@ namespace nagy_valtozasu_telepulesek
                     sorszamok.Add(i + 1);
                 }
             }
-            Console.Write($"{db} ");
-            Console.Write(String.Join(' ', sorszamok));
+            return (db, sorszamok);
+        }
+        static void Main(string[] args)
+        {
+            int[,] homerseklet;
+            int db = 0;
+            List<int> sorszamok = new List<int>();
+
+            homerseklet = beolvas();
+
+            (db, sorszamok) = megold(homerseklet);
+
+            kiir(db, sorszamok);
         }
     }
 }
@@ -291,6 +325,138 @@ namespace nagy_valtozasu_telepulesek
 A `Program.cs` fájl tartalma:
 
 ```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Numerics;
+using System.Text;
+using System.Threading.Tasks;
+using magas_szintű_mintamegvalósítások;
+
+namespace nagy_valtozasu_telepulesek_magas
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[,] homerseklet;
+            int db;
+            int[] sorszamok;
+
+            homerseklet = beolvas();
+            int n = homerseklet.GetLength(0);
+            int m = homerseklet.GetLength(1);
+
+            sorszamok = Mintak.Kivalogat(0, n - 1, i => Mintak.Van(1, m - 1, j => (Math.Abs(homerseklet[i, j - 1] - homerseklet[i, j]) >= 10)), i => i + 1);
+            db = sorszamok.Length;
+
+            kiir(db, sorszamok);
+        }
+        static void kiir(int db, int[] sorszamok)
+        {
+            if (Console.IsOutputRedirected)
+            {
+                Console.Write($"{db} ");
+                Console.Write(String.Join(' ', sorszamok));
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                if (db == 0)
+                {
+                    Console.WriteLine("Nincs a feltételnek megfelelő település!");
+                }
+                else
+                {
+                    Console.WriteLine("{0} darab feltételnek megfelelő település is van, sorszámaik: ", db);
+                    Console.WriteLine(String.Join(", ", sorszamok));
+                }
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.Write("Kérem, nyomjon ENTER-t a folytatáshoz!");
+                Console.ResetColor();
+                Console.ReadLine();
+            }
+        }
+
+        static int[,] beolvas()
+        {
+            if (Console.IsInputRedirected)
+            {
+                return beolvas_biro();
+            }
+            else
+            {
+                return beolvas_kezi();
+            }
+        }
+        static int[,] beolvas_biro()
+        {
+            string[] sortomb = Console.ReadLine().Split(' ');
+            int n = int.Parse(sortomb[0]);
+            int m = int.Parse(sortomb[1]);
+            int[,] homerseklet = new int[n, m];
+
+            for (int i = 0; i < n; i++)
+            {
+                sortomb = Console.ReadLine().Split(' ');
+                for (int j = 0; j < m; j++)
+                {
+                    homerseklet[i, j] = int.Parse(sortomb[j]);
+                }
+            }
+            return homerseklet;
+        }
+        static int[,] beolvas_kezi()
+        {
+            int n, m;
+            bool jo;
+            do
+            {
+                Console.ResetColor();
+                Console.Write("Települések száma = ");
+                jo = int.TryParse(Console.ReadLine(), out n) && 1 <= n && n <= 1000;
+                if (!jo)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("A szám nem megfelelő (1<=N<=1000)!");
+                }
+            } while (!jo);
+            do
+            {
+                Console.ResetColor();
+                Console.Write("Napok száma = ");
+                jo = int.TryParse(Console.ReadLine(), out m) && 1 <= m && m <= 1000;
+                if (!jo)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("A szám nem megfelelő (1<=N<=1000)!");
+                }
+            } while (!jo);
+
+            int[,] homerseklet = new int[n, m];
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    do
+                    {
+                        Console.ResetColor();
+                        Console.Write($"{i + 1}. település {j + 1}. hömérséklet értéke = ");
+                        jo = int.TryParse(Console.ReadLine(), out homerseklet[i, j]) && -50 <= homerseklet[i, j] && homerseklet[i, j] <= 50;
+                        if (!jo)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("A szám nem megfelelő (-50<=H<=50)");
+                        }
+                    } while (!jo);
+                }
+            }
+            return homerseklet;
+        }
+    }
+}
+
 ```
 
 ### Tesztelés
@@ -307,58 +473,58 @@ A `Program.cs` fájl tartalma:
 
 ##### 1. teszteset: `teszt1.txt`
 
-|**Bemenet**|
-|--------------|
-|3 4|
-|10 20 30 40|
-|5 15 25 35|
-|-10 0 10 20|
-|**Kimenet**|
-|3 1 2 3|
+| **Bemenet** |
+| ----------- |
+| 3 4         |
+| 10 20 30 40 |
+| 5 15 25 35  |
+| -10 0 10 20 |
+| **Kimenet** |
+| 3 1 2 3     |
 
 ##### 2. teszteset: `teszt2.txt`
 
-|**Bemenet**|
-|--------------|
-|2 5|
-|-10 -20 -30 -40 -50|
-|50 40 30 20 10|
-|**Kimenet**|
-|2 1 2|
+| **Bemenet**         |
+| ------------------- |
+| 2 5                 |
+| -10 -20 -30 -40 -50 |
+| 50 40 30 20 10      |
+| **Kimenet**         |
+| 2 1 2               |
 
 ##### 3. teszteset: `teszt3.txt`
 
-|**Bemenet**|
-|--------------|
-|4 6|
-|0 0 0 0 0 0|
-|10 10 10 10 10 10|
-|-50 -40 -30 -20 -10 0|
-|5 15 5 15 5 15|
-|**Kimenet**|
-|2 3 4|
+| **Bemenet**           |
+| --------------------- |
+| 4 6                   |
+| 0 0 0 0 0 0           |
+| 10 10 10 10 10 10     |
+| -50 -40 -30 -20 -10 0 |
+| 5 15 5 15 5 15        |
+| **Kimenet**           |
+| 2 3 4                 |
 
 ##### 4. teszteset: `teszt4.txt`
 
-|**Bemenet**|
-|--------------|
-|1 3|
-|-5 10 -5|
-|**Kimenet**|
-|1 1|
+| **Bemenet** |
+| ----------- |
+| 1 3         |
+| -5 10 -5    |
+| **Kimenet** |
+| 1 1         |
 
 ##### 5. teszteset: `teszt5.txt`
 
-|**Bemenet**|
-|--------------|
-|5 7|
-|10 10 10 10 10 10 10|
-|-10 -10 -10 -10 -10 -10 -10|
-|50 40 30 20 10 0 -10|
-|15 15 25 15 25 15 25|
-|0 10 20 30 40 50 50|
-|**Kimenet**|
-|3 3 4 5|
+| **Bemenet**                 |
+| --------------------------- |
+| 5 7                         |
+| 10 10 10 10 10 10 10        |
+| -10 -10 -10 -10 -10 -10 -10 |
+| 50 40 30 20 10 0 -10        |
+| 15 15 25 15 25 15 25        |
+| 0 10 20 30 40 50 50         |
+| **Kimenet**                 |
+| 3 3 4 5                     |
 
 #### *Érvénytelen tesztesetek*
 
@@ -366,21 +532,21 @@ Billentyűzetes bevitel esetén
 
 ##### 6. teszteset
 
-|**Bemenet** - *szöveges adat*|
-|--------------|
-|N = 11tizenegy|
-|**Kimenet**|
-|Újrakezdés|
-|N = |
+| **Bemenet** - *szöveges adat* |
+| ----------------------------- |
+| N = 11tizenegy                |
+| **Kimenet**                   |
+| Újrakezdés                    |
+| N =                           |
 
 ##### 7. teszteset
 
-|**Bemenet** - *nem megfelelő szám*|
-|--------------|
-|N = -1|
-|**Kimenet**|
-|Újrakezdés|
-|N = |
+| **Bemenet** - *nem megfelelő szám* |
+| ---------------------------------- |
+| N = -1                             |
+| **Kimenet**                        |
+| Újrakezdés                         |
+| N =                                |
 
 ...
 

@@ -79,18 +79,41 @@ namespace nagy_valtozasu_telepulesek
             }
             return homerseklet;
         }
-        static void Main(string[] args)
+
+        static void kiir(int db, List<int> sorszamok)
         {
-            int[,] homerseklet;
+            if (Console.IsOutputRedirected)
+            {
+                Console.Write($"{db} ");
+                Console.Write(String.Join(' ', sorszamok));
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                if (db == 0)
+                {
+                    Console.WriteLine("Nincs a feltételnek megfelelő település!");
+                }
+                else
+                {
+                    Console.WriteLine("{0} darab feltételnek megfelelő település is van, sorszámaik: ", db);
+                    Console.WriteLine(String.Join(", ", sorszamok));
+                }
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.BackgroundColor = ConsoleColor.Gray;
+                Console.Write("Kérem, nyomjon ENTER-t a folytatáshoz!");
+                Console.ResetColor();
+                Console.ReadLine();
+            }
+        }
+        static (int db, List<int> sorszamok) megold(int[,] homerseklet)
+        {
             int db = 0;
             List<int> sorszamok = new List<int>();
-
-            homerseklet = beolvas();
-
             for (int i = 0; i < homerseklet.GetLength(0); i++)
             {
                 int j = 1;
-                while (j < homerseklet.GetLength(1) && !(homerseklet[i, j - 1] - homerseklet[i, j] >= 10 || homerseklet[i, j] - homerseklet[i, j - 1] >= 10))
+                while (j < homerseklet.GetLength(1) && Math.Abs(homerseklet[i, j - 1] - homerseklet[i,j])<10)
                 {
                     j += 1;
                 }
@@ -100,14 +123,19 @@ namespace nagy_valtozasu_telepulesek
                     sorszamok.Add(i + 1);
                 }
             }
-            Console.Write($"{db} ");
-            Console.Write(String.Join(' ', sorszamok));
+            return (db, sorszamok);
+        }
+        static void Main(string[] args)
+        {
+            int[,] homerseklet;
+            int db = 0;
+            List<int> sorszamok = new List<int>();
+
+            homerseklet = beolvas();
+
+            (db, sorszamok) = megold(homerseklet);
+
+            kiir(db, sorszamok);
         }
     }
 }
-/*
-3 5
-10 19 12 10 10
-1 11 11 11 20
-12 16 16 16 -2
- */
