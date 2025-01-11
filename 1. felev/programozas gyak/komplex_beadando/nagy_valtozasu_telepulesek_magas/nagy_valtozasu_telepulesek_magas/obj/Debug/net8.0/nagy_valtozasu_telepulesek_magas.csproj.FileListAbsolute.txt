@@ -1,0 +1,15 @@
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\bin\Debug\net8.0\nagy_valtozasu_telepulesek_magas.exe
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\bin\Debug\net8.0\nagy_valtozasu_telepulesek_magas.deps.json
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\bin\Debug\net8.0\nagy_valtozasu_telepulesek_magas.runtimeconfig.json
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\bin\Debug\net8.0\nagy_valtozasu_telepulesek_magas.dll
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\bin\Debug\net8.0\nagy_valtozasu_telepulesek_magas.pdb
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.AssemblyInfoInputs.cache
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.AssemblyInfo.cs
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.csproj.CoreCompileInputs.cache
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.sourcelink.json
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.dll
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\refint\nagy_valtozasu_telepulesek_magas.dll
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.pdb
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\nagy_valtozasu_telepulesek_magas.genruntimeconfig.cache
+C:\Users\csabi\Desktop\elte\1. felev\programozas gyak\komplex_beadando\nagy_valtozasu_telepulesek_magas\nagy_valtozasu_telepulesek_magas\obj\Debug\net8.0\ref\nagy_valtozasu_telepulesek_magas.dll

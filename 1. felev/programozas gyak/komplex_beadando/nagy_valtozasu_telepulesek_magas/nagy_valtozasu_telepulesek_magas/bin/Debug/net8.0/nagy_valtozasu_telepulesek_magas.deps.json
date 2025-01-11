@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "nagy_valtozasu_telepulesek_magas/1.0.0": {
+        "runtime": {
+          "nagy_valtozasu_telepulesek_magas.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "nagy_valtozasu_telepulesek_magas/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
