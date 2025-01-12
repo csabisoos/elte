@@ -23,7 +23,7 @@
     - [Fejlesztői környezet](#fejlesztői-környezet)
     - [Forráskód](#forráskód)
     - [Megoldás](#megoldás)
-      - [*Függvéynstruktúra*](#függvéynstruktúra)
+      - [*Függvénystruktúra*](#függvénystruktúra)
       - [*A kód*](#a-kód)
       - [*A kód (magas szintű függvényekkel)*](#a-kód-magas-szintű-függvényekkel)
     - [Tesztelés](#tesztelés)
@@ -168,7 +168,7 @@ A teljes fejlesztői anyag –kicsomagolás után– a `nagy_valtozasu_telepules
 
 ### Megoldás
 
-#### *Függvéynstruktúra*
+#### *Függvénystruktúra*
 
 ![Függvénystruktúra](fuggstuki.png)
 
