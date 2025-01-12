@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("nagy_valtozasu_telepulesek_magas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c27b1e428ac37fc204b7414dd5d4c9bd49d23042")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d91f4bcad86cc7b4c67c5f17683127ce4bb40b67")]
 [assembly: System.Reflection.AssemblyProductAttribute("nagy_valtozasu_telepulesek_magas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("nagy_valtozasu_telepulesek_magas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

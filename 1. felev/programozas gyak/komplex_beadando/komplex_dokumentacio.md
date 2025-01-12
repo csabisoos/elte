@@ -149,7 +149,7 @@ IBM PC, exe futtatására alkalmas operációs rendszer (pl. Windows 11 Home). V
 
 ### Forráskód
 
-A teljes fejlesztői anyag –kicsomagolás után– az `nagy_valtozasu_telepulesek` nevű könyvtárban található meg. A fejlesztés során használt könyvtár-struktúra:
+A teljes fejlesztői anyag –kicsomagolás után– a `nagy_valtozasu_telepulesek` nevű könyvtárban található meg. A fejlesztés során használt könyvtár-struktúra:
 
 | Állomány                                                                     | Magyarázat                                        |
 | ---------------------------------------------------------------------------- | ------------------------------------------------- |
