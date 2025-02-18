@@ -10,6 +10,8 @@ Tegyük fel, hogy az $A, B \subset \mathbb{R}$ halmazokra a következők teljes�
 Ekkor 
 $$\exists ξ \in \mathbb{R} : \forall a \in A \; és \; b \in B \; esetén \; a \leq ξ \leq b$$
 
+$$\exists ξ \in \mathbb{R} : \forall a \in A \quad \text{és} \quad b \in B \quad \text{esetén} \quad a \leq ξ \leq b$$
+
 ---
 
 ### 2. Írja le pozitív formában azt, hogy egy $\emptyset = A \subset R$ halmaz felülről nem korlátos!
