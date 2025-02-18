@@ -76,9 +76,11 @@ Legyen $\emptyset \neq H \subset \mathbb{R}$ alulról korlátos halmaz. Ekkor
 $ξ = \inf H \iff$
 
 i) ξ alsó korlát, azaz
+
 $$\forall x \in H : ξ \leq x$$
 
 ii) ξ a legnagyobb alsó korlát, azaz
+
 $$\forall \epsilon > 0\text{-hoz} \; \exists x \in H : x < ξ + \epsilon$$
 
 ![nyolcadik kerdes](6.2.png)
