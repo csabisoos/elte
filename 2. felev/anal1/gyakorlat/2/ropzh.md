@@ -13,13 +13,13 @@ $$\exists ξ \in \mathbb{R} : \forall a \in A \quad \text{és} \quad b \in B \qu
 
 ---
 
-### 2. Írja le pozitív formában azt, hogy egy $\emptyset = A \subset R$ halmaz felülről nem korlátos!
+### 2. Írja le pozitív formában azt, hogy egy $\emptyset = A \subset \mathbb{R}$ halmaz felülről nem korlátos!
 
 Ha a $\emptyset \neq H \subset \mathbb{R}$ halmaz felülről nem korlátos, akkor azt mondjuk, hogy a **szupréruma plusz végtelen**, és ezt úgy jelöljük, hogy $$\sup H := +\infty$$
 
 ---
 
-### 3. Fogalmazza meg egyenlőtlenségekkel azt a tényt, hogy egy $\emptyset \neq A \subset R$ halmaz korlátos!
+### 3. Fogalmazza meg egyenlőtlenségekkel azt a tényt, hogy egy $\emptyset \neq A \subset \mathbb{R}$ halmaz korlátos!
 
 Korlátos, ha alulról is, felülről is korlátos, azaz $\exists K \in \mathbb{R}$, hogy $\forall x \in H$ esetén $\left| x \right| \leq K$
 
