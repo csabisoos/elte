@@ -89,13 +89,13 @@ $$\forall \epsilon > 0\text{-hoz} \; \exists x \in H : x < ξ + \epsilon$$
 
 ### 9. Mi a kapcsolat egy halmaz maximuma és a szuprémuma között?
 
-$$\exists \max H \iff \sup H \in H \text{és ekkor} \; \sup H = \max H$$
+$$\exists \max H \iff \sup H \in H \quad \text{és ekkor} \quad \sup H = \max H$$
 
 ---
 
 ### 10. Mi a kapcsolat egy halmaz minimuma és az inmuma között?
 
-$$\exists \min H \iff \inf H \in H \text{és ekkor} \; \inf H = \min H$$
+$$\exists \min H \iff \inf H \in H \quad \text{és ekkor} \quad \inf H = \min H$$
 
 --- 
 
