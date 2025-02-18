@@ -8,7 +8,6 @@ Tegyük fel, hogy az $A, B \subset \mathbb{R}$ halmazokra a következők teljes�
 - minden $a \in A$ és minden $b \in B$ elemre $a \leq b$
 
 Ekkor 
-$$\exists ξ \in \mathbb{R} : \forall a \in A \; és \; b \in B \; esetén \; a \leq ξ \leq b$$
 
 $$\exists ξ \in \mathbb{R} : \forall a \in A \quad \text{és} \quad b \in B \quad \text{esetén} \quad a \leq ξ \leq b$$
 
