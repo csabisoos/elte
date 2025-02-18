@@ -33,7 +33,9 @@ i) $H \neq \emptyset$
 ii) $H$ felülről korlátos
 
 Ekkor
-$$\exists \min \left\{ K \in \mathbb{R} \mid K \; \text{felső korlátja} \; H\text{-nak} \right\}$$
+$$\exists \min \left\lbrace K \in \mathbb{R} \mid K \; \text{felső korlátja} \; H\text{-nak} \right\rbrace$$
+
+$$\exists K \in \mathbb{R} \mid K \text{ a legkisebb felső korlátja } H\text{-nak}$$
 
 ---
 
