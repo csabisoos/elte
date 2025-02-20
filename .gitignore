@@ -6,3 +6,4 @@ Thumbs.db
 a.out
 a.exe
 .vs/
+*.class
