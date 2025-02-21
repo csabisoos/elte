@@ -9,3 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = beadando_1
 build_property.ProjectDir = /Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 7.0
+build_property.EnableCodeStyleSeverity = 

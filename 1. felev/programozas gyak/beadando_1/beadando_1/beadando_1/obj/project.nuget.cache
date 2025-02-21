@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "VtbnBYTB6oc=",
+  "dgSpecHash": "XdkW7LPp/t4=",
   "success": true,
   "projectFilePath": "/Users/csabasoos/Desktop/elte/1. felev/programozas gyak/beadando_1/beadando_1/beadando_1/beadando_1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/csabasoos/.nuget/packages/microsoft.netcore.app.ref/7.0.20/microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "/Users/csabasoos/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.20/microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "/Users/csabasoos/.nuget/packages/microsoft.netcore.app.host.osx-arm64/7.0.20/microsoft.netcore.app.host.osx-arm64.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }
