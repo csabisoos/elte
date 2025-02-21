@@ -119,9 +119,9 @@ Egy nem üres $A \subset \mathbb{R}$ halmaz **felülről nem korlátos**, ha nem
 **Egyenlőtlenségekkel megfogalmazva:**  
 Azt mondjuk, hogy $A$ **felülről nem korlátos**, ha minden $M \in \mathbb{R}$ számra létezik egy $a \in A$ elem úgy, hogy:  
 
-\[
+$$
 a > M.
-\]  
+$$  
 
 Vagyis bármilyen nagy számot választunk, mindig találunk a halmazban egy annál nagyobb elemet.
 
