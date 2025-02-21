@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/bin/Debug/net9.0/Labor_2
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/bin/Debug/net9.0/Labor_2.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/bin/Debug/net9.0/Labor_2.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/bin/Debug/net9.0/Labor_2.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/bin/Debug/net9.0/Labor_2.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/refint/Labor_2.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/Labor_2.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/2/Labor_2/Labor_2/obj/Debug/net9.0/ref/Labor_2.dll
