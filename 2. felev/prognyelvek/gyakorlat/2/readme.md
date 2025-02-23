@@ -90,7 +90,7 @@ $$(y_2 - y_1)(x_3 - x_2) - (y_3 - y_2)(x_2 - x_1)$$
 
 Készítsen egy `intersects(s)` metódust, mely visszaadja, hogy a szakasznak van-e közös pontja a paraméterként kapott `s` szakasszal! A megoldáshoz használja az alábbi segítséget!
 
-http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf <Geometry1x1.pdf>
+[Geometry1x1.pdf](http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf)
 
 ### 4. gyakorló feladat
 
