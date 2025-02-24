@@ -1,0 +1,1 @@
+Gyakorlat vezető: Pallai Hunor

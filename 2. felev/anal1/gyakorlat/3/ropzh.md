@@ -1,14 +1,18 @@
 ### 1. Hogyan értelmezi a függvényt?
 
-
+Egy függvény olyan hozzárendelés lét halmaz között, amely az egyik halmaz minden eleméhez pontosan egy elemet rendel a másik halmazból. 
 
 ### 2. Mit jelent az $f \in A \to B$ szimbólum?
 
 Ez azt jelenti, hogy $f$ egy függvény, amely az $A$ halmaz elemeit képezi le a $B$ halmaz elemeire. Itt az $"\in"$ jel arra utal, hogya $f$ egy függvény az $A \to B$ típusú függvények halmazában.
 
+Az $f \in A \to B$ azt jelenti, hogy $f$ egy olyan függvény, amelynek a definíciós tartománya $A$, és az értékkészlete $B$.
+
 ### 3. Mit jelent az $f:A \to B$ szimbólum?
 
 Ez egy másik módja annak, hogy egy függvényt definiáljunk. Azt jelenti, hogya $f$ egy olyan függvény, amely az $A$ halmaz elemeit $B$-be képezi le. Ebben az esetben a $":"$ szimbólum a függvényt jelöli, és a nyíl mutatja, hogy az $A$ halmazból a $B$ halmazba történik a leképezés.
+
+Az $f:A \to B$ azt jelöli, hogya $f$ egy $A$ halmazon értelmezett függvény, amely $B$ elemeit rendeli hozzá.
 
 ### 4. Definiálja a halmaznak függvény által létesített képét!
 
