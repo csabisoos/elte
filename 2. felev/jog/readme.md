@@ -1,0 +1,1 @@
+Előadó: Dr. Nikovits Tibor

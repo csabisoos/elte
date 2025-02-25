@@ -1,3 +1,6 @@
+Előadó: Dr. Weisz Ferenc
+Gyakorlat vezető: Bognár Gergő
+
 Tantárgy rövid leírása
 
 A valós számok halmaza, korlátos halmazok, szuprémum, infimum.

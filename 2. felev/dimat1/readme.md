@@ -1,3 +1,6 @@
+Előadó: Fancsali Szabolcs Levente
+Gyakorlat vezető: Fancsali Szabolcs Levente
+
 A Diszkrét matematika 1 tantárgy a következő fejezetekből épül fel:
 
 1. Logika, halmazelmélet

@@ -1,6 +1,6 @@
 ### 1. Hogyan értelmezi a függvényt?
 
-Egy függvény olyan hozzárendelés lét halmaz között, amely az egyik halmaz minden eleméhez pontosan egy elemet rendel a másik halmazból. 
+Egy függvény olyan hozzárendelés két halmaz között, amely az egyik halmaz eleméhez pontosan egy elemet rendel a másik halmazból. 
 
 ### 2. Mit jelent az $f \in A \to B$ szimbólum?
 
