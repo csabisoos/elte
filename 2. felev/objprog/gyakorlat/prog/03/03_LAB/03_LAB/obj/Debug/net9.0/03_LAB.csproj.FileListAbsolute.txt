@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/bin/Debug/net9.0/03_LAB
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/bin/Debug/net9.0/03_LAB.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/bin/Debug/net9.0/03_LAB.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/bin/Debug/net9.0/03_LAB.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/bin/Debug/net9.0/03_LAB.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/refint/03_LAB.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/03_LAB.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/03/03_LAB/03_LAB/obj/Debug/net9.0/ref/03_LAB.dll
