@@ -9,7 +9,11 @@ Ekkor az $A$ számot a sorozat **határértékének** nevezzük, és az alábbi 
 - $\lim\limits_{n \to +\infty} a_n := A$,
 - $a_n \to A \ \ (n \to +\infty)$.
 
-Megállapodunk abban, hogy $(*)$-ot így rövidítjuk:
+**Megjegyzések**
+
+1. Az $\epsilon > 0$ számot **hibakorlátnak**, $n_0$-at pedig **küszöbindexnek** nevezzük. Világos, hogy $n_0$ függ az $\epsilon$-tól, ezért szokás ezt az $\epsilon$-hoz tartozó küszöbindexnek is nevezni és $n_0(\epsilon)$-nal jelölni. Egy adott $\epsilon$ hibakorláthoz tartozó küszöbindex nem egyértlmű, ui. bármely $n_0$-nál nagyobb természetes szám is egy "jó" küszöbindex.
+
+2. Megállapodunk abban, hogy $(*)$-ot így rövidítjuk:
 
 $$
 \exists A \in \mathbb{R}, \ \ \forall \epsilon > 0 \text{-hoz} \ \ \exists n_0 \in \mathbb{N}, \ \ \forall n > n_0 : | a_n - A | < \epsilon .
@@ -49,7 +53,8 @@ Ezt az alábbi szimbólumok valamelyikével jelöljük:
 
 Azt mondjuk, hogy az $(a_n)$ sorozat **határértéke $- \infty$** (vagy a sorozat **$- \infty$-hez tart**), ha  
 
-$$\forall P < 0\text{-hoz} \ \ \exists n_0 \in \mathbb{N}, \forall n > n_0 : a_n > P.$$
+$$\forall P < 0\text{-hoz} \ \ \exists n_0 \in \mathbb{N}, \forall n > n_0 : a_n < P.
+$$
 
 Ezt az alábbi szimbólumok valamelyikével jelöljük:
 
@@ -64,6 +69,12 @@ Azt mondjuk, hogy az $(a_n)$ sorozatnak **van határértéke**, ha
 $$
 \exists A \in \overline{\mathbb{R}}, \ \ \forall \epsilon > 0 \text{-hoz} \ \ \exists n_0 \in \mathbb{N}, \ \ \forall n > n_0 : a_n \in K_\epsilon(A).
 $$
+
+**(A tágabb értelemben vett határérték egyértelműsége).** Ha az $(a_n)$ sorozatnk van határértéke, akkor a fenti definícióban szereplő $A \in \overline{\mathbb{R}}$ elem egyértelműen létezik, ezt a sorozat **határértékének** nevezzük, és így jelöljük:
+
+- $\lim (a_n) := A \in \overline{\mathbb{R}}$,
+- $\lim\limits_{n \to + \infty} a_n := A \in \overline{\mathbb{R}}$,
+- $a_n \to A \in \overline{\mathbb{R}}$, ha $n \to + \infty$
 
 ## 8. Hogyan deniálja egy sorozat részsorozatát?
 
