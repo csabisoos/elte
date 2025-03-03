@@ -24,11 +24,68 @@
     </nav>
 
     </header>
+
+    <main id="tartalom">
+        <article>
+            <form action="mailto:valaki@valahol.hu" method="post" enctype="text/plain" id="u1">
+                <fieldset>
+                    <legend>A film adatai</legend>
+                    <p>
+                        <b>Cím (magyarul)*</b> <br>
+                        <input type="text" id="u11" maxlength="100" size="50" required>
+                    </p>
+                    <p>
+                        <b>Cím (angolul)*</b> <br>
+                        <input type="text" id="u12" maxlength="100" size="50" required>
+                    </p>
+                    <p>
+                        <b>IMDb webcím:</b> <br>
+                        <input type="url" id="u13" maxlength="255" size="50" value="http://imdb.com/">
+                    </p>
+                    <p>
+                        <b>A film cselekménye röviden</b> <br>
+                        <textarea id="u14" cols="50" rows="5" maxlength="300" placeholder="...ne spoilerezz..."></textarea>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Értékelés</legend>
+                    <p>A te értékelésed 5-ös skálán: <br>
+                        <input type="radio" name="r1" value="r11" id="r11"><label for="r11">1</label>
+                        <input type="radio" name="r1" value="r12" id="r12"><label for="r12">2</label>
+                        <input type="radio" name="r1" value="r13" id="r13"><label for="r13">3</label>
+                        <input type="radio" name="r1" value="r14" id="r14"><label for="r14">4</label>
+                        <input type="radio" name="r1" value="r15" id="r15" checked> <label for="r15">5</label>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Az adataid</legend>
+                    <p>
+                        <b>Neved*</b> <br>
+                        <input type="text" id="u19" maxlength="70" size="50" required>
+                    </p>
+                    <p>
+                        <b>E-mail cím*</b> <br>
+                        <input type="email" id="u20" maxlength="70" size="50" required pattern="">
+                    </p>
+                    <p>
+                        <input type="checkbox" name="fi" value="y" checked> Feliratkozom
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Adatok elküldése</legend>
+                    <input type="submit" id="elk" value="Elküld">
+                    <input type="reset" id="ms" value="Mégsem" title="Törlöm az adatokat">
+                </fieldset>
+            </form>
+        </article>
+    </main>
     
     <footer>
         <address>
-        <p>Készítette: Gipsz Jakab  </p>
-        <p>([gipszjakab@mailinator.com](mailto:gipszjakab@mailinator.com))  </p>
+        <p>Készítette: Gipsz Jakab</p>
+        <p>
+            <a href="mailto:gipszjakab@mailinator.com">gipszjakab@mailinator.com</a>
+        </p>
         <p>1117 Budapest, Nevenincs u. 17</p>
     </address>
     </footer>
