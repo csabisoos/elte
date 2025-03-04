@@ -49,6 +49,7 @@ $$
 Ekkor
 
 ha $b_n \neq 0 (n \in \mathbb{N})$ és $\lim(b_n) \neq 0$, akkor
+
 $$
 \Big(\frac{a_n}{b_n}\Big) \quad \text{is konvergens, és} \quad \lim \Big(\frac{a_n}{b_n}\Big) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}.
 $$
