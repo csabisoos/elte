@@ -117,4 +117,4 @@ $\lim\limits_{n \to + \infty} q^n$:
 - $= 0, \quad \text{ha} \ \ |q| < 1$,
 - $= 1, \quad \text{ha} \ \ q = 1$,
 - $= + \infty, \quad \text{ha} \ \ q > 1$,
-- $\text{nem létezik,} \quad \text{ha} q \leq -1$.
+- $\text{nem létezik,} \quad \text{ha} \ \ q \leq -1$.
