@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/bin/Debug/net9.0/FourthLabor
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/bin/Debug/net9.0/FourthLabor.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/bin/Debug/net9.0/FourthLabor.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/bin/Debug/net9.0/FourthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/bin/Debug/net9.0/FourthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/refint/FourthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/FourthLabor.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/04/FourthLabor/FourthLabor/obj/Debug/net9.0/ref/FourthLabor.dll
