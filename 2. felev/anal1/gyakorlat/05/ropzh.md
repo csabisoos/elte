@@ -14,6 +14,21 @@ Ekkor
 
 ## 3. Mondjon példát olyan $(a_n), (b_n) : \mathbb{N} \to \mathbb{R}$ sorozatokra, amelyekre $\lim (a_n) = 0$, $\lim(b_n) = 0$ és a $\lim (a_n/b_n)$ határérték nem létezik.
 
+Példaként vegyük a következő sorozatokat:
+
+- Legyen $a_n = \frac{(-1)^n}{n}$ és $b_n = \frac{1}{n}$.
+
+Ekkor:
+
+- $\lim\limits_{n \to \infty} a_n = 0$, mert $a_n$ nullsorozat, hiszen $|a_n| = \frac{1}{n}$ és $\lim\limits_{n \to \infty} \frac{1}{n} = 0$.
+- $\lim\limits_{n \to \infty} b_n = 0$, mert $b_n = \frac{1}{n}$ és $\lim\limits_{n \to \infty} \frac{1}{n} = 0$.
+
+**A $\frac{a_n}{b_n}$ sorozat azonban:**
+
+- $\frac{a_n}{b_n} = \frac{(-1)^n}{n} \div \frac{1}{n} = (-1)^n$.
+
+Ez a sorozat divergens, mert váltakozva $1$ és $-1$ között ingadozik, így nincs határértéke. Tehát, $\lim\limits_{n \to \infty} \frac{a_n}{b_n}$ nem létezik.
+
 ## 4. Milyen állítást ismer konvergens sorozatok összegéről?
 
 **(Műveletek konvergens sorozatokkal).** Tegyük fel, hogy az $(a_n)$ és a $(b_n)$ sorozat konvergens. Legyen
