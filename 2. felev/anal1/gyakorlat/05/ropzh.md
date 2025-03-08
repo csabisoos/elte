@@ -66,7 +66,7 @@ Ekkor
 ha $b_n \neq 0 (n \in \mathbb{N})$ és $\lim(b_n) \neq 0$, akkor
 
 $$
-\Big(\frac{a_n}{b_n}\Big) \quad \text{is konvergens, és} \quad \lim \Big(\frac{a_n}{b_n}\Big) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}.
+\left(\frac{a_n}{b_n}\right) \quad \text{is konvergens, és} \quad \lim \left(\frac{a_n}{b_n}\right) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}.
 $$
 
 ## 7. Milyen állítást tud mondani (tágabb értelemben) határértékkel bíró sorozatok összegéről?
@@ -115,10 +115,10 @@ $$
 
 Ekkor
 
-ha $b_n \neq 0 (n \in \mathbb{N})$, akkor az $\Big(\frac{a_n}{b_n}\Big)$ hányados-sorozatnak is van határértéke, és 
+ha $b_n \neq 0 (n \in \mathbb{N})$, akkor az $\left(\frac{a_n}{b_n}\right)$ hányados-sorozatnak is van határértéke, és 
 
 $$
-\lim \Big(\frac{a_n}{b_n}\Big) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}
+\lim \left(\frac{a_n}{b_n}\right) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}
 $$
 
 feltéve, hogy az $\frac{A}{B} \in \overline{\mathbb{R}}$ hányados értelmezve van
