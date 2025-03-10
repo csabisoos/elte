@@ -63,7 +63,7 @@ $$
 
 Ekkor
 
-- ha $b_n \neq 0 (n \in \mathbb{N})$ és $\lim(b_n) \neq 0$, akkor
+- ha $b_n \neq 0 \quad (n \in \mathbb{N})$ és $\lim(b_n) \neq 0$, akkor
 
 $$
 \left(\frac{a_n}{b_n}\right) \quad \text{is konvergens, és} \quad \lim \left(\frac{a_n}{b_n}\right) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}.
