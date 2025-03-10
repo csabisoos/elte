@@ -63,7 +63,7 @@ $$
 
 Ekkor
 
-ha $b_n \neq 0 (n \in \mathbb{N})$ és $\lim(b_n) \neq 0$, akkor
+- ha $b_n \neq 0 (n \in \mathbb{N})$ és $\lim(b_n) \neq 0$, akkor
 
 $$
 \left(\frac{a_n}{b_n}\right) \quad \text{is konvergens, és} \quad \lim \left(\frac{a_n}{b_n}\right) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}.
@@ -79,7 +79,7 @@ $$
 
 Ekkor
 
-az $(a_n + b_n)$ összeg-sorozatnak is van határértéke, és 
+- az $(a_n + b_n)$ összeg-sorozatnak is van határértéke, és 
 
 $$
 \lim (a_n + b_n) = \lim (a_n) + \lim (b_n) = A + B,
@@ -97,7 +97,7 @@ $$
 
 Ekkor
 
-az $(a_n \cdot b_n)$ szorzat.sorozatnak is van határértéke, és
+- az $(a_n \cdot b_n)$ szorzat.sorozatnak is van határértéke, és
 
 $$
 \lim (a_n \cdot b_n) = \lim (a_n) \cdot \lim (b_n) = A \cdot B
@@ -115,7 +115,7 @@ $$
 
 Ekkor
 
-ha $b_n \neq 0 (n \in \mathbb{N})$, akkor az $\left(\frac{a_n}{b_n}\right)$ hányados-sorozatnak is van határértéke, és 
+- ha $b_n \neq 0 (n \in \mathbb{N})$, akkor az $\left(\frac{a_n}{b_n}\right)$ hányados-sorozatnak is van határértéke, és 
 
 $$
 \lim \left(\frac{a_n}{b_n}\right) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}
