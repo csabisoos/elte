@@ -97,7 +97,7 @@ $$
 
 Ekkor
 
-- az $(a_n \cdot b_n)$ szorzat.sorozatnak is van határértéke, és
+- az $(a_n \cdot b_n)$ szorzat-sorozatnak is van határértéke, és
 
 $$
 \lim (a_n \cdot b_n) = \lim (a_n) \cdot \lim (b_n) = A \cdot B
