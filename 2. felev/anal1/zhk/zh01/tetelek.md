@@ -53,6 +53,23 @@ Ez pedig pontosan azt jelenti, hogy $\xi$ a $H$ halmaz legkisebb felső korlátj
 
 ## 3. Az arkhimédészi tulajdonság.
 
+**Az arkhimédészi tulajdonság**
+
+Ha $n \in \mathbb{N}$, akkor egy szám $n$-szerese úgy tekinthető, mint a szám önmagával vett $n$-szeres összege. Ha $a >0$, akkor a számegyenesen ábrázolva látható, hogy az 
+
+$$
+n \cdot a = \underbrace{a + a + \dots + a}_{\text{n-szer}}
+$$
+
+alakú számok nagyon értékek vehetnek fel, amelyek bármely $b$ valós számnál is nagyobbak.
+
+```mermaid
+graph LR;
+    0((0)) --> a((a)) --> n[...] --> b((b));
+    subgraph "n-szer felmérve"
+        a --> n
+    end
+```
 
 
 ## 4. A Cantor-tulajdonság.
