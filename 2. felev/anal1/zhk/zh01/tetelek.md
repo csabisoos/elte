@@ -11,7 +11,7 @@ Ekkor az $A(n)$ állítás minden $n$ természetes számra igaz.
 **Bizonyítás.** Legyen
 
 $$
-S := \left\{ n \in \mathbb{N} \mid A(n) \ \ \text{igaz}\right\}.
+S := \left\lbrace n \in \mathbb{N} \mid A(n) \ \ \text{igaz}\right\rbrace.
 $$
 
 Ekkor $\underline{S \subset \mathbb{N}}$ és $S$ induktív halmaz, hiszen $0 \in S$, és ha $n \in S$, azaz $A(n)$ igaz, akkor $A(n+1)$ is igaz, ezért $n + 1 \in S$ teljesül következésképpen $S$ induktív halmaz. Mivel $\mathbb{N}$ a legszűkebb induktív halmaz, ezért az $\underline{\mathbb{N} \subset S}$ tartalmazás is fennáll, tehát $S=\mathbb{N}$. Ez pedig azt jelenti, hogy az állítás minden $n$ terészetes számra igaz.
@@ -27,7 +27,7 @@ ii) $H$ felülről korlátos.
 Ekkor
 
 $$
-\exists \min \left\{K \in \mathbb{R}\mid K \ \ \text{felső korlátja} \ \ H \text{-nak}\right\}
+\exists \min \left\lbrace K \in \mathbb{R}\mid K \ \ \text{felső korlátja} \ \ H \text{-nak}\right\rbrace
 $$
 
 Legkisebb felső korlát.
@@ -35,7 +35,7 @@ Legkisebb felső korlát.
 **Bizonyítás.** Legyen
 
 $$
-A:=H \quad \text{és} \quad B:=\left\{K \in \mathbb{R}\mid K \ \ \text{felső korlátja} \ \ H \text{-nak}\right\}
+A:=H \quad \text{és} \quad B:=\left\lbrace K \in \mathbb{R}\mid K \ \ \text{felső korlátja} \ \ H \text{-nak}\right\rbrace
 $$
 
 A feltételek miatt $A \neq \emptyset$ és $B \neq \emptyset$, továbbá
