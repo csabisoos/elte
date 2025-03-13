@@ -458,7 +458,55 @@ $$
 
 ## 10. Műveletek nullsorozatokkal.
 
+**04/02 Tétel (Műveletek nullsorozatokkal).** Tegyük fel, hogy $\lim (a_n) = 0$ és $\lim (b_n) = 0$.
 
+Ekkor
+
+1. $(a_n + b_n)$ is nullsorozat,
+2. ha $(c_n)$ korlátos sorozat, akkor $(c_n \cdot a_n)$ is nullsorozat,
+3. $(a_n \cdot b_n)$ is nullsorozat.
+
+**Bizonyítás.**
+
+1. Mivel $\lim (a_n) = \lim (b_n) = 0$, ezért $\forall \epsilon > 0$-hoz
+
+$$
+\exists n_1 \in \mathbb{N}, \forall n > n_1 : | a_n | < \frac{\epsilon}{2},
+$$
+
+$$
+\exists n_2 \in \mathbb{N}, \forall n > n_2 : | b_n | < \frac{\epsilon}{2}.
+$$
+
+Legyen $n_0 := \max \left\lbrace n_1, n_2 \right\rbrace$. Ekkor $\forall n > n_0$ indexre
+
+$$
+|a_n + b_n| \leq |a_n| + |b_n| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon,
+$$
+
+és ez azt jelenti, hogy $\lim (a_n + b_n) = 0$, azaz $(a_n + b_n)$ valóban nullsorozat.
+
+2. A $(c_n)$ sorozat korlátos, ezért
+
+$$
+\exists K > 0 : |c_n| < K \quad (n \in \mathbb{N}).
+$$
+
+Mivel $(a_n)$ nullsorozat, ezért
+
+$$
+\forall \epsilon > 0 \text{-hoz} \ \ \exists n_0 \in \mathbb{N}, \forall n > n_0 : |a_n| < \frac{\epsilon}{K},
+$$
+
+következésképpen minden $n > n_0$ indexre
+
+$$
+|c_n \cdot a_n| = |c_n| \cdot |a_n| < K \cdot \frac{\epsilon}{K} = \epsilon ,
+$$
+
+azaz $\lim (c_n \cdot a_n) = 0$.
+
+3. Mivel minden konvergens sorozat korlátos, ezért a $\lim (b_n) = 0$ feltételből következik, hogy $(b_n)$ korlátos sorozat. Az állítás tehát a 2. állítás közvetlen következménye.
 
 ## 11. Konvergens sorozatok szorzatára vonatkozó tétel.
 
@@ -466,9 +514,105 @@ $$
 
 ## 12. Konvergens sorozatok hányadosára vonatkozó tétel.
 
+A következő tétel már általános kovergens sorozatokra vonatkozik. Azt állítja, hogy a konvergens sorozatok a müveletek során a legtöbb esetben jól viselkednek abban az értelemben, hgy az alapműveletek és a határértékképzés sorrendje felcserélhető.
 
+**04/03 Tétel (Műveletek konvergens sorozatokkal).** Tegyük fel, hogy az $(a_n)$ és a $(b_n)$ sorozat konvergens. Legyen
 
-## 13. Monoton növekv® sorozatok határértékére vonatkozó tétel (véges és végtelen eset).
+$$
+\lim (a_n) = A \in \mathbb{R} \quad \text{és} \quad \lim (b_n) B \in \mathbb{R}. 
+$$
+
+Ekkor
+
+1. $(a_n + b_n)$ is konvergens és $\lim (a_n + b_n) = \lim (a_n) + \lim (b_n) = A + B$,
+2. $(a_n \cdot b_n)$ is konvergens és $\lim (a_n \cdot b_n) = \lim (a_n) \cdot \lim (b_n) = A \cdot B$,
+3. ha $b_n \neq 0 \ \ (n \in \mathbb{N})$ és $\lim (b_n) \neq 0$, akkor
+
+$$
+\left(\frac{a_n}{b_n}\right) \quad \text{is konvergens, és} \ \ \lim \left(\frac{a_n}{b_n}\right) = \frac{\lim (a_n)}{\lim (b_n)} = \frac{A}{B}.
+$$
+
+**Bizonyítás.** Gyakran fogjuk alkalmazni a nullsorozatok 2. alaptulajdonsága, ami azt mondja ki, hogy
+
+$(*) \quad (x_n)$ konvergens, és $\alpha \in \mathbb{R}$ a  határértéke $\quad \iff \quad (x_n - \alpha)$ nullsorozat.
+
+1. $(*)$ miatt elég megmutatni, hogy $\big((a_n + b_n) - (A + B)\big)$ nullsorozat. Ez nyilván igaz, mert
+
+$$
+\big((a_n + b_n) - (A + B)\big) = (a_n - A) + (b_n - B),
+$$
+
+és két nullsorozat összege is nullsorozat.
+
+2. $(*)$ miatt elég megmutatni, hogy (a_n b_n - AB) nullsorozat. Ez a következő átalakítással igazolható:
+
+$$
+a_n b_n - AB = a_n b_n - A b_n + A b_n -AB = \underbrace{\underbrace{\underbrace{b_n}_{\text{korlátos}} \cdot \underbrace{(a_n - A)}_{\text{nullsorozat}}}_{\text{nullsorozat}} +\underbrace{\underbrace{A}_{\text{korlátos}} \cdot \underbrace{(b_n - B)}_{\text{nullsorozat}}}_{\text{nullsorozat}}}_{\text{nullsorozat}}.
+$$
+
+A fenti gondolatmenetben a $(b_n)$ sorozat azért korlátos, mert konvergens.
+
+3. A bizonyításhoz először egy önmagában is érdekes állítást igazolunk.
+
+**$\underline{\text{Segédtétel.}}$** Ha $b_n \neq 0 \ \ (n\in \mathbb{N})$ és $(b_n)$ konvergens, továbbá $B := \lim (b_n) \neq 0$, akkor az
+
+$$
+\left(\frac{1}{b_n} \right)
+$$
+
+reciprok-sorozat korlátos.
+
+Ennek bizonyításához legyen $\epsilon := |B|/2$. Ekkor egy alkalmas $n_0 \in \mathbb{N}$ küszöbindex mellett
+
+$$
+|b_n - B| < \epsilon = \frac{|B|}{2} \quad \forall n > n_0 \ \ \text{indexre}.
+$$
+
+Így minden $n > n_0$ esetén
+
+$$
+|b_n| \geq |B| - |b_n -B| > |B| - \frac{|B|}{2} = \frac{|B|}{2},
+$$
+
+hiszen $|B| = |B - b_n + b_n| \leq |B - b_n| + |b_n|$. Tehát
+
+$$
+\left| \frac{1}{b_n} \right| < \frac{2}{|B|}, \ \ \text{ha} \ \ n>n_0,
+$$
+
+következésképpen az 
+
+$$
+\left| \frac{1}{b_n} \right| \leq \max \left\lbrace \frac{1}{|b_0|}, \frac{1}{|b_1|}, \dots , \frac{1}{|b_{n_0}|}, \frac{2}{|B|} \right\rbrace
+$$
+
+egyenlőtlenség már minden $n \in \mathbb{N}$ számra teljesül, ezért az $(1/b_n)$ sorozat valóban korlátos. A segédtételt tehát bebizonyíítottuk.
+
+Most azt látjuk be, hogy az 
+
+$$
+\left(\frac{1}{b_n} \right) \ \ \text{sorozat konvergens} \quad \text{és} \quad \lim \left(\frac{1}{b_n}\right) = \frac{1}{B}.
+$$
+
+Ez $(*)$-ből következik az alábbi átalakítással:
+
+$$
+\frac{1}{b_n} - \frac{1}{B} = \frac{B - b_n}{B \cdot b_n} = \underbrace{\underbrace{\frac{1}{B \cdot b_n}}_{\text{korlátos}} \cdot \underbrace{(B - b_n)}_{\text{nullsorozat}}}_{\text{nullsorozat}}.
+$$
+
+A 3. állítás bizonyításának a befejezéséhez már csal azt kell figyelembe venni, hogy
+
+$$
+\frac{a_n}{b_n} = a_n \cdot \frac{1}{b_n} \quad (n \in \mathbb{N}),
+$$
+
+más szóval az $(a_n/b_n)$ "hányados-sorozat" két konvergens sorozat szorzata. Így a 2. állítás és a reciprok sorozatról az előbb mondottak miatt
+
+$$
+\left(\frac{a_n}{b_n} \right) \ \ \text{is konvergens} \ \ \text{és} \ \ \lim \left(\frac{a_n}{b_n} \right) = A \cdot \frac{1}{B} = \frac{A}{B} = \frac{\lim (a_n)}{\lim (b_n)}.
+$$
+
+## 13. Monoton növekvő sorozatok határértékére vonatkozó tétel (véges és végtelen eset).
 
 
 
