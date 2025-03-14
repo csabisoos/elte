@@ -50,7 +50,17 @@ $$
 
 ## 4. Igaz-e az, hogy ha az $(a_n)$ és a $(b_n)$ sorozatoknak van határértéke és $a_n > b_n$ minden $n$-re, akkor $\lim(a_n) > \lim (b_n)$?
 
+Nem igaz. Legyen
 
+$$
+a_n = \frac{1}{n}, \quad b_n = -\frac{1}{n} .
+$$
+
+Ekkor minden $n$-re igaz, hogy $a_n > b_n$, viszont mindkét sorozat határértéke $0$:
+
+$$
+\lim_{n \to \infty} a_n = \lim_{n \to \infty} b_n = 0 .
+$$
 
 ## 5. Fogalmazza meg egy valós szám m-edik gyökének a létezésére vonatkozó tételt, és adjon olyan eljárást, amivel ezek a számok nagy pontossággal előállíthatók.
 
