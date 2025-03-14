@@ -97,7 +97,7 @@ $$
 \exists n_0 \in \mathbb{N} : n_0 \cdot a > \xi - a \quad \iff \quad (n_0 + 1) \cdot a > \xi.
 $$
 
-Azonban $(n_0 + 1) \cdot a \in H$, tehát $(n_0 + 1) \cdot a \leq \xi$, hiszen \xi felső korlátja a $H$ halmaznak.
+Azonban $(n_0 + 1) \cdot a \in H$, tehát $(n_0 + 1) \cdot a \leq \xi$, hiszen $\xi$ felső korlátja a $H$ halmaznak.
 
 Így ellentmondáshoz jutottunk.
 
@@ -519,7 +519,7 @@ A következő tétel már általános kovergens sorozatokra vonatkozik. Azt áll
 **04/03 Tétel (Műveletek konvergens sorozatokkal).** Tegyük fel, hogy az $(a_n)$ és a $(b_n)$ sorozat konvergens. Legyen
 
 $$
-\lim (a_n) = A \in \mathbb{R} \quad \text{és} \quad \lim (b_n) B \in \mathbb{R}. 
+\lim (a_n) = A \in \mathbb{R} \quad \text{és} \quad \lim (b_n) = B \in \mathbb{R}. 
 $$
 
 Ekkor

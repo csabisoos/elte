@@ -59,7 +59,7 @@ $$
 - $a_0>0$ tetszőleges valós szám,
 - $a_{n+1} := \frac{1}{m} \left(\frac{A}{a_n^{m-1}} + (m-1) a_n\right) \quad \quad n \in \mathbb{N}$
 
-rekurzióval értelmezett $(a_n)$ sorozat konvergens, és az $ \alpha := \lim(a_n)$ határértékére igaz, hogy $\alpha > 0$ és
+rekurzióval értelmezett $(a_n)$ sorozat konvergens, és az $\alpha := \lim(a_n)$ határértékére igaz, hogy $\alpha > 0$ és
 
 $$
 \alpha^m=A.
