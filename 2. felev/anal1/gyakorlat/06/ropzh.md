@@ -40,7 +40,7 @@ $$
 - Ha $(a_n) \searrow$ és alulról korlátos, akkor $(a_n)$ konvergens és
 
 $$
-\lim(a_n) = \inf\left\rbrace a_n \mid n \in \mathbb{N} \right\rbrace .
+\lim(a_n) = \inf\left\lbrace a_n \mid n \in \mathbb{N} \right\rbrace .
 $$
 
 2. 
