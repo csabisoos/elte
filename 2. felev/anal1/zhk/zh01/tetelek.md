@@ -550,13 +550,13 @@ $$
 a_n b_n - AB = a_n b_n - A b_n + A b_n -AB = \underbrace{\underbrace{\underbrace{b_n}_{\text{korlátos}} \cdot \underbrace{(a_n - A)}_{\text{nullsorozat}}}_{\text{nullsorozat}} +\underbrace{\underbrace{A}_{\text{korlátos}} \cdot \underbrace{(b_n - B)}_{\text{nullsorozat}}}_{\text{nullsorozat}}}_{\text{nullsorozat}}.
 $$
 
-{% raw %}
-$$ 
-a_n b_n - AB = a_n b_n - A b_n + A b_n -AB = 
-\underbrace{\underbrace{\underbrace{b_n}_{\text{korlátos}} \cdot \underbrace{(a_n - A)}_{\text{nullsorozat}}}_{\text{nullsorozat}} 
-+\underbrace{\underbrace{A}_{\text{korlátos}} \cdot \underbrace{(b_n - B)}_{\text{nullsorozat}}}_{\text{nullsorozat}}}_{\text{nullsorozat}}.
 $$
-{% endraw %}
+\underbrace{b_n}_{nullsorozat}
+$$
+
+$$
+a_n b_n - AB = a_n b_n - A b_n + A b_n -AB = \underbrace{\underbrace{\underbrace{b_n}_{korlátos} \cdot \underbrace{(a_n - A)}_{nullsorozat}}_{nullsorozat} +\underbrace{\underbrace{A}_{korlátos} \cdot \underbrace{(b_n - B)}_{nullsorozat}}_{nullsorozat}}_{nullsorozat}.
+$$
 
 A fenti gondolatmenetben a $(b_n)$ sorozat azért korlátos, mert konvergens.
 
