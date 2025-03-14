@@ -172,7 +172,7 @@ $$
 
 **03/01 Tétel (A határérték egyértelműsége).** Ha az $(a_n) : \mathbb{N} \to \mathbb{R}$ sorozat konvergens, akkor a konvergencia definíciójában szereplő $A$ szám egyértelműen létezik.
 
-$(*) \quad \exists A \ \mathbb{R}$, hogy $\forall \epsilon > 0 $ számhoz $\exists n_0 \in \mathbb{N}$, hogy $\forall n > n_0$ indexre $| a_n - A | < \epsilon$.
+$(*) \quad \exists A \in \mathbb{R}$, hogy $\forall \epsilon > 0$ számhoz $\exists n_0 \in \mathbb{N}$, hogy $\forall n > n_0$ indexre $| a_n - A | < \epsilon$.
 
 **Bizonyítás.** Tegyük fel, hogy az $(a_n)$ sorozatra $(*)$ az $A_1$ és az $A_2$ számokkal is teljesül.
 
