@@ -721,10 +721,219 @@ $$
 
 amivel beláttuk, hogy a sorozat szigorúan monoton növekvő.
 
-- **
+- **A korlátosság** bizonyításához most az $(n + 2)$ darab
+
+$$
+\frac{1}{2}, \ \ \frac{1}{2}, \ \ 1 + \frac{1}{n}, \ \ 1 + \frac{1}{n}, \ \ \dots , \ \ 1 + \frac{1}{n}
+$$
+
+számra alkalmazzuk ismét a számtani és mértani közép közötti egyenlőtlenséget:
+
+$$
+\sqrt[n+2]{\frac{1}{2} \cdot \frac{1}{2} \cdot \left(1 + \frac{1}{n}\right)^n} < \frac{2 \cdot \frac{1}{2} + n \cdot \left(1 + \frac{1}{n}\right)}{n + 2} = \frac{n + 2}{n + 2} = 1 .
+$$
+
+Ebből következik, hogy
+
+$$
+a_n = \left(1 + \frac{1}{n}\right)^n < 4 \quad (n \in \mathbb{N}^+) ,
+$$
+
+ezért a sorozat felülről korlátos.
+
+A monoton sorozatok határértékére vonatkozó tételből következik, hogy a sorozat konvergens.
 
 ## 15. Newton-féle iterációs eljárás $m$-edik gyökök keresésére.
 
+### Rekurzív sorozatok határértéke
 
+A monoton sorozatok konvergenciájára vonatkozó tételt egyszerű feltételei miatt már több esetbenisalkalmaztuk. Atételtszámos, rekurzióval megadott sorozatok konvergencia-vizsgálatánál is jól használhatjuk. A módszer alkalmazása során bebizonyítjuk, hogy a sorozat konvergens; a határértékét pedig a rekurzív képletből nyerhető egyenlet gyökeiből választjuk ki. A módszer hatékonyságát mutatja, hogy a sorozatok nagyságrendjéről szóló részben a határértékek kiszámításához két esetben is felírtuk a sorozatot rekurzív alakban.
+
+Most ennek a módszernek a felhasználásával igazoljuk pozitív valós számok $m$-edik gyökének a létezését, és egy egyszerű konstruktív eljárást adunk ezek közelítő kiszámítására.
+
+Emlékeztetünk arra, hogy ha $A > 0$ tetszőleges valós szám és $m \geq 2$ természetes szám, akkor az $\sqrt[m]{A}$ szimbólummal jelöljük (és az **$A$ szám $m$-edik gyökének** nevezzük) azt a pozitív valós számot, amelynek az $m$-edik hatványa $A$, azaz $\alpha^m = A$. A következő tételből következik, hogy olya $\alpha$ szám mindig létezik.
+
+**05/04 Tétel (Newton-féle iterációs eljárás $m$-edik gyökök keresésére).** Legyen $A > 0$ valós szám és $m \geq 2$ természetes szám. Ekkor az
+
+$$
+\begin{cases}
+    a_0 > 0 \quad \text{tetszőleges valós szám,} \\
+    a_{n+1} := \frac{1}{m} \left( \frac{A}{a_n^{m-1}} + (m-1)a_n \right) \quad (n \in \mathbb{N})
+\end{cases}
+$$
+
+rekurzióval értelmezett $(a_n)$ sorozat konvergens, és az $\alpha := \lim (a_n)$ határértékre igaz, hogy $\alpha > 0$ és
+
+$$
+\alpha^m = A .
+$$
+
+**Bizonyítás.** Az állítást több lépésben igazoljuk.
+
+**1. lépés.** Teljes indukcióval könnyen igazolható, hogy az $(a_n)$ sorozat "jól definiált" és $a_n > 0 \ \ (n \in \mathbb{N}) .$
+
+**2. lépés.** $\underline{ \text{Igazoljuk, hogy az} \ \ (a_n) \ \ \text{sorozat konvergens.} }$ A monoton sorozatok konvergenciájára vonatkozó tételt fogjuk alkalmazni.
+
+A sorozat alulról korlátos és $0$ egy triviális alsó korlát (az 1. lépés alapján).
+
+Most megmutatjuk azt, hogy az $(a_n)$ sorozat a második tagtól kezdve monoton csökkenő, azaz
+
+$$
+a_{n+1} \leq a_n \quad \iff \quad \frac{a_{n+1}}{a_n} \leq 1, \quad \text{ha} \ \ n = 1, 2, \dots .
+$$
+
+A rekurzív képlet szerint minden $n \in \mathbb{N}^+$ esetén
+
+$$
+\frac{a_{n+1}}{a_n} = \frac{1}{m} \left(\frac{A}{a_{n}^m} + m - 1 \right) \leq 1 \quad \iff \quad a_{n}^m \geq A .
+$$
+
+A jobb oldali egyenlőtlenség igazolására a számtani és a mértani közép közötti egyenlőtlenslg következő alakját fogjuk alkalmazni: ha $x_1, x_2, \dots , x_m$ tetszés szerinti nemnegatív valós számok, akkor
+
+$(\triangle) \quad \quad x_1 \cdot x_2 \cdot _\dots \cdot x_m \leq \left(\frac{x_1+x_2+ \dots + x_m}{m} \right)^m$,
+
+és az egyenlőség akkor és csak akkor áll fenn, ha $x_1 = x_2 = \dots = x_m .$ Fontos hangsúlyozni, hogy lényegében ezt az alakot igazoltuk gyakorlaton, és csak az $m$-edik gyök egyértelmű létezése után írhatjuk fel az egyenlőséget a megszokott alakban.
+
+Vegyük észre, hogy a rekurzív képlet jobb oldalán álló összeg az $m$ darab
+
+$$
+x_1 := \frac{A}{a_{n}^{m-1}}, \ \ x_2 := a_n, \ \ x_3 := a_n, \ \ \dots \ \ , \ \ x_m := a_n \quad (n \in \mathbb{N})
+$$
+
+pozitív szám számtani közepe. Ezért $(\triangle)$ miatt
+
+$$
+a_{n+1}^m = \left( \frac{1}{m} \left( \frac{A}{a_{n}^{m-1}} + \underbrace{a_n + \dots + a_n}_{m-1 \ \ \text{darab}} \right) \right)^m = \left(\frac{x_1 + x_2 + \dots + x_m}{m} \right)^m \geq 
+$$
+
+$$
+\geq x_1 \cdot x_2 \cdot \dots \cdot x_m = \frac{A}{a_{n}^{m-1}} \cdot \underbrace{a_n \cdot a_n \cdot \dots \cdot a_n}_{m-1 \ \ \text{darab}} = A \quad (n \in \mathbb{N}).
+$$
+
+Sikerült igazolnunk tehát, hogy $a_{n}^{m} \geq A \ \ (n \in \mathbb{N}^+)$, ezzel azt, hogy az $(a_n)$ sorozat a második tagtól kezdve monoton csökkenő.
+
+Az $(a_n)$ sorozat tehát monoton csökkenő a második tagtól kezdve és alulról korlátos, ezért a monoton sorozatok határértékére vonatkozó tétel alapján $(a_n)$ komvergens.
+
+**3. lépés.** $\underline{\text{Kiszámítjuk a sorozat határértékét.}}$ Legyen
+
+$$
+\alpha := \lim (a_n).
+$$
+
+Az eddigiekből az következik, hogy $\alpha \geq 0$. Fontos észrevétel azonban az, hogy az $\alpha > 0$ egyenlőtlenség is igaz. Ez az állítás a konvergens sorozatok és a műveletek kapcsolatára vonatkozó tételből, valamint a határérték és a rendezés kapcsolatára vonatkozó tételből következik, hiszen
+
+$$
+a_{n}^{m} \geq A, \ \ a_n \to \alpha \quad \implies \quad a_{n}^{m} \to \alpha^m \geq A > 0 \quad \implies \quad \alpha > 0 .
+$$
+
+Az $(a_n)$ sorozatot megadó rekurzív összefüggésben az $n \to \infty$ határátmenetet véve az $\alpha$ határértékre egy egyenletet kapunk. Valóban, ha alkalmazzuk a konvergens sorozatok és a műveletek kapcsolatára vonatkozó tételeket (itt használjuk az $\alpha > 0$ egyenlőtlenséget), akkor az adódik, hogy
+
+$$
+\alpha \gets a_{n+1} = \frac{1}{m} \left(\frac{A}{a_{n}^{m-1}} + (m-1) \cdot \underbrace{a_n}_{\to \alpha} \right) \to \frac{1}{m} \left(\frac{A}{\alpha^{m-1}} + (m-1) \alpha \right) .
+$$
+
+A határérték egyértelműsége miatt
+
+$$
+\alpha = \frac{1}{m} \left(\frac{A}{\alpha^{m-1}} + (m-1) \alpha \right) .
+$$
+
+Innen már egyszerű átrendezéssel azt kapjuk, hogy
+
+$$
+m \alpha^m = A + (m-1) \alpha^m \quad \implies \quad \alpha^m = A .
+$$
 
 ## 16. A Cauchy-féle konvergenciakritérium sorozatokra.
+
+**05/01 Definíció.** Az $(a_n)$ valós sorozatot **Cauchy-sorozatnak** nevezzük, ha
+
+$$
+\forall \epsilon > 0 \text{-hoz} \ \ \exists n_0 \in \mathbb{N}, \forall m, n > n_0 : |a_n-a_m|<\epsilon .
+$$
+
+**Megjegyzés.** Pongyolán, de szemléletesen fogalmazva: "egy sorozat akkor Cauchy-sorozat, ha az elég nagy indexű tagjainak távolsága kisebb, mint bármely előre meghatározott kicsi szám".
+
+Látható tehát, hogy az ún. **Cauchy-tulajdonságban** kizárólag a sorozat tagjai játszanak szerepet.
+
+A kövekező tétel azt állítja, hogy a Cauchy-tulajdonság szükséges és elégséges feltétele a sorozat konvergenciájának.
+
+**05/06 Tétel (A Cauchy-féle konvergenciakritérium).** Legyen $(a_n)$ egy valós sorozat.
+
+Ekkor
+
+$$
+(a_n) \ \ \text{konvergens} \quad \iff \quad (a_n) \ \ \text{Cauchy-sorozat} .
+$$
+
+**Bizonyítás.**
+
+$\boxed{\Rightarrow}$ Tegyük fel, hogy $(a_n)$ konvergens, és $A := \lim (a_n)$ a határértéke. Legyen $\epsilon > 0$ tetszőleges valós szám. A konvergencia definíciója szerint
+
+$$
+\exists n_0 \in \mathbb{N}, \forall n > n_0 : |a_n - A| < \frac{\epsilon}{2} .
+$$
+
+Így $\forall m,n>n_0$ index esetén
+
+$$
+|a_n - a_m| = \left|(a_n - A) + (A - a_m) \right| \leq |a_n - A| + |a_m - A| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon ,
+$$
+
+és ez azt jelenti, hogy $(a_n)$ Cauchy-sorozat.
+
+$\boxed{\Leftarrow}$ Tegyük fel, hogy $(a_n)$ Cauchy-sorozat. Több lépésen keresztül látjuk be, hogy $(a_n)$ konvergens.
+
+**1. lépés.** $\underline{\text{Igazoljuk, hogy } (a_n) \text{ korlátos sorozat.}}$
+
+A Cauchy-sorozat definíciójában $\epsilon = 1$-hez van olyan $n_1 \in \mathbb{N}$ index, hogy
+
+$$
+\forall m,n > n_1 : |a_n - a_m| < 1 .
+$$
+
+Legyen $m = n_1 + 1$. Ekkor minden $n > n_1$ esetén
+
+$$
+|a_n| = \left|(a_n - a_{n_1+1}) + a_{n_1+1} \right| \leq |a_n - a_{n_1+1}| + |a_{n_1+1}| < 1 + |a_{n_1+1}| .
+$$
+
+Következésképpen az
+
+$$
+|a_n| \leq \max \left\lbrace |a_0|, |a_1|, \dots , |a_{n_1}|, 1+|a_{n_1+1}| \right\rbrace
+$$
+
+egyenlőtlenség már minden $n \in \mathbb{N}$ számra igaz, azaz a sorozat valóban korlátos.
+
+**2. lépés.** A Bolzano-Weierstrass-féle kiválasztási tételből következik, hogy $(a_n)$-nek létezik egy $(a_{v_n})$ konvergens részsorozata. Jelölje
+
+$$
+A:= \lim (a_{v_n}) \in \mathbb{R} .
+$$
+
+**3. lépés.** $\underline{\text{Belátjuk, hogy } \lim (a_n) = A \text{ is igaz.}}$
+
+Legyen $\epsilon > 0$ tetszőleges. Ekkor $A$ definíciójából következi, hogy 
+
+$$
+\exists n_2 \in \mathbb{N}, \forall > n_2 : |a_{v_n} - A| < \frac{\epsilon}{2} .
+$$
+
+Az $(a_n)$ Cauchy-sorozat ezért $\epsilon / 2$-höz
+
+$$
+\exists n_3 \in \mathbb{N}, \forall n,m > n_3 : |a_n - a_m| < \frac{\epsilon}{2} .
+$$
+
+Mivel $(v_n) : \mathbb{N} \to \mathbb{N}$ indexsorozat (vagyis $(v_n)$ szigorúan monoton növekvő), ezért $v_n \geq n \ \ (n \in \mathbb{N})$, amit teljes indukcióval lehet igazolni.
+
+Ha $n > n_0 := \max \left\lbrace n_2, n_3 \right\rbrace$, akkor $v_n > n_0$, ezért $n$ és $m:=v_n$ is nagyobb, mint $n_2$ és $n_3$, tehát alkalmazhatók a fenti egyenlőtlenségek. Ekkor
+
+$$
+|a_n -A| = \left|(a_n - a_{v_n}) + (a_{v_n} - A)\right| \leq |a_n - a_m| + |a_{v_n} - A| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon ,
+$$
+
+és ez azt jelenti, hogy az $(a_n)$ sorozat valóban konvergens, és $\lim (a_n) = A$.
+
+**Megjegyzés.** Fontos megjegyezni, hogy az iménti tétel konvergens (tehát véges határértékű) sorozatokról szól. Végtelen határértékekre az analóg állítás nem igaz: például az $(n)$ sorozatnak a határértéke $+ \infty$, de ez nem Cauchy-sorozat. A sok hasonlóság mellett ez az egyik leglényegesebb különbség a konvergens, ill. a $\pm \infty$-hez tartó sorozatok között.
