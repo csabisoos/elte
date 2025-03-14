@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/bin/Debug/net9.0/FifthLabor
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/bin/Debug/net9.0/FifthLabor.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/bin/Debug/net9.0/FifthLabor.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/bin/Debug/net9.0/FifthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/bin/Debug/net9.0/FifthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/refint/FifthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/FifthLabor.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/05/FifthLabor/FifthLabor/obj/Debug/net9.0/ref/FifthLabor.dll
