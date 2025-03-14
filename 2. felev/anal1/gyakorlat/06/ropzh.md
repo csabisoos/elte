@@ -34,13 +34,13 @@ Ekkor a $(b_n)$ sorozatnak is van határértéke és $\lim (b_n) = A$.
 - Ha $(a_n) \nearrow$ és felülről korlátos, akkor $(a_n)$ konvergens és
 
 $$
-\lim(a_n) = \sup\left\{a_n \mid n \in \mathbb{N}\right\}.
+\lim(a_n) = \sup\left\lbrace a_n \mid n \in \mathbb{N}\right\rbrace.
 $$
 
 - Ha $(a_n) \searrow$ és alulról korlátos, akkor $(a_n)$ konvergens és
 
 $$
-\lim(a_n) = \inf\left\{a_n \mid n \in \mathbb{N} \right\}.
+\lim(a_n) = \inf\left\rbrace a_n \mid n \in \mathbb{N} \right\rbrace .
 $$
 
 2. 

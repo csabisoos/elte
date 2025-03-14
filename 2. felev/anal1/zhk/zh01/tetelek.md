@@ -614,11 +614,114 @@ $$
 
 ## 13. Monoton növekvő sorozatok határértékére vonatkozó tétel (véges és végtelen eset).
 
+### Monoton sorozatok határértéke
 
+A sorozatok egy légyeges osztályát képezik a monoton sorozatok. Látni fogjuk azt, hogy **minden monoton sorozatnak van határértéke**. Ha még azt is feltesszük, hogy a sorozat korlátos, akkor a sorozat konvergens is. Nem korlátos sorozatok határértéke pedig vagy $+ \infty$ vagy $- \infty$. Mivel a monotonitást, illetve a korlátosságot egyszerűbb eldönteni, mint a konvergenciát vagy a határértéket, ezért a következő tétel sok esetben jól használható módszert ad a határérték-vizsgálatokhoz.
+
+**04/05 Tétel.** Minden $(a_n)$ monoton sorozatnak van határértéke.
+
+1. 
+
+a) Ha $(a_n) \nearrow$ és felülről korlátos, akkor $(a_n)$ konvergens és
+
+$$
+\lim (a_n) = \sup \left\lbrace a_n \mid n \in \mathbb{N} \right\rbrace .
+$$
+
+b) Ha $(a_n) \searrow$ és alulról korlátos, akkor $(a_n)$ konvergens és
+
+$$
+\lim (a_n) = \inf \left\lbrace a_n \mid n \in \mathbb{N} \right\rbrace .
+$$
+
+2. 
+
+a) Ha $(a_n) \nearrow$ és felülről nem korlátos, akkor $\lim (a_n) = + \infty$.
+
+b) Ha $(a_n) \searrow$ és alulról nem korlátos, akkor $\lim(a_n) = - \infty$.
+
+**Bizonyítás.** Az állítás csak monoton növekvő sorozatokra fogjuk igazolni. Értelemszerű módosításokkal bizonyíthatjuk be az állítást a monoton csökkenő sorozatokra.
+
+1. Tegyük fel, hogy az $(a_n)$ sorozat monoton növekvő és felülről korlátos. Legyen
+
+$$
+A := \sup \left\lbrace a_n \mid n \in \mathbb{N} \right\rbrace \in \mathbb{R} .
+$$
+
+Ez azt jelenti, hogy $A$ a szóban forgó halmaznak a legkisebb felső korlátja, azaz 
+
+- $\forall n \in \mathbb{N} : a_n \leq A \quad$ és
+- $\forall \epsilon > 0$-hoz $\exists n_0 \in \mathbb{N} : A - \epsilon < a_{n_0} \leq A$.
+
+Mivel a feltételezésünk szerint az $(a_n)$ sorozat monoton növekvő, ezért az
+
+$$
+A - \epsilon < a_{n_0} \leq a_n \leq A .
+$$
+
+becslés is igaz minden $n > n_0$ indexre. Azt kapjuk tehát, hogy
+
+$$
+\forall \epsilon > 0 \text{-hoz} \ \ \exists n_0 \in \mathbb{N}, \forall n > n_0 : |a_n - A| < \epsilon .
+$$
+
+Ez pontosan azt jelenti, hogy az $(a_n)$ sorozat konvergens, és $\lim (a_n) = A$ .
+
+2. Tegyük fel, hogy az $(a_n)$ sorozat monoton növekő és felülről nem korlátos. Ekkor
+
+$$
+\forall P > 0 \text{-hoz} \ \ \exists n_0 \in \mathbb{N} : a_{n_0} > P .
+$$
+
+A monotonitás miatt ezért egyúttal az is igaz, hogy
+
+$$
+\forall n > n_0 : a_n \geq a_{n_0} > P ,
+$$
+
+és ez pontosan azt jelenti, hogy $\lim (a_n) = + \infty$ .
+
+**Megjegyzés.** A tételben elég feltenni azt, hogy a sorozat egy küszöbindextől kezdve monoton, hiszen véges sok tag nem befolyásolja a határértéket.
 
 ## 14. Az $a_n := \left(1 + \frac{1}{n}\right)^n \ \ (b \in \mathbb{N}^+)$ sorozat konvergenciája
 
+**6.** Az $e$ szám bevezetése.
 
+**05/02 Tétel (Az $e$ szám értelmezése).** Az 
+
+$$
+a_n := \left(1 + \frac{1}{n}\right)^n \quad (n \in \mathbb{N}^+)
+$$
+
+sorozat szigorúan monoton növekvő és felülről korlátos, tehát konvergens. Legyen
+
+$$
+e := \lim_{n \to + \infty} \left(1 + \frac{1}{n}\right)^n .
+$$
+
+**Bizonyítás.** Az állítás a számtani és a mértani közép közötti egyenlőtlenség "ötletes" felhasználásával bizonyítjuk.
+
+- **A monotonitás** igazolásához az egyenlőtlenséget az $(n + 1)$ darab
+
+$$
+1, \ \ 1 + \frac{1}{n}, \ \ 1 + \frac{1}{n}, \ \ \dots , \ \ 1 + \frac{1}{n}
+$$
+
+számra alkalmazzuk. Mivel ezek nem mind egyenlők, ezért
+
+$$
+\sqrt[n+1]{1 \cdot \left(1 + \frac{1}{n}\right)^n} < \frac{1 + n \cdot \left(1 + \frac{1}{n}\right)}{n + 1} = \frac{n + 2}{n + 1} = 1 + \frac{1}{n + 1} .
+$$
+
+Mindekét oldalt $(n + 1)$-edik hatványra emelve azt kapjuk, hogy
+
+$$
+a_n = \left(1 + \frac{1}{n}\right)^n < \left(1 + \frac{1}{n+1}\right)^{n+1} = a_{n+1} \quad (n \in \mathbb{N}^+) ,
+$$
+
+amivel beláttuk, hogy a sorozat szigorúan monoton növekvő.
+
+- **
 
 ## 15. Newton-féle iterációs eljárás $m$-edik gyökök keresésére.
 
