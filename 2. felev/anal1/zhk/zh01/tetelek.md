@@ -550,6 +550,14 @@ $$
 a_n b_n - AB = a_n b_n - A b_n + A b_n -AB = \underbrace{\underbrace{\underbrace{b_n}_{\text{korlátos}} \cdot \underbrace{(a_n - A)}_{\text{nullsorozat}}}_{\text{nullsorozat}} +\underbrace{\underbrace{A}_{\text{korlátos}} \cdot \underbrace{(b_n - B)}_{\text{nullsorozat}}}_{\text{nullsorozat}}}_{\text{nullsorozat}}.
 $$
 
+{% raw %}
+$$ 
+a_n b_n - AB = a_n b_n - A b_n + A b_n -AB = 
+\underbrace{\underbrace{\underbrace{b_n}_{\text{korlátos}} \cdot \underbrace{(a_n - A)}_{\text{nullsorozat}}}_{\text{nullsorozat}} 
++\underbrace{\underbrace{A}_{\text{korlátos}} \cdot \underbrace{(b_n - B)}_{\text{nullsorozat}}}_{\text{nullsorozat}}}_{\text{nullsorozat}}.
+$$
+{% endraw %}
+
 A fenti gondolatmenetben a $(b_n)$ sorozat azért korlátos, mert konvergens.
 
 3. A bizonyításhoz először egy önmagában is érdekes állítást igazolunk.
