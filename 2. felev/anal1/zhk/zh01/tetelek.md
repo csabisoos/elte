@@ -790,7 +790,7 @@ $$
 
 A jobb oldali egyenlőtlenség igazolására a számtani és a mértani közép közötti egyenlőtlenslg következő alakját fogjuk alkalmazni: ha $x_1, x_2, \dots , x_m$ tetszés szerinti nemnegatív valós számok, akkor
 
-$(\triangle) \quad \quad x_1 \cdot x_2 \cdot _\dots \cdot x_m \leq \left(\frac{x_1+x_2+ \dots + x_m}{m} \right)^m$,
+$(\triangle) \quad \quad x_1 \cdot x_2 \cdot \dots \cdot x_m \leq \left(\frac{x_1+x_2+ \dots + x_m}{m} \right)^m$,
 
 és az egyenlőség akkor és csak akkor áll fenn, ha $x_1 = x_2 = \dots = x_m .$ Fontos hangsúlyozni, hogy lényegében ezt az alakot igazoltuk gyakorlaton, és csak az $m$-edik gyök egyértelmű létezése után írhatjuk fel az egyenlőséget a megszokott alakban.
 
