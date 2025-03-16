@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/bin/Debug/net8.0/HF4
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/bin/Debug/net8.0/HF4.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/bin/Debug/net8.0/HF4.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/bin/Debug/net8.0/HF4.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/bin/Debug/net8.0/HF4.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/refint/HF4.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/HF4.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/04_kisbeadando/Base/obj/Debug/net8.0/ref/HF4.dll
