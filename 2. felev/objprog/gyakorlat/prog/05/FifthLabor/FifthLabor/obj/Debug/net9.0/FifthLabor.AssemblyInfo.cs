@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FifthLabor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28f8a3e5e2d7e7e6a2f7c9a76c76de19383314e1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9cee6bba6a88658e6bf3b0097798eb3ea7835258")]
 [assembly: System.Reflection.AssemblyProductAttribute("FifthLabor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FifthLabor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
