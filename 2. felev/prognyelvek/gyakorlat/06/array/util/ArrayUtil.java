@@ -58,8 +58,8 @@ public class ArrayUtil {
         if (array.length == 0) {
             return new int[] {0, 0};
         }
-        int min = Integer.MIN_VALUE;
-        int max = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
         for (int i : array) {
             if (max < i) max = i;
             if (i < min) min = i;

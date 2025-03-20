@@ -55,4 +55,19 @@ public class ArrayUtilTest {
         assertEquals(max, array.util.ArrayUtil.max3(new int[] {max, min}));
         assertEquals(max, array.util.ArrayUtil.max4(new int[] {max, min}));
     }
+
+    @Test
+    public void minMaxLength0() {
+        assertArrayEquals(new int[] {1, 2}, array.util.ArrayUtil.minMax(new int[] {2, 1}));
+    }
+
+    @Test
+    public void minMaxLength1() {
+        assertArrayEquals(new int[] {0, 0}, array.util.ArrayUtil.minMax(new int[] {0, 0}));
+    }
+
+    @Test
+    public void minMaxLength2() {
+        assertArrayEquals(new int[] {-210, 210}, array.util.ArrayUtil.minMax(new int[] {-210, 210}));
+    }
 }
