@@ -8,15 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "5d5a1ebc9430872d",
+            "id": "ba012b5698247f7e",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "2. felev/objprog/gyakorlat/terv/05/2025.03.13_terv_encrypt.md"
+                "file": "2. felev/objprog/gyakorlat/terv/06/2025.03.20_terv_equations.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "2025.03.13_terv_encrypt"
+              "title": "2025.03.20_terv_equations.excalidraw"
             }
           }
         ]
@@ -76,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 214.5
   },
   "right": {
     "id": "e16c6e444294af7b",
@@ -164,9 +164,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5d5a1ebc9430872d",
+  "active": "ba012b5698247f7e",
   "lastOpenFiles": [
     "2. felev/objprog/gyakorlat/terv/05/2025.03.13_terv_encrypt.md",
+    "2. felev/objprog/gyakorlat/terv/06/2025.03.20_terv_equations.excalidraw.md",
+    "2. felev/objprog/gyakorlat/terv/06",
     "2. felev/objprog/gyakorlat/terv/05",
     "2. felev/objprog/gyakorlat/terv/04/2025.03.06_terv_UML.md",
     "2. felev/objprog/gyakorlat/terv/04/2025.03.06_terv_List.md",
