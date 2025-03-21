@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/bin/Debug/net9.0/SixthLabor
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/bin/Debug/net9.0/SixthLabor.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/bin/Debug/net9.0/SixthLabor.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/bin/Debug/net9.0/SixthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/bin/Debug/net9.0/SixthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/refint/SixthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/SixthLabor.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/Debug/net9.0/ref/SixthLabor.dll

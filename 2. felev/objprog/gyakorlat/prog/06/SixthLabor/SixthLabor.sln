@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixthLabor", "SixthLabor\SixthLabor.csproj", "{55CA1ED5-52A0-43EB-AD22-CEA7573F79E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SixthLaborTest", "SixthLaborTest\SixthLaborTest.csproj", "{1285D73C-71A2-4546-95CE-9E351579FC45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55CA1ED5-52A0-43EB-AD22-CEA7573F79E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55CA1ED5-52A0-43EB-AD22-CEA7573F79E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55CA1ED5-52A0-43EB-AD22-CEA7573F79E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55CA1ED5-52A0-43EB-AD22-CEA7573F79E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1285D73C-71A2-4546-95CE-9E351579FC45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1285D73C-71A2-4546-95CE-9E351579FC45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1285D73C-71A2-4546-95CE-9E351579FC45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1285D73C-71A2-4546-95CE-9E351579FC45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,72 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net9.0": []
+  },
+  "packageFolders": {
+    "/Users/csabasoos/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/SixthLabor.csproj",
+      "projectName": "SixthLabor",
+      "projectPath": "/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/SixthLabor.csproj",
+      "packagesPath": "/Users/csabasoos/.nuget/packages/",
+      "outputPath": "/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/06/SixthLabor/SixthLabor/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/csabasoos/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/Users/csabasoos/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
