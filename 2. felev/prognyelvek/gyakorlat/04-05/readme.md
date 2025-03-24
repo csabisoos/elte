@@ -95,5 +95,96 @@ A funkcionális tesztelőben az alábbi tesztek érhetők el a `Fan` osztályhoz
     - A metódus visszatérési értéke a számított darabár.
         - Ezt az összeget elkölti a rajongó és mindegyik barátja.
         - Az összes költés felét megkapja a kiadó a gotIncome() segítségével.
+- `favesAtSameLabel()` azt vizsgálja meg, hogy ugyanaz a művész-e két rajongó kedvence.
+- Az alábbi négy metódus állítsa elő a rajongó szöveges reprezentációját. Ezek visszatérési értéke megegyezik, de más-más módon állítják elő azt.
+    - A `toString1()` metódus a `+` operátorral fűz össze szövegrészleteket.
+        - Ez hatékony, de macerás megírni és olvasni.
+    - A `toString2()` metódus a `formatted` metódust használja ilyen módon: `"%s=%d".formatted("one hundred", 100)`.
+        - Ezt könnyű olvasni.
+    - A `toString3()` metódus ezt használja: `String.format("%s=%d", "one hundred", 100)`.
+        - Ez az előzőhöz hasonló, kicsit régebbi stílusú.
+    - A `toString4()` metódus egy `StringBuilder` példányt használ.
+        - A `sb.append(123)` hívással lehet bővíteni a tartalmat.
+        - A `sb.toString()` hívással lehet szövegként kinyerni a tartalmat.
+        - Ez akkor hasznos, ha a kimenet hosszú és összetett.
 
+### 4. feladat
 
+A `math.operation.textual.Adder.addAsText()` metódus két `String` paramétert vár.
+
+- Ha mindkettő értelmezhető egész számként, az eredmény az összegük szövegesen.
+- Hasonlóan működik, ha a bemenetek értelmezhetőek lebegőpontos számként.
+- Ha a bemenetek nem szám jellegűek, az eredmény a következő szöveg: `Operands are not numbers`.
+- Az implementáció forráskódja **nem** elérhető, csak a `.class` fájl.
+    - Ezt a megfelelő könyvtárba kell tenni.
+
+Ugyanebbe a csomagba készítsük el az `AdderTest` osztályt, ami a következőket próbálja ki.
+
+- `wrongInput`: legalább az egyik paraméter nem szöveges
+- `addZero`: egy számhoz nullát adunk hozzá
+    - Mindkét oldal lehessen a nulla.
+    - Kipróbálandó: a nulla vagy a szám lebegőpontos.
+- `add`: összeadunk két számot
+    - Az összeadás mindkét sorrendben ugyanazt az eredményt adja.
+    - Kipróbálandó: mindkét szám egész; mindkettő lebegőpontos; egyik ilyen, másik olyan.
+- `addCommutative`: két szám összeadva a megadott sorrendben és ahhoz képest fordítva ugyanazt az eredményt adja.
+
+Megengedett egyszerűsítés.
+
+- Egy metódusba szabad egynél több `assertX` hívást is írni.
+- Ez realisztikus kódban nem jó választás.
+- Létezik erre jobb megoldás (`assertAll`), de az túlmutat a kurzus keretein.
+
+A fentieket a következő módokon lehet bővíteni.
+
+- Néhány (vagy akár mindegyik) feltétel több paraméterrel is kipróbálható (`@ParameterizedTest`).
+- A `wrongInput` teszt kerüljön át az `AdderInvalidTest.java` fájlba. Egy test suite hívja meg mindkét osztályt.
+
+## Gyakorló feladatok
+
+### 1. gyakorló feladat
+
+Implementálja a [Caesar-kódolást](https://hu.wikipedia.org/wiki/Caesar-rejtjel) a `cipher.CaesarCipher` osztályban a következőek szerint.
+
+- Az eltolási távolságot konstruktor paraméterként kapja meg (`shift`) és tárolja el.
+- Az `encrypt()` metódus egy szöveget kap meg, és az alábbiak szerint, karakterenként kódolja el.
+    - Ha a karakter nem betű (nem `'a'` és `'z'` közötti karakter), akkor megtartjuk. Különben a `shift` pozícióval odébb levő karaktert adjuk a kimenethez.
+        - Például: `'d'` hárommal eltolva `'g'` lesz.
+        - Figyelem: az eltolás átfordulhat: `'z'` kettő távolsággal eltolva `'b'` lesz.
+        - Figyelem: az eltolás lehet negatív, és akkor is átfordulhat: `'c'` `-5` távolsággal eltolva `'x'` lesz.
+    - További részletek:
+        - Az eredmény szöveget `+` operátorral összefűzve is elő lehet állítani, de még jobb `StringBuilder` használatával.
+        - Az eltolás után típuskényszerítést kell használni: `(char)shiftedChar`.
+- A `decrypt()` metódus legyen az `encrypt()` ellentéte.
+
+A `cipher.CaesarCipherTest` osztály a következőket tesztelje.
+
+- `noShift`: ha `shift` értéke `0`, `encrypt()` és `decrypt()` egyaránt az eredeti szöveget adja
+- `encryptBy`: adott szöveg elkódolása adott `shift` távolsággal
+    - üres szöveg (a `textBlock` részre `''` alakban írható le)
+    - egybetűs szöveg
+    - hosszabb szöveg
+    - nem csak kisbetűket tartalmazó szöveg
+- `inverseOperation`: két, egymással ellentétes hatású művelet meghívása egymás után, az eredmény az eredeti szöveg
+    - `encrypt()`, aztán `decrypt()` ugyanolyan `shift` távolsággal
+    - `decrypt()`, aztán `encrypt()` ugyanolyan `shift` távolsággal
+    - `encrypt()` `shift` távolsággal, aztán `encrypt()` `-shift` távolsággal
+    - `encrypt()` `-shift` távolsággal, aztán `encrypt()` `shift` távolsággal
+    - `decrypt()` `shift` távolsággal, aztán `decrypt()` `-shift` távolsággal
+    - `decrypt()` `-shift` távolsággal, aztán `decrypt()` `shift` távolsággal
+
+### 2. feladat
+
+**a**
+
+Írjunk static `math.operation.Power.power()` metódust, amely természetes számok hatványozását valósítja meg (a hatvány alap és kitevő is természetes szám). Bár az eredmény mindig egész lesz, a visszatérési érték legyen `double`, mert nemsokára továbbfejlesztjük ezt a függvényt. A `0` nulladik hatványa most legyen `1`.
+
+Tesztelje a `power()` függvényt.
+
+**b**
+
+Fejlesszük tovább a `power()` függvényt úgy, hogy negatív egész kitevővel is helyesen működjön.
+
+Próbálja ki, hogy az **a** feladatban megírt unit tesztek továbbra is sikeresen lefutnak-e.
+
+Bővítse a unit teszteket negatív kitevő helyességét ellenőrző esetekkel.
