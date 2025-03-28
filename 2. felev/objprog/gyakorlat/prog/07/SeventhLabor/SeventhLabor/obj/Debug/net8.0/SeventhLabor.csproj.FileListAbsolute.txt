@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/bin/Debug/net8.0/SeventhLabor
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/bin/Debug/net8.0/SeventhLabor.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/bin/Debug/net8.0/SeventhLabor.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/bin/Debug/net8.0/SeventhLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/bin/Debug/net8.0/SeventhLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/refint/SeventhLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/SeventhLabor.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/07/SeventhLabor/SeventhLabor/obj/Debug/net8.0/ref/SeventhLabor.dll
