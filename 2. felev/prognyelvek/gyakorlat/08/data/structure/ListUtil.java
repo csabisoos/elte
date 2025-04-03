@@ -30,8 +30,7 @@ public class ListUtil {
         if (list == null || list.isEmpty()) return;
 
         String maxStr = Collections.max(list);
-        
-        list.remove(maxStr);
-        list.add(0, maxStr);
+        list.remove(maxStr); 
+        list.add(0, maxStr); 
     }
 }

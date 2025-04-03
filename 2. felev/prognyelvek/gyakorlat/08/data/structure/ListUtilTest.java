@@ -58,6 +58,6 @@ public class ListUtilTest {
 
         ArrayList<String> list2 = new ArrayList<>(List.of("-123", "2000", "100"));
         ListUtil.maxToFront(list2);
-        assertEquals(List.of("2000", "100", "-123"), list2);
+        assertEquals(List.of("2000", "-123", "100"), list2);
     }
 }

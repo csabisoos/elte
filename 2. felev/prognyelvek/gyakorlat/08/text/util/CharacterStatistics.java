@@ -22,8 +22,9 @@ public class CharacterStatistics {
     public String toString() {
         StringBuilder result = new StringBuilder();
         for (Map.Entry<Character, Integer> entry : charToCount.entrySet()) {
-            result.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+            result.append(entry.getKey()).append("(").append(entry.getValue()).append(") ");
         }
-        return result.toString().trim();
+        return result.toString().trim(); 
     }
+
 }
