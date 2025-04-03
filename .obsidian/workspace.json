@@ -8,15 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "01ab6b6528042bf9",
+            "id": "cdd9799ba19dd466",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "2. felev/objprog/gyakorlat/terv/05/2025.03.13_terv_encrypt.md"
+                "file": "2. felev/objprog/gyakorlat/terv/08/2025.04.03_terv_interface.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "2025.03.13_terv_encrypt"
+              "title": "2025.04.03_terv_interface.excalidraw"
             }
           }
         ]
@@ -76,7 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 235.5
+    "width": 200
   },
   "right": {
     "id": "e16c6e444294af7b",
@@ -92,6 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "2. felev/objprog/gyakorlat/terv/08/2025.04.03_terv_interface.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks"
+              "title": "Backlinks for 2025.04.03_terv_interface.excalidraw"
             }
           },
           {
@@ -164,11 +165,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "01ab6b6528042bf9",
+  "active": "e9776c4e65358671",
   "lastOpenFiles": [
-    "2. felev/objprog/gyakorlat/terv/06/2025.03.20_terv_equations.excalidraw.md",
     "2. felev/objprog/gyakorlat/terv/07/2025.03.27_terv_simulation.excalidraw.md",
+    "2. felev/objprog/gyakorlat/terv/08/2025.04.03_terv_interface.excalidraw.md",
+    "2. felev/objprog/gyakorlat/terv/08/Drawing 2025-04-03 12.11.04.excalidraw.md",
+    "2. felev/objprog/gyakorlat/terv/08/Untitled.md",
+    "2. felev/objprog/gyakorlat/terv/08",
     "2. felev/objprog/gyakorlat/terv/05/2025.03.13_terv_encrypt.md",
+    "2. felev/objprog/gyakorlat/terv/06/2025.03.20_terv_equations.excalidraw.md",
     "2. felev/objprog/gyakorlat/terv/07",
     "2. felev/objprog/gyakorlat/terv/06",
     "2. felev/objprog/gyakorlat/terv/05",
