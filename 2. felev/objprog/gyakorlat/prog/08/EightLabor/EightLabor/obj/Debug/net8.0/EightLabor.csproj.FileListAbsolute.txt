@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/bin/Debug/net8.0/EightLabor
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/bin/Debug/net8.0/EightLabor.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/bin/Debug/net8.0/EightLabor.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/bin/Debug/net8.0/EightLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/bin/Debug/net8.0/EightLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/refint/EightLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/EightLabor.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/08/EightLabor/EightLabor/obj/Debug/net8.0/ref/EightLabor.dll
