@@ -1,0 +1,29 @@
+/Users/csabasoos/Downloads/HF7/bin/Debug/net8.0/HF7
+/Users/csabasoos/Downloads/HF7/bin/Debug/net8.0/HF7.deps.json
+/Users/csabasoos/Downloads/HF7/bin/Debug/net8.0/HF7.runtimeconfig.json
+/Users/csabasoos/Downloads/HF7/bin/Debug/net8.0/HF7.dll
+/Users/csabasoos/Downloads/HF7/bin/Debug/net8.0/HF7.pdb
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/HF7.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/HF7.AssemblyInfoInputs.cache
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/HF7.AssemblyInfo.cs
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/HF7.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/HF7.dll
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/refint/HF7.dll
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/HF7.pdb
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/HF7.genruntimeconfig.cache
+/Users/csabasoos/Downloads/HF7/obj/Debug/net8.0/ref/HF7.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/bin/Debug/net8.0/HF7
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/bin/Debug/net8.0/HF7.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/bin/Debug/net8.0/HF7.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/bin/Debug/net8.0/HF7.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/bin/Debug/net8.0/HF7.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/refint/HF7.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/HF7.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/07_kisbeadando/HF7/obj/Debug/net8.0/ref/HF7.dll
