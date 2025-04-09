@@ -25,22 +25,22 @@ public class Space{
 
     // Methods
     public boolean isTaken(){
-        return true;
+        return this.occupyingCar != null;
     }
 
     public void addOccupyingCar(Car c){
-
+        this.occupyingCar = c;
     }
 
     public void removeOccupyingCar(){
-
+        this.occupyingCar = null;
     }
 
     public String getCarLicensePlate(){
-        return "";
+        return this.occupyingCar.getLicensePlate();
     }
 
     public Size getOccupyingCarSize(){
-        return null;
+        return this.occupyingCar.getSpotOccupation();
     }
 }

@@ -27,6 +27,19 @@ public class ParkingLot{
     // Methods
     @Override
     public String toString() {
-        return "";
+        String result = "";
+        for (int i=0; i<floorPlan.length; ++i){
+            String line = "";
+            for (int j=0; j<floorPlan[i].length; ++j){
+                Space space = floorPlan[i][j];
+                if (!space.isTaken()) line += "X ";
+                else if (space.getOccupyingCarSize() == vehicle.Size.LARGE) line += "L ";
+                else line += "S ";
+            }
+            line = line.trim();
+            result += line;
+            if (i<floorPlan.length-1) result += "\n";
+        }
+        return result;
     }
 }

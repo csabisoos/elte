@@ -13,28 +13,28 @@ public class GateTestStructureTest {
                  .thatIs(FULLY_IMPLEMENTED, INSTANCE_LEVEL, VISIBLE_TO_ALL);
     }
 
-    @Test @DisabledIf(notApplicable) @Order(3_00)
+    @Test @DisabledIf(notApplicable)
     public void methodTestFindAnyAvailableSpaceForCar() {
         it.hasMethod("testFindAnyAvailableSpaceForCar", withNoParams())
             .thatIs(FULLY_IMPLEMENTED, INSTANCE_LEVEL, VISIBLE_TO_ALL)
             .thatReturnsNothing();
     }
 
-    @Test @DisabledIf(notApplicable) @Order(3_01)
+    @Test @DisabledIf(notApplicable)
     public void methodTestFindPreferredAvailableSpaceForCar() {
         it.hasMethod("testFindPreferredAvailableSpaceForCar", withParams("plate: String", "size: vehicle.Size", "preferredFloor: int"))
             .thatIs(FULLY_IMPLEMENTED, INSTANCE_LEVEL, VISIBLE_TO_ALL)
             .thatReturnsNothing();
     }
 
-    @Test @DisabledIf(notApplicable) @Order(3_02)
+    @Test @DisabledIf(notApplicable)
     public void methodTestRegisterCar() {
         it.hasMethod("testRegisterCar", withParams("plate: String", "size: vehicle.Size", "preferredFloor: int"))
             .thatIs(FULLY_IMPLEMENTED, INSTANCE_LEVEL, VISIBLE_TO_ALL)
             .thatReturnsNothing();
     }
 
-    @Test @DisabledIf(notApplicable) @Order(3_03)
+    @Test @DisabledIf(notApplicable)
     public void methodTestDeRegisterCar() {
         it.hasMethod("testDeRegisterCar", withParams("plate: String", "size: vehicle.Size", "preferredFloor: int"))
             .thatIs(FULLY_IMPLEMENTED, INSTANCE_LEVEL, VISIBLE_TO_ALL)
