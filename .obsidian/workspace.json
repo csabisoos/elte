@@ -8,15 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "cdd9799ba19dd466",
+            "id": "97c7963c044a7431",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "2. felev/objprog/gyakorlat/terv/08/2025.04.03_terv_interface.excalidraw.md"
+                "file": "2. felev/objprog/gyakorlat/terv/09/2025.04.10_terv_tervezesi_mintak.excalidraw.md"
               },
               "icon": "excalidraw-icon",
-              "title": "2025.04.03_terv_interface.excalidraw"
+              "title": "2025.04.10_terv_tervezesi_mintak.excalidraw"
             }
           }
         ]
@@ -92,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2. felev/objprog/gyakorlat/terv/08/2025.04.03_terv_interface.excalidraw.md",
+                "file": "2. felev/objprog/gyakorlat/terv/09/2025.04.10_terv_tervezesi_mintak.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 2025.04.03_terv_interface.excalidraw"
+              "title": "Backlinks for 2025.04.10_terv_tervezesi_mintak.excalidraw"
             }
           },
           {
@@ -151,7 +151,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -165,9 +165,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cdd9799ba19dd466",
+  "active": "97c7963c044a7431",
   "lastOpenFiles": [
     "2. felev/objprog/gyakorlat/terv/08/2025.04.03_terv_interface.excalidraw.md",
+    "2. felev/objprog/gyakorlat/terv/09/2025.04.10_terv_tervezesi_mintak.excalidraw.md",
+    "2. felev/objprog/gyakorlat/terv/09",
     "2. felev/objprog/gyakorlat/terv/07/2025.03.27_terv_simulation.excalidraw.md",
     "2. felev/objprog/gyakorlat/terv/08/Drawing 2025-04-03 12.11.04.excalidraw.md",
     "2. felev/objprog/gyakorlat/terv/08/Untitled.md",
