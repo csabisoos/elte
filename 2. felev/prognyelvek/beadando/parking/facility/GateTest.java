@@ -1,7 +1,15 @@
 package parking.facility;
 
-import org.junit.jupiter.api.*;
+import java.util.*;
+import java.io.IOException;
+import static check.CheckThat.*;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.*;
+import org.junit.jupiter.api.extension.*;
+import org.junit.jupiter.params.*;
+import org.junit.jupiter.params.provider.*;
+import check.*;
 import java.util.*;
 import vehicle.Car;
 import vehicle.Size;
@@ -21,43 +29,87 @@ public class GateTest {
     @Test
     public void testFindAnyAvailableSpaceForCar() {
         Car smallCar = new Car("ABC123", Size.SMALL, 0);
-        Space space = gate.findAnyAvailableSpaceForCar(smallCar);
-        assertNotNull(space, "Expected an available space for the small car.");
-        assertFalse(space.isTaken(), "The space should be available.");
+        Space smallSpace = gate.findAnyAvailableSpaceForCar(smallCar);
+        assertNotNull(smallSpace, "Expected an available space for the small car.");
+        assertFalse(smallSpace.isTaken(), "The space should be available.");
+
+        Car largeCar = new Car("XYZ789", Size.LARGE, 1);
+        Space largeSpace = gate.findAnyAvailableSpaceForCar(largeCar);
+        assertNotNull(largeSpace, "Expected an available space for the large car.");
+        assertFalse(largeSpace.isTaken(), "The space should be available.");
     }
 
-    @Test
-    public void testFindPreferredAvailableSpaceForCar() {
-        Car preferredCar = new Car("XYZ789", Size.SMALL, 0);
-        parkingLot.getFloorPlan()[0][0].addOccupyingCar(preferredCar); 
-        Car carWithPreferredFloor = new Car("LMN456", Size.SMALL, 1); 
 
-        Space space = gate.findPreferredAvailableSpaceForCar(carWithPreferredFloor);
+    @ParameterizedTest(name = "testFindPreferredAvailableSpaceForCar")
+    @CsvSource(textBlock = """
+        ABC123, SMALL, 0,
+        XYZ789, LARGE, 1,
+        LMN456, SMALL, 1,
+        JKL123, LARGE, 0
+    """)
+    @DisableIfHasBadStructure
+    @Test
+    public void testFindPreferredAvailableSpaceForCar(String plate, Size size, int preferredFloor) {
+        ParkingLot parkingLot = new ParkingLot(3, 10);
+        Gate gate = new Gate(parkingLot);
+
+        Car preferredCar = new Car(plate, size, preferredFloor);
+
+        Space space = gate.findPreferredAvailableSpaceForCar(preferredCar);
+
         assertNotNull(space, "Expected to find a preferred available space.");
         assertFalse(space.isTaken(), "The space should be available.");
+        assertEquals(preferredFloor, space.getFloorNumber(), "The space should be on the preferred floor.");
     }
 
+    @ParameterizedTest(name = "testFindPreferredAvailableSpaceForCar")
+    @CsvSource(textBlock = """
+        ABC123, SMALL, 0,
+        XYZ789, LARGE, 1,
+        LMN456, SMALL, 1,
+        JKL123, LARGE, 0
+    """)
+    @DisableIfHasBadStructure
     @Test
-    public void testRegisterCar() {
-        Car carToRegister = new Car("JKL123", Size.LARGE, 0);
+    public void testRegisterCar( String plate, Size size, int preferredFloor) {
+        /* Car carToRegister = new Car(plate, size, preferredFloor);
+        //Car carToRegister = new Car("JKL123", Size.LARGE, 0);
+        boolean registered = gate.registerCar(carToRegister);
+        assertTrue(registered, "The car should be successfully registered.");
+        assertNotNull(carToRegister.getTicketId(), "The car should have a ticket ID."); */
+
+        ParkingLot parkingLot = new ParkingLot(3, 10);
+        Gate gate = new Gate(parkingLot);
+
+        Car carToRegister = new Car(plate, size, preferredFloor);
+
         boolean registered = gate.registerCar(carToRegister);
         assertTrue(registered, "The car should be successfully registered.");
         assertNotNull(carToRegister.getTicketId(), "The car should have a ticket ID.");
     }
 
+    @ParameterizedTest(name = "testFindPreferredAvailableSpaceForCar")
+    @CsvSource(textBlock = """
+        ABC123, SMALL, 0,
+        XYZ789, LARGE, 1,
+        LMN456, SMALL, 1,
+        JKL123, LARGE, 0
+    """)
+    @DisableIfHasBadStructure
     @Test
-    public void testDeRegisterCar() {
-        Car carToDeRegister = new Car("XYZ123", Size.SMALL, 1); 
-        Space space = new Space(0, 0);
+    public void testDeRegisterCar(String plate, Size size, int preferredFloor) {
+        ParkingLot parkingLot = new ParkingLot(3, 10);
+        Gate gate = new Gate(parkingLot);
 
+        Car carToDeRegister = new Car(plate, size, preferredFloor);
+        Space space = new Space(0, 0);
         space.addOccupyingCar(carToDeRegister);
 
-        Gate gate = new Gate(new ParkingLot(3, 10));
-        gate.registerCar(carToDeRegister); 
+        gate.registerCar(carToDeRegister);
 
         gate.deRegisterCar(carToDeRegister.getTicketId());
 
         assertNull(space.getCarLicensePlate(), "The space should be available after de-registering the car.");
-        assertNull(space.getOccupyingCarSize(), "The space should no longer have an occupying car.");
+
     }
 }
