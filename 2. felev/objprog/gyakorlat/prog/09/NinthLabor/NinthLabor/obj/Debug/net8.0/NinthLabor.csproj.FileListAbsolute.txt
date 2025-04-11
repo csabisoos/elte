@@ -1,0 +1,15 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/bin/Debug/net8.0/NinthLabor
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/bin/Debug/net8.0/NinthLabor.deps.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/bin/Debug/net8.0/NinthLabor.runtimeconfig.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/bin/Debug/net8.0/NinthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/bin/Debug/net8.0/NinthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.sourcelink.json
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/refint/NinthLabor.dll
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.pdb
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/NinthLabor.genruntimeconfig.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/09/NinthLabor/NinthLabor/obj/Debug/net8.0/ref/NinthLabor.dll

@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinthLabor", "NinthLabor\NinthLabor.csproj", "{4646612C-828C-4250-B3AC-03B6141E6ACA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4646612C-828C-4250-B3AC-03B6141E6ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4646612C-828C-4250-B3AC-03B6141E6ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4646612C-828C-4250-B3AC-03B6141E6ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4646612C-828C-4250-B3AC-03B6141E6ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
