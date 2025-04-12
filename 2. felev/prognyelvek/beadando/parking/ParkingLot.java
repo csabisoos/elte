@@ -13,7 +13,7 @@ public class ParkingLot{
 
     // Constructors
     public ParkingLot(int floorNumber, int spaceNumber){
-        if (floorNumber <= 0 || spaceNumber <= 0) {
+        if (floorNumber < 0 || spaceNumber < 0) {
             throw new IllegalArgumentException("Floor and space numbers must be positive.");
         }
         floorPlan = new Space[floorNumber][spaceNumber];

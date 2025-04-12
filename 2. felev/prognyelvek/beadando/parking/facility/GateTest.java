@@ -10,7 +10,6 @@ import org.junit.jupiter.api.extension.*;
 import org.junit.jupiter.params.*;
 import org.junit.jupiter.params.provider.*;
 import check.*;
-import java.util.*;
 import vehicle.Car;
 import vehicle.Size;
 import parking.ParkingLot;
@@ -48,7 +47,6 @@ public class GateTest {
         JKL123, LARGE, 0
     """)
     @DisableIfHasBadStructure
-    @Test
     public void testFindPreferredAvailableSpaceForCar(String plate, Size size, int preferredFloor) {
         ParkingLot parkingLot = new ParkingLot(3, 10);
         Gate gate = new Gate(parkingLot);
@@ -70,14 +68,7 @@ public class GateTest {
         JKL123, LARGE, 0
     """)
     @DisableIfHasBadStructure
-    @Test
     public void testRegisterCar( String plate, Size size, int preferredFloor) {
-        /* Car carToRegister = new Car(plate, size, preferredFloor);
-        //Car carToRegister = new Car("JKL123", Size.LARGE, 0);
-        boolean registered = gate.registerCar(carToRegister);
-        assertTrue(registered, "The car should be successfully registered.");
-        assertNotNull(carToRegister.getTicketId(), "The car should have a ticket ID."); */
-
         ParkingLot parkingLot = new ParkingLot(3, 10);
         Gate gate = new Gate(parkingLot);
 
@@ -96,20 +87,19 @@ public class GateTest {
         JKL123, LARGE, 0
     """)
     @DisableIfHasBadStructure
-    @Test
     public void testDeRegisterCar(String plate, Size size, int preferredFloor) {
         ParkingLot parkingLot = new ParkingLot(3, 10);
         Gate gate = new Gate(parkingLot);
 
         Car carToDeRegister = new Car(plate, size, preferredFloor);
-        Space space = new Space(0, 0);
+        Space space = gate.findPreferredAvailableSpaceForCar(carToDeRegister);
         space.addOccupyingCar(carToDeRegister);
 
         gate.registerCar(carToDeRegister);
 
         gate.deRegisterCar(carToDeRegister.getTicketId());
 
-        assertNull(space.getCarLicensePlate(), "The space should be available after de-registering the car.");
+        assertFalse(space.isTaken(), "The space should be available after de-registering the car.");
 
     }
 }

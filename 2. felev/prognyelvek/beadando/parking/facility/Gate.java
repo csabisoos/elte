@@ -87,9 +87,10 @@ public class Gate{
         int spot = space.getSpaceNumber();
         Space[][] floorPlan = parkingLot.getFloorPlan();
 
-        if (c.getSpotOccupation() == vehicle.Size.LARGE){
+        if (c.getSpotOccupation() == vehicle.Size.LARGE) {
+            if (spot + 1 >= floorPlan[floor].length) return false;
             floorPlan[floor][spot].addOccupyingCar(c);
-            floorPlan[floor][spot+1].addOccupyingCar(c);
+            floorPlan[floor][spot + 1].addOccupyingCar(c);
         } else {
             floorPlan[floor][spot].addOccupyingCar(c);
         }
