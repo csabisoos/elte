@@ -1,0 +1,15 @@
+header, nav, footer, .btn, video {
+    display: none;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+body {
+    background: white;
+    color: black;
+    font-family: serif;
+    font-size: 12pt;
+}
