@@ -43,8 +43,9 @@ public class MultiDimensionalPoint implements Scalable, Undoable, Comparable<Mul
 
     @Override
     public void undoLast(){
-        
+        int[] temp = coordinates;
         coordinates = lastCoordinates;
+        lastCoordinates = temp;
     }
 
     @Override
