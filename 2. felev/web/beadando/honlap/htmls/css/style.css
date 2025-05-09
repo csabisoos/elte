@@ -1,0 +1,72 @@
+/* Basic reset and typography */
+html { font-size: 100%; line-height: 1.5; }
+body { margin:0; font-family: Georgia, serif; color:#222; background:#fff; }
+h1,h2,h3,h4,h5,h6 { font-family: 'Segoe UI', sans-serif; margin-top:1rem; }
+p, ul, ol, table { margin-bottom:1rem; }
+
+/* Skip link */
+.skip-link {
+  position:absolute; top:-40px; left:0; background:#000; color:#fff;
+  padding:0.5rem; z-index:100; transition:top 0.3s;
+}
+.skip-link:focus { top:0; }
+
+/* Navigation */
+nav { background:#eef; padding:0.5rem; }
+nav a { text-decoration:underline; }
+nav a:visited { color:#555; }
+nav .active { font-weight:bold; }
+
+/* Main layout */
+.container { max-width:960px; margin:0 auto; padding:1rem; }
+.row { display:flex; flex-wrap:wrap; }
+.col { flex:1; padding:0.5rem; }
+
+/* Thumbnails */
+.thumb { width:100px; }
+.thumb:hover { opacity:0.8; }
+
+/* Table in details */
+details table { width:100%; border-collapse:collapse; }
+details th, details td { border:1px solid #ccc; padding:0.5rem; text-align:left; }
+
+/* Form */
+form label { font-weight:600; display:block; margin-bottom:0.25rem; }
+form input, form textarea { width:100%; font-size:1rem; margin-bottom:0.75rem; }
+.form-check-inline { margin-right:1rem; }
+
+/* Carousel override */
+.carousel img { max-height:300px; object-fit:cover; }
+
+/* High-contrast toggle */
+.high-contrast body { background:#000; color:#ff0; }
+.high-contrast a { color:#0ff; }
+
+/* Print */
+@media print {
+  header, nav, footer, .carousel, video, aside { display:none; }
+  img { max-width:4cm; height:auto; }
+  body { font-size:12pt; }
+}
+
+/* Responsive columns */
+@media (max-width: 576px) {
+  .row { flex-direction:column; }
+}
+@media (min-width: 577px) and (max-width: 768px) {
+  .row { flex-direction:column; }
+}
+@media (min-width: 769px) {
+  .row { flex-direction:row; }
+}
+
+body {
+    background: url('design/hatter.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.form-container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+}
