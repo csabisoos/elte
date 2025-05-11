@@ -1,84 +1,38 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kezdőlap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vincent van Gogh – Kezdőlap</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Ugrás a tartalomra</a>
 
-  <header class="bg-light p-3">
+  <header>
     <div class="container">
-      <h1 class="text-center">Vincent van Gogh</h1>
+      <h1><span lang="nl">Vincent van Gogh</span></h1>
       <button onclick="toggleContrast()">Kontraszt váltás</button>
     </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar">
     <div class="container">
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html"><b>Kezdőlap</b></a></li>
-          <li class="nav-item"><a class="nav-link" href="eletrajz.html">Életrajz</a></li>
-          <li class="nav-item"><a class="nav-link" href="urlap.html">Kapcsolat</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://hu.wikipedia.org/wiki/Vincent_van_Gogh" target="_blank" rel="noopener">Wikipédia</a></li>
-        </ul>
-      </div>
+      <a href="index.html" class="active">Kezdőlap</a> 
+      <a href="eletrajz.html">Életrajz</a> 
+      <a href="urlap.html">Kapcsolat</a> 
+      <a href="https://hu.wikipedia.org/wiki/Vincent_van_Gogh" target="_blank" rel="noopener" class="external-link">Wikipédia</a> 
+      <div class="hamburger">
+       <span></span>
+       <span></span>
+       <span></span>
+     </div>
     </div>
   </nav>
 
-  
-
-  <main  id="main-content" tabindex="-1" class="container">
-    <h2>Vincent van Gogh híresebb művei</h2>
-    <div class="row mb-4 align-items-center">
-      <div class="col-md-8">
-        <h4>Napraforgók (1888)</h4>
-        <p>A Napraforgók sorozat Van Gogh egyik legismertebb és legkedveltebb művei közé tartozik. A festmények vibráló, sárgás színvilágukkal azonnal megragadják a figyelmet – mintha a napfény egy darabját zárta volna a vászonra. Ezeket a képeket Van Gogh 1888-ban és 1889-ben készítette, főként Arles-ban, Dél-Franciaországban, amikor még abban reménykedett, hogy egy művészközösséget hozhat létre ott.</p>
-        <p>A festményeken vázában álló napraforgók láthatók – egyesek már teljes pompájukban virágoznak, mások épp hervadni kezdenek. Ez a változatosság nemcsak a növény természetes életciklusát mutatja be, hanem egyfajta mélyebb üzenetet is hordoz: az élet mulandóságát, ugyanakkor szépségét is.</p>
-        <p>A képeken használt erős ecsetvonások és a gazdag textúra azt az érzést keltik, mintha Van Gogh szó szerint beleöntötte volna az érzelmeit a festékbe. Nem a tökéletességre törekedett, hanem arra, hogy érzéseit, hangulatát átadja a nézőnek – ezért ezek a képek nemcsak szépek, hanem élők is. Nem csoda, hogy ezek a napraforgók mára az öröm, a melegség és Van Gogh művészetének egyik legfontosabb szimbólumává váltak.</p>
-      </div>
-      <div class="col-md-4">
-        <img src="design/napraforgok.jpg" alt="Napraforgók" class="img-fluid mb-2">
-      </div>
-    </div>
-
-    <div class="row mb-4 align-items-center">
-      <div class="col-md-4">
-        <img src="design/csillagos_ej.jpg" alt="Csillagos Éj" class="img-fluid rounded">
-      </div>
-      <div class="col-md-8">
-        <h4>Csillagos Éj (1889)</h4>
-        <p>A Csillagos éj talán Van Gogh legemblematikusabb festménye, amely szinte mágnesként vonzza a tekintetet. A kép 1889-ben készült, amikor Van Gogh egy franciaországi elmegyógyintézetben tartózkodott. Az ablakából nyíló kilátás ihlette meg – de nem pusztán lemásolta, amit látott, hanem átalakította azt saját érzelmei és fantáziája szerint.</p>
-        <p>A festményen egy kis falu nyugszik a dombok között, fölötte pedig szinte örvénylő égbolt ragyog. A csillagok hatalmas fénygömbökként tündökölnek, az ég mintha mozogna, hullámzik – ezzel is kifejezve a természet erejét és az ember kicsinységét. A kép bal oldalán egy sötét, lángnyelvszerű ciprusfa nyúlik az ég felé – sokan ezt a halál szimbólumának tartják, de egyben összekötő kapocs is ég és föld között.</p>
-        <p>Van Gogh élénk, kontrasztos színei és a jellegzetes, kanyargó ecsetvonásai itt különösen kifejezőek. Nem azt akarta megmutatni, amit látott, hanem amit érzett – és talán pont ezért olyan különleges ez a kép. A Csillagos éj nemcsak egy éjszakai táj, hanem egy zaklatott lélek lenyomata is, aki mégis képes volt meglátni a szépséget a sötétségben.</p>
-      </div>
-    </div>
-
-    <div class="row mb-4 align-items-center">
-      <div class="col-md-8">
-        <h4>Tanguy apó (1887)</h4>
-        <p>Ez a festmény egy kedves és meghatározó alakot ábrázol: Julien “Père” Tanguyt, a festékkereskedőt, aki egyfajta “művészeti nagybácsi” volt a párizsi avantgárd festők körében. Nemcsak festéket árult, hanem támogatta is a fiatal tehetségeket – képeket fogadott el pénz helyett, és gyakran segítette őket nehéz időkben. Van Gogh hálája és tisztelete egyértelműen érződik ezen a portrén.</p>
-        <p>Tanguy nyugodtan ül egy széken, kalapban, kezét összefonva. Tekintete barátságos, arca kissé pirosas, ami életet visz a kompozícióba. Ruhája egyszerű, de méltóságteljes – igazi „mindennapi hős” benyomását kelti.</p>
-        <p>A háttér azonban teszi igazán különlegessé a képet: Van Gogh japán fametszetek és keleti hatású motívumok kaleidoszkópját helyezte a háttérbe. Ez nem véletlen – a japán művészet mély benyomást tett rá, és a háttér nemcsak a festő ízléséről mesél, hanem Tanguy nyitottságáról is, aki ezeket a műveket is támogatta.</p>
-       <p>A festmény színei élénkek, mégis harmóniában vannak: a kék kabát és a színes háttér között kiegyensúlyozott kontraszt húzódik. A jellegzetes, rövid, irányított ecsetvonásoktól a kép szinte vibrál – ez Van Gogh kézjegye.</p>
-        <p>Ez a portré nemcsak egy ember arcképe, hanem egy korszaké is. Egy emlékeztető arra, hogy a művészethez nemcsak tehetség, hanem támogatás és emberség is kell. Père Tanguy ezt testesíti meg – és Van Gogh ezzel a képpel mondott neki köszönetet.</p>
-      </div>
-      <div class="col-md-4">
-        <img src="design/tanguy_apo.JPG" alt="Tanguy apó" class="img-fluid rounded">
-      </div>
-    </div>
-  
-    <div class="mb-4">
-      <div class="ratio ratio-16x9">
-        <iframe src="https://www.youtube.com/embed/3q5fuVFWe0Q" allowfullscreen></iframe>
-      </div>
-    </div>
-
-    <!-- <section>
+  <main id="main-content" tabindex="-1" class="container">
+    <section>
       <h2>Híres művek galéria</h2>
       <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -90,6 +44,12 @@
           </div>
           <div class="carousel-item">
             <img src="design/tanguy_apo.JPG" class="d-block w-100" alt="Père Tanguy portré">
+          </div>
+          <div class="carousel-item">
+            <img src="design/olajfak.jpg" class="d-block w-100" alt="Olajfák festmény">
+          </div>
+          <div class="carousel-item">
+            <img src="design/onarckep.webp" class="d-block w-100" alt="Olajfák festmény">
           </div>
         </div>
         <button class="carousel-control-prev" type="button"
@@ -105,9 +65,9 @@
       <article class="row">
         <div class="col-md-8">
           <h3>Napraforgók (1888)</h3>
-          <p>A Napraforgók sorozat Van Gogh egyik legismertebb és legkedveltebb művei közé tartozik. A festmények vibráló, sárgás színvilágukkal azonnal megragadják a figyelmet – mintha a napfény egy darabját zárta volna a vászonra. Ezeket a képeket Van Gogh 1888-ban és 1889-ben készítette, főként Arles-ban, Dél-Franciaországban, amikor még abban reménykedett, hogy egy művészközösséget hozhat létre ott.</p>
+          <p>A Napraforgók sorozat <span lang="nl">Van Gogh</span> egyik legismertebb és legkedveltebb művei közé tartozik. A festmények vibráló, sárgás színvilágukkal azonnal megragadják a figyelmet – mintha a napfény egy darabját zárta volna a vászonra. Ezeket a képeket <span lang="nl">Van Gogh</span> 1888-ban és 1889-ben készítette, főként <span lang="fr">Arles</span>-ban, Dél-Franciaországban, amikor még abban reménykedett, hogy egy művészközösséget hozhat létre ott.</p>
           <p>A festményeken vázában álló napraforgók láthatók – egyesek már teljes pompájukban virágoznak, mások épp hervadni kezdenek. Ez a változatosság nemcsak a növény természetes életciklusát mutatja be, hanem egyfajta mélyebb üzenetet is hordoz: az élet mulandóságát, ugyanakkor szépségét is.</p>
-          <p>A képeken használt erős ecsetvonások és a gazdag textúra azt az érzést keltik, mintha Van Gogh szó szerint beleöntötte volna az érzelmeit a festékbe. Nem a tökéletességre törekedett, hanem arra, hogy érzéseit, hangulatát átadja a nézőnek – ezért ezek a képek nemcsak szépek, hanem élők is. Nem csoda, hogy ezek a napraforgók mára az öröm, a melegség és Van Gogh művészetének egyik legfontosabb szimbólumává váltak.</p>
+          <p>A képeken használt erős ecsetvonások és a gazdag textúra azt az érzést keltik, mintha <span lang="nl">Van Gogh</span> szó szerint beleöntötte volna az érzelmeit a festékbe. Nem a tökéletességre törekedett, hanem arra, hogy érzéseit, hangulatát átadja a nézőnek – ezért ezek a képek nemcsak szépek, hanem élők is. Nem csoda, hogy ezek a napraforgók mára az öröm, a melegség és Van Gogh művészetének egyik legfontosabb szimbólumává váltak.</p>
         </div>
         <aside class="col-md-4">
           <figure>
@@ -119,12 +79,185 @@
         </aside>
       </article>
 
-    </section> -->
+      <article class="row">
+        <div class="col-md-8">
+          <h3>Csillagos éj (1889)</h3>
+          <p>A Csillagos éj talán <span lang="nl">Van Gogh</span> legemblematikusabb festménye, amely szinte mágnesként vonzza a tekintetet. A kép 1889-ben készült, amikor <span lang="nl">Van Gogh</span> egy franciaországi elmegyógyintézetben tartózkodott. Az ablakából nyíló kilátás ihlette meg – de nem pusztán lemásolta, amit látott, hanem átalakította azt saját érzelmei és fantáziája szerint.</p>
+          <p>A festményen egy kis falu nyugszik a dombok között, fölötte pedig szinte örvénylő égbolt ragyog. A csillagok hatalmas fénygömbökként tündökölnek, az ég mintha mozogna, hullámzik – ezzel is kifejezve a természet erejét és az ember kicsinységét. A kép bal oldalán egy sötét, lángnyelvszerű ciprusfa nyúlik az ég felé – sokan ezt a halál szimbólumának tartják, de egyben összekötő kapocs is ég és föld között.</p>
+          <p><span lang="nl">Van Gogh</span> élénk, kontrasztos színei és a jellegzetes, kanyargó ecsetvonásai itt különösen kifejezőek. Nem azt akarta megmutatni, amit látott, hanem amit érzett – és talán pont ezért olyan különleges ez a kép. A Csillagos éj nemcsak egy éjszakai táj, hanem egy zaklatott lélek lenyomata is, aki mégis képes volt meglátni a szépséget a sötétségben.</p>
+        </div>
+        <aside class="col-md-4">
+          <figure>
+            <a href="design/csillagos_ej.jpg">
+              <img src="design/csillagos_ej.jpg" alt="Csillagos éj thumbnail" class="thumb">
+            </a>
+            <figcaption>Csillagos éj (kisméretű előnézet)</figcaption>
+          </figure>
+        </aside>
+      </article>
+
+      <article class="row">
+        <div class="col-md-8">
+          <h3>Tanguy apó</h3>
+          <p>Ez a festmény egy kedves és meghatározó alakot ábrázol: <span lang="fr">Julien “Père” Tanguy</span>t, a festékkereskedőt, aki egyfajta “művészeti nagybácsi” volt a párizsi avantgárd festők körében. Nemcsak festéket árult, hanem támogatta is a fiatal tehetségeket – képeket fogadott el pénz helyett, és gyakran segítette őket nehéz időkben. <span lang="nl">Van Gogh</span> hálája és tisztelete egyértelműen érződik ezen a portrén.</p>
+          <p><span lang="fr">Tanguy</span> nyugodtan ül egy széken, kalapban, kezét összefonva. Tekintete barátságos, arca kissé pirosas, ami életet visz a kompozícióba. Ruhája egyszerű, de méltóságteljes – igazi „mindennapi hős” benyomását kelti.</p>
+          <p>A háttér azonban teszi igazán különlegessé a képet: <span lang="nl">Van Gogh</span> japán fametszetek és keleti hatású motívumok kaleidoszkópját helyezte a háttérbe. Ez nem véletlen – a japán művészet mély benyomást tett rá, és a háttér nemcsak a festő ízléséről mesél, hanem <span lang="fr">Tanguy</span> nyitottságáról is, aki ezeket a műveket is támogatta.</p>
+          <p>A festmény színei élénkek, mégis harmóniában vannak: a kék kabát és a színes háttér között kiegyensúlyozott kontraszt húzódik. A jellegzetes, rövid, irányított ecsetvonásoktól a kép szinte vibrál – ez <span lang="nl">Van Gogh</span> kézjegye.</p>
+          <p>Ez a portré nemcsak egy ember arcképe, hanem egy korszaké is. Egy emlékeztető arra, hogy a művészethez nemcsak tehetség, hanem támogatás és emberség is kell. <span lang="fr">Père Tanguy</span> ezt testesíti meg – és <span lang="nl">Van Gogh</span> ezzel a képpel mondott neki köszönetet.</p>
+        </div>
+        <aside class="col-md-4">
+          <figure>
+            <a href="design/tanguy_apo.JPG">
+              <img src="design/tanguy_apo.JPG" alt="Tanguy apó thumbnail" class="thumb">
+            </a>
+            <figcaption>Tanguy apó (kisméretű előnézet)</figcaption>
+          </figure>
+        </aside>
+      </article>
+
+      <article class="row">
+        <div class="col-md-8">
+          <h3>Olajfák (1889)</h3>
+          <p><span lang="nl">Vincent van Gogh</span> Olajfák című festménye az <span lang="fr">arles</span>-i és <span lang="fr">saint-rémy</span>-i időszakának kiemelkedő alkotása, amely a <span lang="fr">provence</span>-i táj egy szeletét örökíti meg lenyűgöző erővel és érzékenységgel. A festményt 1889-ben készítette <span lang="fr">Saint-Rémy-de-Provence</span>-ban, ahol önkéntes elvonulása alatt számos természeti témájú művet alkotott. Az olajfák – a dél-francia táj szimbólumai – számára nem csupán növények voltak, hanem az élet, a kitartás és az állandóság jelképei is.</p>
+          <p>A kép dinamikus ecsetvonásai, a gazdag zöldek, kékek és földszínek hullámzó ritmusa szinte mozgatja a tájat. <span lang="nl">Van Gogh</span> nemcsak látványt festett, hanem a természet belső energiáját is érzékeltette: a fák csavarodó törzsei, az ég kavargó felhői és a föld ívelt vonalai mind hozzájárulnak ehhez a vibráló hatáshoz. Az Olajfák egyedülálló módon közvetíti azt az intenzív lelki kapcsolatot, amelyet <span lang="nl">Van Gogh</span> a természet iránt érzett, miközben a remény, a kitartás és az élet körforgásának allegóriájaként is értelmezhető.</p>
+          <p>Ez a festmény jól példázza <span lang="nl">Van Gogh</span> stílusának jellegzetességeit: a posztimpresszionista ecsetkezelést, a markáns színhasználatot és az erős érzelmi töltetet. Az Olajfák sorozat darabjai közül ez az alkotás különösen híres lett, és ma is a természet művészi ábrázolásának egyik legszuggesztívebb példájaként tartják számon.</p>
+        </div>
+        <aside class="col-md-4">
+          <figure>
+            <a href="design/olajfak.jpg">
+              <img src="design/olajfak.jpg" alt="Olajfák thumbnail" class="thumb">
+            </a>
+            <figcaption>Olajfák (kisméretű előnézet)</figcaption>
+          </figure>
+        </aside>
+      </article>
+
+      <article class="row">
+        <div class="col-md-8">
+          <h3>Mandulavirágok (1890)</h3>
+          <p><span lang="nl">Vincent van Gogh</span> „Mandulavirág” című festménye egy gyönyörű alkotás, amelyet <span lang="nl">Van Gogh</span> 1890 februárjában festett a franciaországi <span lang="fr">Saint-Rémy-de-Provence</span>-ban. Ezen a festményen egy mandulafa virágokkal teli ágai láthatók a ragyogó kék ég hátterében, amely az újjászületés, a remény és az új kezdet szimbóluma.</p>
+          <p>A mű még különlegesebb, mert <span lang="nl">Vincent</span> testvérének, Theónak és sógornőjének, <span lang="nl">Jo</span>-nak ajándékozta, akiknek ekkor született meg kisfiuk, <span lang="nl">Vincent Willem</span>. A festmény <span lang="nl">Vincent</span> unokaöccsének új életét ünnepli, és különös jelentőséggel bírt az egész <span lang="nl">Van Gogh</span> család számára. A finoman kidolgozott virágok és az élénk színek nemcsak a természet szépségét örökítik meg, hanem az öröm és szeretet személyes üzenetét is hordozzák.</p>
+          <p>Később ez a festmény még fontosabbá vált, amikor <span lang="nl">Vincent Willem</span> felnőtt, és meghatározó szerepet vállalt a <span lang="nl">Van Gogh</span> Múzeum megalapításában, amely mára az egyik legismertebb és leglátogatottabb művészeti intézménnyé vált. A „Mandulavirág” így nemcsak művészeti értéke, hanem családi és történelmi jelentősége miatt is kiemelkedő alkotás <span lang="nl">Van Gogh</span> életművében.</p>
+        </div>
+        <aside class="col-md-4">
+          <figure>
+            <a href="design/mandulaviragok.webp">
+              <img src="design/mandulaviragok.webp" alt="Mandulavirágok thumbnail" class="thumb">
+            </a>
+            <figcaption>Mandulavirágok (kisméretű előnézet)</figcaption>
+          </figure>
+        </aside>
+      </article>
+      
+    </section>
+    <aside>
+        <a href="https://www.vangoghmuseum.nl/en/collection">További művek megtekintése</a>
+    </aside>
+    
+    <div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+      <video class="w-100" controls poster="design/selfposter.jpg">
+        <source src="design/video.mp4" type="video/mp4">
+        <track label="Angol felirat" kind="subtitles" srclang="en" src="subtitles/felirat.vtt" default>
+        A böngésződ nem támogatja a videólejátszást.
+      </video>
+    </div>
+      
+    <details>
+    <summary>Teljes videó szövege</summary>
+    <p>00:09 – you probably know me already I'm famous</p>
+    <p>00:12 – the world over but do you know my story</p>
+    <p>00:21 – Brabant painted just as I remember it</p>
+    <p>00:24 – that's where I grew up I was different</p>
+    <p>00:28 – from the others</p>
+    <p>00:29 – stubborn always in trouble at home and</p>
+    <p>00:32 – at school things were better outdoors I</p>
+    <p>00:35 – loved being out in the fields</p>
+    <p>00:38 – do you know what you want to be yet well</p>
+    <p>00:41 – I certainly didn't I was an art dealer</p>
+    <p>00:44 – in Paris in London a teacher in England</p>
+    <p>00:47 – a priest in Belgium I tried the lot</p>
+    <p>00:49 – nothing worked out</p>
+    <p>00:52 – my brother Theo my best friend had an</p>
+    <p>00:55 – idea Vincent you're good at drawing why</p>
+    <p>00:59 – don't you do something with that well he</p>
+    <p>01:01 – was right I was always drawing and I</p>
+    <p>01:04 – could learn how to paint there was no</p>
+    <p>01:07 – time to lose</p>
+    <p>01:08 – practice practice practice I was</p>
+    <p>01:11 – unstoppable</p>
+    <p>01:12 – Anton mouthed my cousin and a famous</p>
+    <p>01:15 – artist taught me how to paint in oils I</p>
+    <p>01:19 – got my first Commission drawing</p>
+    <p>01:22 – cityscapes of the hague the train</p>
+    <p>01:24 – station what a building all that glass I</p>
+    <p>01:29 – wanted to show real-life nature the</p>
+    <p>01:33 – lives of farmers what I saw as I felt it</p>
+    <p>01:37 – that's what I wanted to paint something</p>
+    <p>01:39 – good something with soul in it and look</p>
+    <p>01:44 – there they are</p>
+    <p>01:46 – they're weather-beaten faces in the</p>
+    <p>01:48 – shadows sitting in the light of a small</p>
+    <p>01:51 – lamp poking their calloused hands into</p>
+    <p>01:53 – the dish of potatoes they themselves</p>
+    <p>01:55 – have sown and harvested others didn't</p>
+    <p>01:59 – think much of it</p>
+    <p>02:01 – woman's nose looks like dice at the end</p>
+    <p>02:03 – of a pipe stem hmm even Theo thought it</p>
+    <p>02:06 – was too dark but I had started I was an</p>
+    <p>02:10 – artist Theo I owe you so much when I</p>
+    <p>02:17 – came to Paris I lived with you when I</p>
+    <p>02:20 – wanted to paint you paid for my paints</p>
+    <p>02:22 – and brushes and me I was insufferable</p>
+    <p>02:25 – living only for my art late night</p>
+    <p>02:29 – discussions with innovative artists like</p>
+    <p>02:31 – Lautrec burn our gogo about contrasts</p>
+    <p>02:37 – colors loose brushstrokes but the work</p>
+    <p>02:42 – wasn't selling</p>
+    <p>02:43 – I rarely had money for models so I'd</p>
+    <p>02:46 – often end up looking in the mirror after</p>
+    <p>02:50 – two years I was fed up with the city</p>
+    <p>02:53 – I headed south to the light the colors</p>
+    <p>02:57 – that's where I painted the colors of the</p>
+    <p>02:59 – wheat</p>
+    <p>03:01 – of the night</p>
+    <p>03:02 – and the see which have many more colors</p>
+    <p>03:05 – than just blue</p>
+    <p>03:07 – green purple blue pink the sea changes</p>
+    <p>03:12 – color like a mackerel skin</p>
+    <p>03:16 – I looked around me and found beauty in</p>
+    <p>03:18 – almost everything</p>
+    <p>03:21 – even in these withering sunflowers</p>
+    <p>03:26 – I had big plans for this yellow house</p>
+    <p>03:30 – where I wanted to work with others to</p>
+    <p>03:32 – create a new kind of art</p>
+    <p>03:36 – but only my artist friend go gang came</p>
+    <p>03:38 – South we had the most fierce discussions</p>
+    <p>03:41 – about art what should you paint what you</p>
+    <p>03:44 – see with your eyes or what you see in</p>
+    <p>03:46 – your mind one evening things started to</p>
+    <p>03:50 – go wrong I just wasn't myself anymore I</p>
+    <p>03:54 – cut off my left ear I was sick I had</p>
+    <p>03:58 – myself admitted to hospital but I didn't</p>
+    <p>04:01 – stop I worked on like some kind of</p>
+    <p>04:03 – painting locomotive and slowly I got my</p>
+    <p>04:08 – life back on track in the countryside</p>
+    <p>04:11 – just north of Paris with Theo closeby I</p>
+    <p>04:14 – worked incessantly my head was on fire</p>
+    <p>04:17 – my paintbrush swept back and forth until</p>
+    <p>04:25 – [Music]</p>
+    <p>04:27 – now you know my story the story of a</p>
+    <p>04:32 – misunderstood stubborn man who wouldn't</p>
+    <p>04:34 – give up a story about needing to do what</p>
+    <p>04:37 – it is that you're good at so tell me</p>
+    <p>04:40 – what are you good at</p>
+  </details>
+      
   </main>
 
-  <footer class="bg-light p-3 mt-5">
+  <footer>
     <div class="container text-center">
-      <p>© 2025 Vincent van Gogh Pályafutása</p>
+      <p>© 2025 <span lang="nl">Vincent van Gogh</span> Pályafutása</p>
+      <a href="#top">Oldal tetejére</a>
     </div>
   </footer>
 

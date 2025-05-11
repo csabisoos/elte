@@ -1,108 +1,127 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Életrajz</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Életrajz – Vincent van Gogh</title>
   <link rel="stylesheet" href="css/styles.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header class="bg-light p-3">
+  <a href="#main-content" class="skip-link">Ugrás a tartalomra</a>
+
+  <header>
     <div class="container">
-      <h1 class="text-center">Életrajz</h1>
+        <h1>Életrajz</h1>
+        <button onclick="toggleContrast()">Kontraszt váltás</button>
     </div>
   </header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar">
     <div class="container">
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="index.html">Kezdőlap</a></li>
-          <li class="nav-item"><a class="nav-link" href="eletrajz.html"><b>Életrajz</b></a></li>
-          <li class="nav-item"><a class="nav-link" href="urlap.html">Kapcsolat</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://hu.wikipedia.org/wiki/Vincent_van_Gogh" target="_blank" rel="noopener">Wikipédia</a></li>
-        </ul>
-      </div>
+      <a href="index.html">Kezdőlap</a> 
+      <a href="eletrajz.html" class="active">Életrajz</a> 
+      <a href="urlap.html">Kapcsolat</a> 
+      <a href="https://hu.wikipedia.org/wiki/Vincent_van_Gogh" target="_blank" rel="noopener" class="external-link">Wikipédia</a> 
+      <div class="hamburger">
+       <span></span>
+       <span></span>
+       <span></span>
+     </div>
     </div>
   </nav>
 
-  <main class="container my-5">
-    <h2>Vincent van Gogh Pályafutása</h2>
-    <p>Van Gogh festői pályája meglepően rövid volt: mindössze kb. 10 évig tartott (1880–1890), mégis több mint 2000 művet alkotott, köztük 860 festményt. Életében nem volt elismert, sokszor küzdött anyagi gondokkal és mentális problémákkal, de ma az egyik legismertebb és legelismertebb művészként tartják számon. Művészete az impresszionizmustól indult, majd a posztimpresszionizmus egyik kulcsfigurájává vált.</p>
+  <main id="main-content" tabindex="-1" class="container">
+    <section>
+      <p><span lang="nl">Van Gogh</span> festői pályája meglepően rövid volt: mindössze kb. 10 évig tartott (1880–1890), mégis több mint 2000 művet alkotott, köztük 860 festményt. Életében nem volt elismert, sokszor küzdött anyagi gondokkal és mentális problémákkal, de ma az egyik legismertebb és legelismertebb művészként tartják számon. Művészete az impresszionizmustól indult, majd a posztimpresszionizmus egyik kulcsfigurájává vált.</p>
 
-    <h3>Kezdetek és művészeti tanulmányok</h3>
-    <p>Vincent 1853-ban született Hollandiában. Kezdetben műkereskedőként dolgozott, majd vallásos lelkesedésből prédikátor akart lenni, de egyik út sem bizonyult tartósnak számára. A húszas évei végén döntött úgy, hogy festő lesz. Eleinte autodidakta módon tanult, majd Brüsszelben és Antwerpenben is járt művészeti iskolába, de a hagyományos akadémikus képzéssel nem tudott azonosulni.</p>
-    <p>Korai munkái sötét tónusúak, paraszti életképeket ábrázolnak – legismertebb ebből az időszakból <b>„A burgonyázók” (1885)</b> című képe.</p>
+      <h2>Kezdetek és művészi tanulmányok</h2>
+      <p><span lang="nl">Vincent</span> 1853-ban született Hollandiában. Kezdetben műkereskedőként dolgozott, majd vallásos lelkesedésből prédikátor akart lenni, de egyik út sem bizonyult tartósnak számára. A húszas évei végén döntött úgy, hogy festő lesz. Eleinte autodidakta módon tanult, majd Brüsszelben és <span lang="fr-be">Antwerpenben</span> is járt művészeti iskolába, de a hagyományos akadémikus képzéssel nem tudott azonosulni.</p>
+      <p>Korai munkái sötét tónusúak, paraszti életképeket ábrázolnak – legismertebb ebből az időszakból <b>„A burgonyázók” (1885)</b> című képe.</p>
 
-    <h3>Párizs és a francia hatások</h3>
-    <p>1886-ban Vincent bátyja, Theo segítségével Párizsba költözött, ahol találkozott az impresszionistákkal (pl. Monet, Pissarro), és új színek, új technikák hatottak rá. Megismerkedett a japán fametszetekkel is, amelyek letisztult vonalai és élénk színei nagy hatással voltak rá.</p>
-    <p>Ez az időszak nagy fordulópont volt művészetében: stílusa világosabbá, színesebbé, dinamikusabbá vált. Megszületett a “van gogh-i” ecsetkezelés, ami később olyan egyedivé tette őt.</p>
+      <h2>Párizs és hatások</h2>
+      <p>1886-ban <span lang="nl">Vincent</span> bátyja, <span lang="nl">Theo</span> segítségével Párizsba költözött, ahol találkozott az impresszionistákkal (pl. <span lang="fr">Monet, Pissarro</span>), és új színek, új technikák hatottak rá. Megismerkedett a japán fametszetekkel is, amelyek letisztult vonalai és élénk színei nagy hatással voltak rá.</p>
+      <p>Ez az időszak nagy fordulópont volt művészetében: stílusa világosabbá, színesebbé, dinamikusabbá vált. Megszületett a “<span lang="nl">van gogh</span>-i” ecsetkezelés, ami később olyan egyedivé tette őt.</p>
 
-    <h3>Az utolsó évek és a tragikus vég</h3>
-    <p>1888-ban Dél-Franciaországba, Arles-ba költözött, ahol sok híres művét festette – például a Napraforgók-at vagy a Sárga ház-at. Itt fogadta be egy ideig Paul Gauguin festőt is, de együttélésük hamarosan összeomlott, viharos veszekedésekbe torkollott. Egy ilyen után Van Gogh egy idegösszeomlás során levágta a bal fülének egy részét – ez az eset legendássá vált.</p>
-    <p>Mentális állapota ezután tovább romlott. Önként vonult be a Saint-Rémy-de-Provence-i elmegyógyintézetbe, ahol számos remekmű (pl. Csillagos éj) született. Később Auvers-sur-Oise-be költözött, ahol 1890-ben – mindössze 37 évesen – öngyilkosságot követett el. Egyes kutatások szerint azonban nem kizárt, hogy baleset vagy más ember is közrejátszott.</p>
+      <h3>Főbb művészi hatások és technikák</h3>
+      <ul>
+        <li>Impresszionista mesterektől átvett élénk színvilág</li>
+        <li>Japán fametszetek kompozíciós hatása</li>
+        <li>Sajátos, sodró ecsetkezelés</li>
+        <li>Erős kontúrok és kontrasztok</li>
+        <li>Színek érzelmi kifejezőereje</li>
+      </ul>
 
-    <details>
-      <summary><h3>Fontos események</h3></summary>
-      <caption>Vincent van Gogh életének fontos eseményei</caption>
-    </details>
-    
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Év</th>
-          <th>Fontos esemény</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1853</td>
-          <td>Vincent van Gogh születése Hollandiában</td>
-        </tr>
-        <tr>
-          <td>1879</td>
-          <td>Prédikátorként dolgozik Belgiumban, majd elfordul az egyháztól</td>
-        </tr>
-        <tr>
-          <td>1880</td>
-          <td>Elkezdi művészi pályáját</td>
-        </tr>
-        <tr>
-          <td>1885</td>
-          <td>Megfesti <i>A burgonyázók</i>-at</td>
-        </tr>
-        <tr>
-          <td>1886</td>
-          <td>Párizsba költözik, és kapcsolatba kerül az impresszionistákkal</td>
-        </tr>
-        <tr>
-          <td>1888</td>
-          <td>Arles-ba költözik, festi a <i>Napraforgók</i>-at</td>
-        </tr>
-        <tr>
-          <td>1888 vége</td>
-          <td>Füllevágós incidens, Gauguin távozik</td>
-        </tr>
-        <tr>
-          <td>1889</td>
-          <td>Elmegyógyintézetbe vonul, megszületik a <i>Csillagos éj</i></td>
-        </tr>
-        <tr>
-          <td>1890</td>
-          <td>Auvers-sur-Oise, öngyilkos lesz júliusban</td>
-        </tr>
-      </tbody>
-    </table>    
+      <h2>Utolsó évek és a tragikus vég</h2>
+      <p>1888-ban Dél-Franciaországba, <span lang="fr">Arles</span>-ba költözött, ahol sok híres művét festette – például a Napraforgók-at vagy a Sárga ház-at. Itt fogadta be egy ideig <span lang="fr">Paul Gauguin</span> festőt is, de együttélésük hamarosan összeomlott, viharos veszekedésekbe torkollott. Egy ilyen után <span lang="nl">Van Gogh</span> egy idegösszeomlás során levágta a bal fülének egy részét – ez az eset legendássá vált.</p>
+      <p>Mentális állapota ezután tovább romlott. Önként vonult be a <span lang="fr">Saint-Rémy-de-Provence</span>-i elmegyógyintézetbe, ahol számos remekmű (pl. Csillagos éj) született. Később <span lang="fr">Auvers-sur-Oise</span>-be költözött, ahol 1890-ben – mindössze 37 évesen – öngyilkosságot követett el. Egyes kutatások szerint azonban nem kizárt, hogy baleset vagy más ember is közrejátszott.</p>
+
+      
+        <h3>Fontos események</h3>
+        <table class="table table-striped">
+          <caption> <span lang="nl">Vincent van Gogh</span> életének fontos eseményei </caption>
+          <thead>
+            <tr>
+              <th>Év</th>
+              <th>Fontos esemény</th>
+            </tr>
+          </thead>
+        <tbody>
+          <tr>
+            <td>1853</td>
+            <td><span lang="nl">Vincent van Gogh</span> születése Hollandiában</td>
+          </tr>
+          <tr>
+            <td>1879</td>
+            <td>Prédikátorként dolgozik Belgiumban, majd elfordul az egyháztól</td>
+          </tr>
+          <tr>
+            <td>1880</td>
+            <td>Elkezdi művészi pályáját</td>
+          </tr>
+          <tr>
+            <td>1885</td>
+            <td>Megfesti <i>A burgonyázók</i>-at</td>
+          </tr>
+          <tr>
+            <td>1886</td>
+            <td>Párizsba költözik, és kapcsolatba kerül az impresszionistákkal</td>
+          </tr>
+          <tr>
+            <td>1888</td>
+            <td><span lang="fr">Arles</span>-ba költözik, festi a <i>Napraforgók</i>-at</td>
+          </tr>
+          <tr>
+            <td>1888 vége</td>
+            <td>Füllevágós incidens, <span lang="fr">Gauguin</span> távozik</td>
+          </tr>
+          <tr>
+            <td>1889</td>
+            <td>Elmegyógyintézetbe vonul, megszületik a <i>Csillagos éj</i></td>
+          </tr>
+          <tr>
+            <td>1890</td>
+            <td><span lang="fr">Auvers-sur-Oise</span>, öngyilkos lesz júliusban</td>
+          </tr>
+        </tbody>
+      </table> 
+      <details>
+        <summary>Táblázat leírása</summary>
+        <p>Ez a táblázat összefoglalja Vincent van Gogh életének legfontosabb állomásait 1853-tól 1890-ig.</p>
+      </details>
+    </section>
+    <aside>
+      <a href="https://ekultura.hu/2004/07/26/vincent-van-gogh-eletrajz">További információk</a>
+    </aside>
   </main>
 
-  <footer class="bg-light p-3 mt-5">
+  <footer>
     <div class="container text-center">
-      <p>© 2025 Vincent van Gogh Pályafutása</p>
+      <p>© 2025 <span lang="nl">Vincent van Gogh</span> Pályafutása</p>
+      <a href="#top">Oldal tetejére</a>
     </div>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
