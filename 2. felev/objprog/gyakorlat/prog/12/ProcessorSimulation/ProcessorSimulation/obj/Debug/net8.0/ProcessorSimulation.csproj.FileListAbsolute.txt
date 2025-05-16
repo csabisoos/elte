@@ -1,0 +1,5 @@
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/12/ProcessorSimulation/ProcessorSimulation/obj/Debug/net8.0/ProcessorSimulation.GeneratedMSBuildEditorConfig.editorconfig
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/12/ProcessorSimulation/ProcessorSimulation/obj/Debug/net8.0/ProcessorSimulation.AssemblyInfoInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/12/ProcessorSimulation/ProcessorSimulation/obj/Debug/net8.0/ProcessorSimulation.AssemblyInfo.cs
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/12/ProcessorSimulation/ProcessorSimulation/obj/Debug/net8.0/ProcessorSimulation.csproj.CoreCompileInputs.cache
+/Users/csabasoos/Desktop/elte/2. felev/objprog/gyakorlat/prog/12/ProcessorSimulation/ProcessorSimulation/obj/Debug/net8.0/ProcessorSimulation.sourcelink.json
