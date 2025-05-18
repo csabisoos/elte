@@ -9,10 +9,9 @@ public class Loan
     public DateTime? ReturnDate { get; private set; }
 
     // State-kezelés: 0, 1–4, 5 könyv
-    public enum LoanState { Empty, Intermediate, Full }
     public LoanState State
         => _books.Count == 0 ? LoanState.Empty
-         : _books.Count < 5 ? LoanState.Intermediate
+         : _books.Count < 5 ? LoanState.PartialFull
          : LoanState.Full;
 
     // Konstruktor: egyszerre kapja a könyveket

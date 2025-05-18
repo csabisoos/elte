@@ -6,25 +6,55 @@ public class Library
     private readonly List<Loan> _allLoans = new();
 
     // --- Könyvkezelés ---
-    public void AddBook(Book book)
+    public void AddBook(Book book, int quantity = 1)
     {
-        if (_inventory.Any(b => b.ISBN == book.ISBN))
-            throw new InvalidOperationException("Ez az ISBN már szerepel az állományban.");
-        _inventory.Add(book);
+        if (book == null) throw new ArgumentNullException(nameof(book));
+        if (quantity <= 0)
+            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be positive.");
+
+        var existing = _inventory.FirstOrDefault(b => b.ISBN == book.ISBN);
+        if (existing != null)
+        {
+            // Ha már szerepel, csak növeljük a példányszámot
+            existing.IncreaseCopies(quantity);
+        }
+        else
+        {
+            // Új könyvként adjuk hozzá, beállítva a példányszámot
+            if (quantity != book.CopyCount)
+                book.IncreaseCopies(quantity - book.CopyCount);
+            _inventory.Add(book);
+        }
     }
 
-    public void RemoveBook(string isbn)
+    public void RemoveBook(string isbn, int quantity = 1)
     {
+        if (quantity <= 0)
+            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be positive.");
+
         var book = _inventory.FirstOrDefault(b => b.ISBN == isbn)
                    ?? throw new InvalidOperationException("Nincs ilyen könyv az állományban.");
+
+        // Ellenőrzés: nincs aktív kölcsönzés
         if (_allLoans.Any(l => l.Books.Any(b => b.ISBN == isbn) && !l.IsReturned))
             throw new InvalidOperationException("A könyv jelenleg ki van kölcsönözve.");
-        _inventory.Remove(book);
+
+        if (book.CopyCount > quantity)
+        {
+            // Csak csökkentjük a példányszámot
+            book.DecreaseCopies(quantity);
+        }
+        else
+        {
+            // Eltávolítjuk, ha a csökkentés után nincs példányszám
+            _inventory.Remove(book);
+        }
     }
 
     // --- Tagságkezelés ---
     public void RegisterMember(Member member)
     {
+        if (member == null) throw new ArgumentNullException(nameof(member));
         if (_members.Any(m => m.MemberId == member.MemberId))
             throw new InvalidOperationException("Ez a tag már létezik.");
         _members.Add(member);
@@ -46,13 +76,16 @@ public class Library
                      ?? throw new InvalidOperationException("Nincs ilyen tag.");
 
         var books = isbns.Select(isbn =>
-            _inventory.FirstOrDefault(b => b.ISBN == isbn)
-            ?? throw new InvalidOperationException($"Nincs ilyen könyv ({isbn}).")
-        ).ToList();
+        {
+            var b = _inventory.FirstOrDefault(x => x.ISBN == isbn)
+                    ?? throw new InvalidOperationException($"Nincs ilyen könyv ({isbn}).");
+            if (b.CopyCount <= 0)
+                throw new InvalidOperationException($"A '{b.Title}' példánya elfogyott.");
+            b.DecreaseCopies(1);
+            return b;
+        }).ToList();
 
         member.BorrowBooks(books, dueDate);
-
-        // Felvesszük az új Loan-t
         var newLoan = member.ActiveLoans.Last();
         _allLoans.Add(newLoan);
     }
@@ -62,7 +95,6 @@ public class Library
         var member = _members.FirstOrDefault(m => m.MemberId == memberId)
                      ?? throw new InvalidOperationException("Nincs ilyen tag.");
 
-        // Minden ISBN-hez megkeressük a Loan-t, és visszahozzuk a konkrét könyvet
         foreach (var isbn in isbns)
         {
             var loan = member.ActiveLoans
@@ -70,7 +102,14 @@ public class Library
                 ?? throw new InvalidOperationException($"A könyv ({isbn}) nincs kölcsönözve ennél a tagnál.");
 
             var book = loan.Books.First(b => b.ISBN == isbn);
-            member.ReturnBooks(loan, new[] { book }, returnDate);
+            loan.RemoveBook(book);
+            book.IncreaseCopies(1);
+
+            if (loan.State == Loan.LoanState.Empty)
+            {
+                loan.MarkReturned();
+                member.ReturnBooks(loan, new[] { book }, returnDate);
+            }
         }
     }
 

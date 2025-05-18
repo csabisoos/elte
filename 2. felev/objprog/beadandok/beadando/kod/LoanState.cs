@@ -1,0 +1,1 @@
+public enum LoanState { Empty, PartialFull, Full }
