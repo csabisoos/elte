@@ -1,34 +1,42 @@
 public class Member
 {
     // --- Személyes adatok ---
-    public string MemberId     { get; }   // igazolványszám, egyedi azonosító
-    public string Name         { get; set; }
-    public string Address      { get; set; }
-    public DateTime RegistrationDate { get; }  // mikor iratkozott be
+    public string MemberId           { get; }
+    public string Name               { get; set; }
+    public string Address            { get; set; }
+    public DateTime RegistrationDate { get; }
 
     // --- Tagsági díj-kezelés ---
     public DateTime MembershipExpiry { get; private set; }
-    public decimal MembershipFeeOwed  // igazolja, hogy kell-e tagdíjat fizetnie
-        => (DateTime.Now > MembershipExpiry) ? CalculateMembershipFee() : 0m;
+    private const decimal DailyMembershipRate = 1.0m;
+
+    public decimal MembershipFeeOwed
+        => DateTime.Now > MembershipExpiry
+           ? (DateTime.Now - MembershipExpiry).Days * DailyMembershipRate
+           : 0m;
 
     // --- Könyvkölcsönzések nyilvántartása ---
-    public List<Loan> ActiveLoans { get; } = new();   // jelenleg nála lévő kölcsönzések
-    public List<Loan> LoanHistory { get; } = new();   // lezárt (visszahozott) kölcsönzések
+    private readonly List<Loan> _activeLoans = new();
+    public IReadOnlyList<Loan> ActiveLoans => _activeLoans;
+
+    private readonly List<Loan> _loanHistory = new();
+    public IReadOnlyList<Loan> LoanHistory => _loanHistory;
 
     // --- Segéd property-k a korlátozásokhoz ---
     public bool HasOverdueLoans
-        => ActiveLoans.Any(loan => loan.IsOverdue());
+        => _activeLoans.Any(loan => loan.IsOverdue());
 
     public bool CanBorrow
-        => ActiveLoans.Count < 5
+        => _activeLoans.Sum(l => l.Books.Count) < 5
            && MembershipFeeOwed == 0m
            && !HasOverdueLoans;
 
     public bool HasOutstandingFines
-        => ActiveLoans.Sum(loan => loan.CalculateFine()) > 0m;
+        => _activeLoans.Any(l => l.OutstandingFine > 0m);
 
     // --- Konstruktor ---
-    public Member(string memberId, string name, string address, DateTime registrationDate, DateTime membershipExpiry)
+    public Member(string memberId, string name, string address,
+                  DateTime registrationDate, DateTime membershipExpiry)
     {
         MemberId           = memberId;
         Name               = name;
@@ -37,40 +45,55 @@ public class Member
         MembershipExpiry   = membershipExpiry;
     }
 
-    // --- Példák a tagdíj számítására, kölcsönzésre és visszahozásra ---
-    private decimal CalculateMembershipFee()
-    {
-        // (például napi díj * lejárt napok száma)
-        var daysLate = (DateTime.Now - MembershipExpiry).Days;
-        return daysLate * DailyMembershipRate;
-    }
-
+    // --- Tagság megújítása ---
     public void RenewMembership(DateTime newExpiry)
         => MembershipExpiry = newExpiry;
 
-
+    // --- Könyvek kölcsönzése ---
     public void BorrowBooks(IEnumerable<Book> books, DateTime dueDate)
     {
-        foreach (var book in books)
-        {
-            if (!CanBorrow)
-                throw new InvalidOperationException("Nem kölcsönözhet több könyvet.");
-            
-            var loan = new Loan(this, book, DateTime.Now, dueDate);
-            ActiveLoans.Add(loan);
-        }
+        var bookList = books.ToList();
+        if (!CanBorrow || _activeLoans.Sum(l => l.Books.Count) + bookList.Count > 5)
+            throw new InvalidOperationException("Nem kölcsönözhet több könyvet.");
+
+        var loan = new Loan(this, bookList, DateTime.Now, dueDate);
+        _activeLoans.Add(loan);
     }
 
-    public void ReturnBooks(IEnumerable<Loan> loans, DateTime returnDate)
+    // --- Részleges vagy teljes visszahozás ---
+    public void ReturnBooks(Loan loan, IEnumerable<Book> booksToReturn, DateTime returnDate)
     {
-        foreach (var loan in loans)
+        if (!_activeLoans.Contains(loan))
+            throw new InvalidOperationException("Ez a kölcsönzés nem aktív ennél a tagnál.");
+
+        foreach (var book in booksToReturn)
         {
-            if (!ActiveLoans.Remove(loan))
-                throw new InvalidOperationException($"A könyv ({loan.Book.ISBN}) nincs kölcsönözve ennél a tagnál.");
-            loan.MarkReturned(returnDate);
-            LoanHistory.Add(loan);
+            loan.RemoveBook(book);
+        }
+
+        // ha már egyáltalán nincs könyv a Loan-ban, lezárjuk
+        if (loan.State == Loan.LoanState.Empty)
+        {
+            loan.MarkReturned();  
+            _activeLoans.Remove(loan);
+            _loanHistory.Add(loan);
         }
     }
 
-    private const decimal DailyMembershipRate = 1.0m;  // példaérték
+    // --- Tagdíj befizetése ---
+    public decimal PayMembershipFee(DateTime newExpiry)
+    {
+        var owed = MembershipFeeOwed;
+        RenewMembership(newExpiry);
+        return owed;
+    }
+
+    // --- Pótdíjak befizetése ---
+    public decimal PayAllFines()
+    {
+        var total = _activeLoans.Sum(l => l.OutstandingFine);
+        foreach (var loan in _activeLoans.Where(l => l.OutstandingFine > 0m))
+            loan.PayFine();
+        return total;
+    }
 }

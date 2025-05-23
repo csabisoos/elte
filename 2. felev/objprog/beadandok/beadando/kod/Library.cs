@@ -6,25 +6,55 @@ public class Library
     private readonly List<Loan> _allLoans = new();
 
     // --- Könyvkezelés ---
-    public void AddBook(Book book)
+    public void AddBook(Book book, int quantity = 1)
     {
-        if (_inventory.Any(b => b.ISBN == book.ISBN))
-            throw new InvalidOperationException("Ez az ISBN már szerepel az állományban.");
-        _inventory.Add(book);
+        if (book == null) throw new ArgumentNullException(nameof(book));
+        if (quantity <= 0)
+            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be positive.");
+
+        var existing = _inventory.FirstOrDefault(b => b.ISBN == book.ISBN);
+        if (existing != null)
+        {
+            // Ha már szerepel, csak növeljük a példányszámot
+            existing.IncreaseCopies(quantity);
+        }
+        else
+        {
+            // Új könyvként adjuk hozzá, beállítva a példányszámot
+            if (quantity != book.CopyCount)
+                book.IncreaseCopies(quantity - book.CopyCount);
+            _inventory.Add(book);
+        }
     }
 
-    public void RemoveBook(string isbn)
+    public void RemoveBook(string isbn, int quantity = 1)
     {
+        if (quantity <= 0)
+            throw new ArgumentOutOfRangeException(nameof(quantity), "Quantity must be positive.");
+
         var book = _inventory.FirstOrDefault(b => b.ISBN == isbn)
                    ?? throw new InvalidOperationException("Nincs ilyen könyv az állományban.");
-        if (_allLoans.Any(l => l.Book.ISBN == isbn && !l.IsReturned))
+
+        // Ellenőrzés: nincs aktív kölcsönzés
+        if (_allLoans.Any(l => l.Books.Any(b => b.ISBN == isbn) && !l.IsReturned))
             throw new InvalidOperationException("A könyv jelenleg ki van kölcsönözve.");
-        _inventory.Remove(book);
+
+        if (book.CopyCount > quantity)
+        {
+            // Csak csökkentjük a példányszámot
+            book.DecreaseCopies(quantity);
+        }
+        else
+        {
+            // Eltávolítjuk, ha a csökkentés után nincs példányszám
+            _inventory.Remove(book);
+        }
     }
 
     // --- Tagságkezelés ---
     public void RegisterMember(Member member)
     {
+        if (member == null) throw new ArgumentNullException(nameof(member));
         if (_members.Any(m => m.MemberId == member.MemberId))
             throw new InvalidOperationException("Ez a tag már létezik.");
         _members.Add(member);
@@ -45,73 +75,72 @@ public class Library
         var member = _members.FirstOrDefault(m => m.MemberId == memberId)
                      ?? throw new InvalidOperationException("Nincs ilyen tag.");
 
-        // lekérdezzük a Book objektumokat az ISBN-ek alapján
         var books = isbns.Select(isbn =>
-            _inventory.FirstOrDefault(b => b.ISBN == isbn)
-            ?? throw new InvalidOperationException($"Nincs ilyen könyv ({isbn}).")
-        ).ToList();
+        {
+            var b = _inventory.FirstOrDefault(x => x.ISBN == isbn)
+                    ?? throw new InvalidOperationException($"Nincs ilyen könyv ({isbn}).");
+            if (b.CopyCount <= 0)
+                throw new InvalidOperationException($"A '{b.Title}' példánya elfogyott.");
+            b.DecreaseCopies(1);
+            return b;
+        }).ToList();
 
-        // delegáljuk a Member-nek
         member.BorrowBooks(books, dueDate);
-
-        // minden új Loan hozzáadása az _allLoans gyűjteményhez
-        foreach (var loan in member.ActiveLoans.Where(l => !_allLoans.Contains(l)))
-            _allLoans.Add(loan);
+        var newLoan = member.ActiveLoans.Last();
+        _allLoans.Add(newLoan);
     }
 
-    // Tömeges visszahozás
     public void ReturnBooks(string memberId, IEnumerable<string> isbns, DateTime returnDate)
     {
         var member = _members.FirstOrDefault(m => m.MemberId == memberId)
                      ?? throw new InvalidOperationException("Nincs ilyen tag.");
 
-        // megkeressük az adott tag ActiveLoans-ában azokat a Loan-okat, amik ISBN-re egyeznek
-        var loansToReturn = member.ActiveLoans
-            .Where(l => isbns.Contains(l.Book.ISBN))
-            .ToList();
+        foreach (var isbn in isbns)
+        {
+            var loan = member.ActiveLoans
+                .FirstOrDefault(l => l.Books.Any(b => b.ISBN == isbn))
+                ?? throw new InvalidOperationException($"A könyv ({isbn}) nincs kölcsönözve ennél a tagnál.");
 
-        if (loansToReturn.Count != isbns.Count())
-            throw new InvalidOperationException("Néhány könyv nincs kölcsönözve ennél a tagnál.");
+            var book = loan.Books.First(b => b.ISBN == isbn);
+            loan.RemoveBook(book);
+            book.IncreaseCopies(1);
 
-        // delegáljuk a Member-nek a visszahozást
-        member.ReturnBooks(loansToReturn, returnDate);
+            if (loan.State == Loan.LoanState.Empty)
+            {
+                loan.MarkReturned();
+                member.ReturnBooks(loan, new[] { book }, returnDate);
+            }
+        }
     }
-
 
     // --- Fizetések ---
     public decimal PayMembershipFee(string memberId, DateTime newExpiry)
     {
         var m = _members.FirstOrDefault(x => x.MemberId == memberId)
                 ?? throw new InvalidOperationException("Nincs ilyen tag.");
-        decimal owed = m.MembershipFeeOwed;
-        m.RenewMembership(newExpiry);
-        return owed;
+        return m.PayMembershipFee(newExpiry);
     }
 
     public decimal PayFines(string memberId)
     {
         var m = _members.FirstOrDefault(x => x.MemberId == memberId)
                 ?? throw new InvalidOperationException("Nincs ilyen tag.");
-        decimal totalFine = m.ActiveLoans.Sum(l => l.CalculateFine());
-        // itt feltételezheted, hogy befizetés után nullázod:
-        foreach (var loan in m.ActiveLoans)
-            loan.MarkFinePaid();
-        return totalFine;
+        return m.PayAllFines();
     }
 
     // --- Lekérdezések ---
     public bool IsMember(string memberId)
         => _members.Any(m => m.MemberId == memberId);
 
-    public bool IsBookAvailable(string title)
-        => _inventory.Any(b => b.Title == title)
-           && !_allLoans.Any(l => l.Book.Title == title && !l.IsReturned);
+    public bool IsBookAvailable(string isbn)
+        => _inventory.Any(b => b.ISBN == isbn)
+           && !_allLoans.Any(l => l.Books.Any(b => b.ISBN == isbn) && !l.IsReturned);
 
     public decimal GetMemberDebt(string memberId)
     {
         var m = _members.FirstOrDefault(x => x.MemberId == memberId)
                 ?? throw new InvalidOperationException("Nincs ilyen tag.");
-        return m.MembershipFeeOwed + m.ActiveLoans.Sum(l => l.CalculateFine());
+        return m.MembershipFeeOwed + m.ActiveLoans.Sum(l => l.OutstandingFine);
     }
 
     public IEnumerable<Book> FindBooksByTitle(string title)
