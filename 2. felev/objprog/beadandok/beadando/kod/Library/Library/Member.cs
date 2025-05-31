@@ -34,8 +34,8 @@ namespace Library
                && !HasOverdueLoans;
 
         public bool HasOutstandingFines
-            => _activeLoans.Any(l => l.OutstandingFine > 0m);
-
+            => _activeLoans.Concat(_loanHistory).Any(l => l.OutstandingFine > 0m);
+        
         // --- Konstruktor ---
         public Member(
             string memberId,
@@ -61,9 +61,9 @@ namespace Library
         }
 
         // --- Könyvek kölcsönzése ---
-        public void BorrowBooks(IEnumerable<Book> books, DateTime dueDate)
+        public void BorrowBooks(IEnumerable<Book> books, DateTime dueDate, DateTime? loanDate = null)
         {
-            var bookList = books?.ToList() ?? throw new ArgumentNullException(nameof(books));
+            /*var bookList = books?.ToList() ?? throw new ArgumentNullException(nameof(books));
 
             // Ellenőrizzük, hogy 0 könyvnél többet adtunk-e meg
             if (bookList.Count == 0)
@@ -82,6 +82,12 @@ namespace Library
 
             // Létrehozunk egy új Loan-t a könyvekkel
             var loan = new Loan(this, bookList, DateTime.Now, dueDate);
+            _activeLoans.Add(loan);*/
+            var bookList = books.ToList();
+            if (!CanBorrow || _activeLoans.Sum(l => l.Books.Count) + bookList.Count > 5)
+                throw new InvalidOperationException("Nem kölcsönözhet több könyvet.");
+
+            var loan = new Loan(this, bookList, loanDate ?? DateTime.Now, dueDate);
             _activeLoans.Add(loan);
         }
 
@@ -100,7 +106,7 @@ namespace Library
             // Minden visszahozott könyvnél meghívjuk a loan.RemoveBook(book) metódust
             foreach (var book in returnList)
             {
-                loan.RemoveBook(book);
+                loan.RemoveBook(book, returnDate);
             }
 
             // Ha a Loan már visszaadott minden könyvet (IsReturned == true), lezárjuk:

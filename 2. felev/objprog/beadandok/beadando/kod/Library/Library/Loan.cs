@@ -12,7 +12,7 @@ namespace Library
         public ILoanState CurrentState => _currentState;
 
         public Member Borrower    { get; }
-        public DateTime LoanDate  { get; }
+        public DateTime LoanDate  { get; set; }
         public DateTime DueDate   { get; }
         public DateTime? ReturnDate { get; internal set; }  // a RemoveBook állítja be
 
@@ -22,10 +22,10 @@ namespace Library
         /// Konstruktor: kezdetben üres állapotba állítja a Loan-t, majd
         /// a kapott könyveket AddBook() hívással veszi fel.
         /// </summary>
-        public Loan(Member borrower, IEnumerable<Book> books, DateTime loanDate, DateTime dueDate)
+        public Loan(Member borrower, IEnumerable<Book> books, DateTime? loanDate, DateTime dueDate)
         {
             Borrower = borrower ?? throw new ArgumentNullException(nameof(borrower));
-            LoanDate = loanDate;
+            LoanDate = loanDate ?? DateTime.Now;
             DueDate  = dueDate < loanDate
                 ? throw new ArgumentException("DueDate must be >= LoanDate", nameof(dueDate))
                 : dueDate;
@@ -90,6 +90,15 @@ namespace Library
         {
             var end = ReturnDate ?? DateTime.Now;
             return end.Date > DueDate.Date;
+        }
+        
+        public void RemoveBook(Book book, DateTime returnDate)
+        {
+            if (!_books.Remove(book))
+                throw new InvalidOperationException("Ez a könyv nem része ennek a kölcsönzésnek.");
+
+            if (_books.Count == 0)
+                ReturnDate = returnDate;
         }
 
         /// <summary>

@@ -72,7 +72,7 @@ namespace Library
         }
 
         // --- Kölcsönzés és visszahozás ---
-        public void BorrowBooks(string memberId, IEnumerable<string> isbns, DateTime dueDate)
+        public void BorrowBooks(string memberId, IEnumerable<string> isbns, DateTime dueDate, DateTime? loanDate = null)
         {
             var member = _members.FirstOrDefault(m => m.MemberId == memberId)
                          ?? throw new InvalidOperationException("Nincs ilyen tag.");
@@ -87,7 +87,7 @@ namespace Library
                 return b;
             }).ToList();
 
-            member.BorrowBooks(books, dueDate);
+            member.BorrowBooks(books, dueDate, loanDate);
             var newLoan = member.ActiveLoans.Last();
             _allLoans.Add(newLoan);
         }
@@ -142,7 +142,7 @@ namespace Library
         {
             var m = _members.FirstOrDefault(x => x.MemberId == memberId)
                     ?? throw new InvalidOperationException("Nincs ilyen tag.");
-            return m.MembershipFeeOwed + m.ActiveLoans.Sum(l => l.OutstandingFine);
+            return m.MembershipFeeOwed + m.ActiveLoans.Concat(m.LoanHistory).Sum(l => l.OutstandingFine);
         }
 
         public IEnumerable<Book> FindBooksByTitle(string title)
