@@ -1,91 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/LibraryTest/LibraryTest.csproj": {}
+    "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\LibraryTest\\LibraryTest.csproj": {}
   },
   "projects": {
-    "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/Library/Library.csproj": {
+    "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\LibraryTest\\LibraryTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/Library/Library.csproj",
-        "projectName": "Library",
-        "projectPath": "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/Library/Library.csproj",
-        "packagesPath": "/Users/csabasoos/.nuget/packages/",
-        "outputPath": "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/Library/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/csabasoos/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/Users/csabasoos/.dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/LibraryTest/LibraryTest.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/LibraryTest/LibraryTest.csproj",
+        "projectUniqueName": "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\LibraryTest\\LibraryTest.csproj",
         "projectName": "LibraryTest",
-        "projectPath": "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/LibraryTest/LibraryTest.csproj",
-        "packagesPath": "/Users/csabasoos/.nuget/packages/",
-        "outputPath": "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/LibraryTest/obj/",
+        "projectPath": "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\LibraryTest\\LibraryTest.csproj",
+        "packagesPath": "C:\\Users\\csabi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\LibraryTest\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/csabasoos/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\csabi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/Library/Library.csproj": {
-                "projectPath": "/Users/csabasoos/Desktop/elte/2. felev/objprog/beadandok/beadando/kod/Library/Library/Library.csproj"
+              "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\Library\\Library.csproj": {
+                "projectPath": "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\Library\\Library.csproj"
               }
             }
           }
@@ -99,7 +47,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -138,7 +87,72 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/csabasoos/.dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\Library\\Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\Library\\Library.csproj",
+        "projectName": "Library",
+        "projectPath": "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\Library\\Library.csproj",
+        "packagesPath": "C:\\Users\\csabi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\csabi\\Desktop\\elte\\2. felev\\objprog\\beadandok\\beadando\\kod\\Library\\Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\csabi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
