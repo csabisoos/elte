@@ -38,7 +38,6 @@ public class LoanFineTest
         [TestMethod]
         public void CalculateFine_ReturnAfterDue_HasFine()
         {
-            // Arrange
             var library = new Library();
             var book = new YouthBook("Youth Late", "Author Y", "Pub Y", "ISBN-F11", 0);
             library.AddBook(book, quantity: 1);
