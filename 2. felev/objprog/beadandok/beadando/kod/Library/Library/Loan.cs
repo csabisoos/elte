@@ -119,12 +119,14 @@ namespace Library
             if (days == 0) return 0m;
 
             decimal totalFine = 0m;
+
             foreach (var book in _books)
             {
                 var visitor = new FineVisitor(days);
                 book.Accept(visitor);
-                totalFine += visitor.GetResult();
+                totalFine += visitor.GetResult(); 
             }
+
             return totalFine;
         }
 

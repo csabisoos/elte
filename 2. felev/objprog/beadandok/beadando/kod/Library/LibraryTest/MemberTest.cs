@@ -89,6 +89,13 @@ public class MemberTest
         Console.WriteLine("DaysOverdue: " + loan.DaysOverdue);
         Console.WriteLine("OutstandingFine: " + loan.OutstandingFine);
         Console.WriteLine("HasOutstandingFines: " + member.HasOutstandingFines);
+        Console.WriteLine("FinePaymentDate: " + loan.FinePaymentDate);
+        Console.WriteLine("Calculated fine: " + loan.CalculateFine());
+        Console.WriteLine($"IsOverdue: {loan.IsOverdue()}");
+        Console.WriteLine($"DaysOverdue: {loan.DaysOverdue}");
+        Console.WriteLine($"OutstandingFine: {loan.OutstandingFine}");
+        Console.WriteLine($"FinePaymentDate: {loan.FinePaymentDate}");
+        Console.WriteLine("Típus: " + book.GetType().Name);
         var ex = Assert.ThrowsException<InvalidOperationException>(() =>
             library.DeregisterMember("M-999"));
         StringAssert.Contains(ex.Message, "fennálló kölcsönzései vagy tartozásai");

@@ -51,7 +51,7 @@ namespace Library
             if (book == null) throw new ArgumentNullException(nameof(book));
 
             bool rare = book.CopyCount < 10;
-            bool few  = book.CopyCount < 100 && book.CopyCount >= 10;
+            bool few  = book.CopyCount >= 10 && book.CopyCount < 100;
             decimal dailyMultiplier = rare ? 50m : (few ? 30m : 10m);
             _result = _overdueDays * dailyMultiplier;
         }
