@@ -5,7 +5,6 @@ using Library;
 [TestClass]
 public class MemberTest
 {
-    // a) Új tag regisztrálása
     [TestMethod] public void RegisterMember_NewMember_ShouldAddToLibrary()
     {
         var library = new Library();
@@ -17,8 +16,7 @@ public class MemberTest
         Assert.AreEqual(1, members.Count);
         Assert.AreEqual("M-100", members[0].MemberId);
     }
-
-    // b) Ismételt regisztrálás
+    
     [TestMethod] public void RegisterMember_DuplicateMember_ShouldThrow()
     {
         var library = new Library();
@@ -28,8 +26,7 @@ public class MemberTest
         
         Assert.ThrowsException<InvalidOperationException>(() => library.RegisterMember(new Member( memberId: "M-101", name: "Alice Duplicate", address: "Other Address", registrationDate: DateTime.Now, membershipExpiry: DateTime.Now.AddDays(30))));
     }
-
-    // c) Törlés tagság nélkül
+    
     [TestMethod] public void DeregisterMember_NoLoansOrFines_ShouldRemoveMember()
     {
         var library = new Library();
@@ -42,8 +39,7 @@ public class MemberTest
         Assert.IsFalse(library.IsMember("M-102"));
         Assert.AreEqual(0, library.GetAllMembers().Count());
     }
-
-    // d) Törlés aktív kölcsönzéssel
+    
     [TestMethod] 
     public void DeregisterMember_WithActiveLoan_ShouldThrow()
     {

@@ -5,7 +5,6 @@ namespace TestLibrary
     [TestClass]
     public class AddBookTest
     {
-        // a) Új könyv bevétele egy példánnyal
         [TestMethod]
         public void AddBook_NewBook_DefaultQuantity_ShouldAddOneCopy()
         {
@@ -21,7 +20,6 @@ namespace TestLibrary
             Assert.AreEqual(1, books[0].CopyCount);
         }
         
-        // b) Új könyv bevétele több példánnyal
         [TestMethod]
         public void AddBook_NewBook_WithQuantity3_ShouldAddThreeCopies()
         {
@@ -33,8 +31,7 @@ namespace TestLibrary
             Assert.AreEqual("ISBN-002", books[0].ISBN);
             Assert.AreEqual(3, books[0].CopyCount);
         }
-
-        // c) Már meglévő könyv példányszám-növelése
+        
         [TestMethod]
         public void AddBook_ExistingBook_IncreaseCopies()
         {
@@ -48,8 +45,7 @@ namespace TestLibrary
             Assert.AreEqual("ISBN-003", books[0].ISBN);
             Assert.AreEqual(5, books[0].CopyCount);
         }
-
-        // d) Hibás mennyiség: 0 vagy negatív
+        
         [DataTestMethod]
         [DataRow(0)]
         [DataRow(-1)]
