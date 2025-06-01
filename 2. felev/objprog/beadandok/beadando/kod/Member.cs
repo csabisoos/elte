@@ -91,25 +91,25 @@ namespace YourNamespace.Models
         // --- Részleges vagy teljes visszahozás ---
         public void ReturnBooks(Loan loan, IEnumerable<Book> booksToReturn, DateTime returnDate)
         {
-            if (loan == null) 
+            if (loan == null)
                 throw new ArgumentNullException(nameof(loan));
             if (!_activeLoans.Contains(loan))
                 throw new InvalidOperationException("Ez a kölcsönzés nem aktív ennél a tagnál.");
-
+        
             var returnList = booksToReturn?.ToList() ?? throw new ArgumentNullException(nameof(booksToReturn));
             if (returnList.Count == 0)
                 throw new ArgumentException("Legalább egy könyvet vissza kell hozni.", nameof(booksToReturn));
-
-            // Minden visszahozott könyvnél meghívjuk a loan.RemoveBook-t
+        
+            // Minden visszahozott könyvnél hívjuk a loan.RemoveBook(book, returnDate)-t
             foreach (var book in returnList)
             {
-                loan.RemoveBook(book);
+                loan.RemoveBook(book, returnDate);
             }
-
-            // Ha a Loan-ban már nem maradt könyv, lezárjuk a kölcsönzést
-            if (loan.State == Loan.LoanState.Empty)
+        
+            // Ha a Loan-ból már nem maradt egy darab könyv sem, akkor lezártuk:
+            // (az IsReturned azt jelzi, hogy ReturnDate beállításra került az "üresre" logika szerint)
+            if (loan.IsReturned)
             {
-                loan.MarkReturned();
                 _activeLoans.Remove(loan);
                 _loanHistory.Add(loan);
             }

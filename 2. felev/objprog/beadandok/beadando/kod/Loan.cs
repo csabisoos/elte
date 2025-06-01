@@ -60,7 +60,11 @@ namespace YourNamespace.Models
         /// </summary>
         public void RemoveBook(Book book)
         {
-            _currentState.RemoveBook(book);
+            if (!_books.Remove(book))
+                 throw new InvalidOperationException("Ez a könyv nem része ennek a kölcsönzésnek.");
+
+            // Ha ez volt az utolsó könyv, állítsuk be a ReturnDate-et
+            if (_books.Count == 0) ReturnDate = returnDate;
         }
 
         /// <summary>
@@ -146,5 +150,8 @@ namespace YourNamespace.Models
         }
 
         #endregion
+
+        public bool IsReturned => ReturnDate.HasValue;
+
     }
 }
