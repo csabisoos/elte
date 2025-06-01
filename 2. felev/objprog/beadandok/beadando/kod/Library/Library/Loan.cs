@@ -2,6 +2,9 @@ namespace Library
 {
     public class Loan
     {
+        private decimal _cachedFine = -1m;
+        private readonly List<Book> _returnedBooksBeforeRemoval = new();
+
         // A könyvek listája – a state-objektumok csak ezen keresztül módosítanak.
         private readonly List<Book> _books = new();
         public List<Book> Books => _books;
@@ -98,7 +101,22 @@ namespace Library
                 throw new InvalidOperationException("Ez a könyv nem része ennek a kölcsönzésnek.");
 
             if (_books.Count == 0)
+            {
+                // Mivel ez az utolsó könyv, számoljuk ki a pótdíjat a teljes listára
+                _cachedFine = 0m;
+                int days = DaysOverdue;
+                if (days > 0)
+                {
+                    foreach (var b in _returnedBooksBeforeRemoval) // lásd lent
+                    {
+                        var visitor = new FineVisitor(days);
+                        b.Accept(visitor);
+                        _cachedFine += visitor.GetResult();
+                    }
+                }
+
                 ReturnDate = returnDate;
+            }
         }
 
         /// <summary>
@@ -168,10 +186,12 @@ namespace Library
         /// A _currentState csak ezen keresztül módosíthatja.
         /// Visszaadja, hogy sikerült-e (true), vagy nem találtuk (false).
         /// </summary>
-        internal bool Internal_RemoveFromBooks(Book book)
+        internal void Internal_RemoveFromBooks(Book book)
         {
             if (book == null) throw new ArgumentNullException(nameof(book));
-            return _books.Remove(book);
+            bool removed = _books.Remove(book);
+            if (removed)
+                _returnedBooksBeforeRemoval.Add(book);
         }
 
         #endregion

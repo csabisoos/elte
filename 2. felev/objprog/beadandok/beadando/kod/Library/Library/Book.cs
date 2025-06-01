@@ -12,6 +12,9 @@ namespace Library
         public string Publisher { get; }
         public string ISBN      { get; }  // Egyedi azonosító
         public int    CopyCount { get; private set; }   // Összes példányszám a könyvtárban
+        private decimal _cachedFine = -1m;
+        private readonly List<Book> _returnedBooksBeforeRemoval = new();
+
 
         /// <summary>
         /// Konstruktor az általános adatokhoz (műfaj nélkül).
