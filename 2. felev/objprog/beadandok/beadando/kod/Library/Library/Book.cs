@@ -5,9 +5,13 @@ namespace Library
         public string Title     { get; }
         public string Author    { get; }
         public string Publisher { get; }
-        public string ISBN      { get; }  
-        public int    CopyCount { get; private set; }   
-        
+        public string ISBN      { get; }  // Egyedi azonosító
+        public int    CopyCount { get; private set; }   // Összes példányszám a könyvtárban
+
+        /// <summary>
+        /// Konstruktor az általános adatokhoz (műfaj nélkül).
+        /// A leszármazottak a saját konstruktorukban hívják meg.
+        /// </summary>
         protected Book(
             string title,
             string author,
