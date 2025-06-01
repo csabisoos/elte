@@ -1,8 +1,5 @@
 namespace Library
 {
-    /// <summary>
-    /// Ifjúsági könyv, a Visitor-mintához implementálja az Accept metódust.
-    /// </summary>
     public class YouthBook : Book
     {
         public YouthBook(

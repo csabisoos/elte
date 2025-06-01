@@ -1,8 +1,5 @@
 namespace Library
 {
-    /// <summary>
-    /// Szépirodalmi könyv, a Visitor-mintához implementálja az Accept metódust.
-    /// </summary>
     public class LiteratureBook : Book
     {
         public LiteratureBook(

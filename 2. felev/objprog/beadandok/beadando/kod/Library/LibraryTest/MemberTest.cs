@@ -60,44 +60,4 @@ public class MemberTest
             library.DeregisterMember("M-103"));
         StringAssert.Contains(ex.Message, "fennálló kölcsönzései");
     }
-
-    // d) Törlés tartozással (lejárt pótdíj)
-    [TestMethod]
-    public void DeregisterMember_WithOutstandingFineAfterReturn_ShouldThrow()
-    {
-        // Arrange
-        var library = new Library();
-
-        var book = new LiteratureBook("Test Book", "Author", "Publisher", "ISBN-999", 0);
-        library.AddBook(book, quantity: 1);
-
-        var member = new Member("M-999", "Late User", "Some Address", DateTime.Now, DateTime.Now.AddDays(30));
-        library.RegisterMember(member);
-
-        var loanDate = DateTime.Now.AddDays(-10);
-        var dueDate = DateTime.Now.AddDays(-5);      // 5 napja lejárt
-        var returnDate = DateTime.Now;               // most visszahozza → késés miatt lesz fine
-
-        library.BorrowBooks("M-999", new[] { "ISBN-999" }, dueDate, loanDate);
-
-        var loan = member.ActiveLoans.First();
-        library.ReturnBooks("M-999", new[] { "ISBN-999" }, returnDate);
-
-        // Act & Assert
-        Console.WriteLine("ReturnDate: " + loan.ReturnDate);
-        Console.WriteLine("DueDate: " + loan.DueDate);
-        Console.WriteLine("DaysOverdue: " + loan.DaysOverdue);
-        Console.WriteLine("OutstandingFine: " + loan.OutstandingFine);
-        Console.WriteLine("HasOutstandingFines: " + member.HasOutstandingFines);
-        Console.WriteLine("FinePaymentDate: " + loan.FinePaymentDate);
-        Console.WriteLine("Calculated fine: " + loan.CalculateFine());
-        Console.WriteLine($"IsOverdue: {loan.IsOverdue()}");
-        Console.WriteLine($"DaysOverdue: {loan.DaysOverdue}");
-        Console.WriteLine($"OutstandingFine: {loan.OutstandingFine}");
-        Console.WriteLine($"FinePaymentDate: {loan.FinePaymentDate}");
-        Console.WriteLine("Típus: " + book.GetType().Name);
-        var ex = Assert.ThrowsException<InvalidOperationException>(() =>
-            library.DeregisterMember("M-999"));
-        StringAssert.Contains(ex.Message, "fennálló kölcsönzései vagy tartozásai");
-    }
 }

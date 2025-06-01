@@ -1,22 +1,13 @@
 namespace Library
 {
-    /// <summary>
-    /// Absztrakt osztály, ami a közös adatokat (Title, Author, ISBN, CopyCount) tartalmazza,
-    /// valamint az Accept(FineVisitor) metódust deklarálja Visitor-mintához.
-    /// </summary>
     public abstract class Book
     {
-        // --- Alapadatok ---
         public string Title     { get; }
         public string Author    { get; }
         public string Publisher { get; }
-        public string ISBN      { get; }  // Egyedi azonosító
-        public int    CopyCount { get; private set; }   // Összes példányszám a könyvtárban
-
-        /// <summary>
-        /// Konstruktor az általános adatokhoz (műfaj nélkül).
-        /// A leszármazottak a saját konstruktorukban hívják meg.
-        /// </summary>
+        public string ISBN      { get; }  
+        public int    CopyCount { get; private set; }   
+        
         protected Book(
             string title,
             string author,
@@ -41,8 +32,7 @@ namespace Library
             ISBN      = isbn;
             CopyCount = copyCount;
         }
-
-        // --- Példányszám-kezelés (pl. beszerzés/leszelejtezés) ---
+        
         public void IncreaseCopies(int amount)
         {
             if (amount <= 0)
@@ -58,11 +48,7 @@ namespace Library
                 throw new ArgumentOutOfRangeException(nameof(amount), "Csökkenteni csak a meglévő példányszámból lehet.");
             CopyCount -= amount;
         }
-
-        /// <summary>
-        /// Visitor belépési pont: minden leszármazott típus ezt valósítja meg,
-        /// és hívja tovább a FineVisitor megfelelő Visit(...) metódusát.
-        /// </summary>
+        
         public abstract void Accept(FineVisitor visitor);
 
         public override string ToString()

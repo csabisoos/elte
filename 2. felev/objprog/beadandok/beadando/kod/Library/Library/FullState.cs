@@ -1,10 +1,6 @@
 namespace Library
 {
-    /// <summary>
-    /// „Teli” állapot: a Loan._books.Count == 5.
-    /// Itt már nem engedhető meg további könyv hozzáadása (Max 5).
-    /// Visszahozáskor, ha 4 lesz, IntermediateState-be léptetjük át.
-    /// </summary>
+    
     public class FullState : ILoanState
     {
         private readonly Loan _loan;
@@ -18,7 +14,6 @@ namespace Library
 
         public void AddBook(Book book)
         {
-            // Ha már 5 könyv van, nem lehet további könyvet hozzátenni.
             throw new InvalidOperationException("Maximum 5 könyv lehet egy kölcsönzésben (Full állapot).");
         }
 
@@ -29,8 +24,7 @@ namespace Library
             bool removed = _loan.Internal_RemoveFromBooks(book);
             if (!removed)
                 throw new InvalidOperationException("Ez a könyv nem része ennek a kölcsönzésnek.");
-
-            // Ha most 4-re csökkent, IntermediateState-be váltunk
+            
             if (_loan.InternalBookCount == 4)
                 _loan.ChangeState(new IntermediateState(_loan));
             // Ha 0 lett volna (ugyan ritka, mert 5-ből egyszerre 5-öt nem lehet egy metódushívásban eltávolítani),

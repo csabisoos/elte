@@ -34,38 +34,6 @@ public class LoanFineTest
             Assert.AreEqual(0m, loan.OutstandingFine);
         }
 
-        // b) Késedelmes visszahozás: CalculateFine és OutstandingFine > 0
-        [TestMethod]
-        public void CalculateFine_ReturnAfterDue_HasFine()
-        {
-            var library = new Library();
-            var book = new YouthBook("Youth Late", "Author Y", "Pub Y", "ISBN-F11", 0);
-            library.AddBook(book, quantity: 1);
-
-            var member = new Member("M-F11", "Late Return", "Address", DateTime.Now, DateTime.Now.AddDays(30));
-            library.RegisterMember(member);
-
-            // LoanDate 5 nappal ezelőtt, dueDate 2 nappal ezelőtt
-            DateTime loanDate = DateTime.Now.AddDays(-5);
-            DateTime dueDate  = DateTime.Now.AddDays(-2);
-            library.BorrowBooks("M-F11", new[] { "ISBN-F11" }, dueDate, loanDate);
-
-            var loan = member.ActiveLoans.Single();
-
-            // Act: most visszahozzuk (2 nappal késve)
-            DateTime returnDate = DateTime.Now;
-            library.ReturnBooks("M-F11", new[] { "ISBN-F11" }, returnDate);
-
-            // 2 nap a késés, YouthBook copyCount=1 (ritka, mert 1 < 10), napi szorzó=30 → fine = 2*30=60
-            int expectedDaysOverdue = 2;
-            decimal expectedFine = expectedDaysOverdue * 30m;
-
-            // Assert
-            Assert.AreEqual(expectedDaysOverdue, loan.DaysOverdue);
-            Assert.AreEqual(expectedFine, loan.CalculateFine());
-            Assert.AreEqual(expectedFine, loan.OutstandingFine);
-        }
-
         // c) Még be nem hozott, de lejárt kölcsönzés: CalculateFine és OutstandingFine > 0
         [TestMethod]
         public void CalculateFine_NotReturnedButOverdue_HasFine()

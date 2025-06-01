@@ -2,12 +2,10 @@ namespace Library
 {
     public class Library
     {
-        // --- Adattagok ---
         private readonly List<Book> _inventory = new();
         private readonly List<Member> _members = new();
         private readonly List<Loan> _allLoans = new();
-
-        // --- Könyvkezelés ---
+        
         public void AddBook(Book book, int quantity = 1)
         {
             if (book == null) throw new ArgumentNullException(nameof(book));
@@ -17,12 +15,10 @@ namespace Library
             var existing = _inventory.FirstOrDefault(b => b.ISBN == book.ISBN);
             if (existing != null)
             {
-                // Ha már szerepel, csak növeljük a példányszámot
                 existing.IncreaseCopies(quantity);
             }
             else
             {
-                // Új könyvként adjuk hozzá, beállítva a példányszámot
                 if (quantity != book.CopyCount)
                     book.IncreaseCopies(quantity - book.CopyCount);
                 _inventory.Add(book);
@@ -36,24 +32,20 @@ namespace Library
 
             var book = _inventory.FirstOrDefault(b => b.ISBN == isbn)
                        ?? throw new InvalidOperationException("Nincs ilyen könyv az állományban.");
-
-            // Ellenőrzés: nincs aktív kölcsönzés
+            
             if (_allLoans.Any(l => l.Books.Any(b => b.ISBN == isbn) && !l.IsReturned))
                 throw new InvalidOperationException("A könyv jelenleg ki van kölcsönözve.");
 
             if (book.CopyCount > quantity)
             {
-                // Csak csökkentjük a példányszámot
                 book.DecreaseCopies(quantity);
             }
             else
             {
-                // Eltávolítjuk, ha a csökkentés után nincs példányszám
                 _inventory.Remove(book);
             }
         }
-
-        // --- Tagságkezelés ---
+        
         public void RegisterMember(Member member)
         {
             if (member == null) throw new ArgumentNullException(nameof(member));
@@ -70,8 +62,7 @@ namespace Library
                 throw new InvalidOperationException("A tagnak vannak fennálló kölcsönzései vagy tartozásai.");
             _members.Remove(m);
         }
-
-        // --- Kölcsönzés és visszahozás ---
+        
         public void BorrowBooks(string memberId, IEnumerable<string> isbns, DateTime dueDate, DateTime? loanDate = null)
         {
             var member = _members.FirstOrDefault(m => m.MemberId == memberId)
@@ -104,8 +95,7 @@ namespace Library
                     ?? throw new InvalidOperationException($"A könyv ({isbn}) nincs kölcsönözve ennél a tagnál.");
 
                 var book = loan.Books.First(b => b.ISBN == isbn);
-
-                // Delegáljuk a Member-nek a visszahozást
+                
                 member.ReturnBooks(loan, new[] { book }, returnDate);
 
                 // Mivel a Member.RemoveBook már eltávolította a könyvet a loan-ból,
@@ -114,8 +104,7 @@ namespace Library
                 book.IncreaseCopies(1);
             }
         }
-
-        // --- Fizetések ---
+        
         public decimal PayMembershipFee(string memberId, DateTime newExpiry)
         {
             var m = _members.FirstOrDefault(x => x.MemberId == memberId)
@@ -129,8 +118,7 @@ namespace Library
                     ?? throw new InvalidOperationException("Nincs ilyen tag.");
             return m.PayAllFines();
         }
-
-        // --- Lekérdezések ---
+        
         public bool IsMember(string memberId)
             => _members.Any(m => m.MemberId == memberId);
 
