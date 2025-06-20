@@ -14,9 +14,9 @@ namespace Library.Books
         {
         }
 
-        public override void Accept(FineVisitor visitor)
+        public override decimal Accept(FineVisitor visitor)
         {
-            visitor.Visit(this);
+            return visitor.Visit(this);
         }
     }
 }

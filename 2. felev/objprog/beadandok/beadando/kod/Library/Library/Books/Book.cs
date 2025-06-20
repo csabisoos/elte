@@ -51,7 +51,7 @@ namespace Library.Books
             CopyCount -= amount;
         }
         
-        public abstract void Accept(FineVisitor visitor);
+        public abstract decimal Accept(FineVisitor visitor);
 
         public override string ToString()
             => $"{Title} by {Author} (ISBN: {ISBN}, Copies: {CopyCount})";

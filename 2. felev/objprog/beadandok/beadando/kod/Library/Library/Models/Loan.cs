@@ -92,8 +92,11 @@ namespace Library.Models
             foreach (var book in _books)
             {
                 var visitor = new FineVisitor(days);
+                /*
                 book.Accept(visitor);
-                totalFine += visitor.GetResult(); 
+                totalFine += visitor.GetResult();
+                */
+                totalFine += book.Accept(visitor);
             }
 
             return totalFine;
