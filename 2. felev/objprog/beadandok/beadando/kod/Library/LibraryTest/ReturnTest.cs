@@ -1,3 +1,6 @@
+using Library.Books;
+using Library.Models;
+
 namespace TestLibrary;
 
 using Library;
@@ -8,7 +11,7 @@ public class ReturnTest
         [TestMethod]
         public void ReturnBooks_PartialReturn_ShouldKeepLoanActive()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             
             var book1 = new ScienceBook("Sci One", "Author A", "Pub A", "ISBN-800", 0);
             var book2 = new LiteratureBook("Lit One", "Author B", "Pub B", "ISBN-801", 0);
@@ -34,7 +37,7 @@ public class ReturnTest
         [TestMethod]
         public void ReturnBooks_FullReturn_ShouldRemoveLoanAndAddToHistory()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
 
             var book = new YouthBook("Youth One", "Author C", "Pub C", "ISBN-802", 0);
             library.AddBook(book, quantity: 1);
@@ -58,7 +61,7 @@ public class ReturnTest
         [TestMethod]
         public void ReturnBooks_NotOnLoan_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
 
             var book = new ScienceBook("Unloaned", "Author D", "Pub D", "ISBN-803", 0);
             library.AddBook(book, quantity: 1);
@@ -74,7 +77,7 @@ public class ReturnTest
         [TestMethod]
         public void ReturnBooks_InvalidMemberId_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
 
             var book = new LiteratureBook("Test", "Author E", "Pub E", "ISBN-804", 0);
             library.AddBook(book, quantity: 1);
@@ -87,7 +90,7 @@ public class ReturnTest
         [TestMethod]
         public void ReturnBooks_InvalidIsbn_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
 
             var member = new Member("M-503", "Some User", "Addr", DateTime.Now, DateTime.Now.AddDays(30));
             library.RegisterMember(member);

@@ -1,3 +1,6 @@
+using Library.Books;
+using Library.Models;
+
 namespace TestLibrary;
 
 using Library;
@@ -8,7 +11,7 @@ public class BorrowTest
         [TestMethod]
         public void BorrowBooks_SingleBook_ShouldSucceed()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new ScienceBook("Test Science", "Author A", "Publisher A", "ISBN-300", 0);
             library.AddBook(book, quantity: 1);  
 
@@ -35,7 +38,7 @@ public class BorrowTest
         [TestMethod]
         public void BorrowBooks_MultipleBooks_ShouldSucceed()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book1 = new LiteratureBook("Test Lit1", "Author B", "Publisher B", "ISBN-301", 0);
             var book2 = new YouthBook("Test Youth", "Author C", "Publisher C", "ISBN-302", 0);
             var book3 = new ScienceBook("Test Sci", "Author D", "Publisher D", "ISBN-303", 0);
@@ -69,7 +72,7 @@ public class BorrowTest
         [TestMethod]
         public void BorrowBooks_ExceedsBookLimit_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             for (int i = 0; i < 6; i++)
             {
                 var isbn = $"ISBN-40{i}";
@@ -94,7 +97,7 @@ public class BorrowTest
         [TestMethod]
         public void BorrowBooks_ExceedsBookLimitInMultipleSteps_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             for (int i = 0; i < 6; i++)
             {
                 var isbn = $"ISBN-50{i}";
@@ -123,7 +126,7 @@ public class BorrowTest
         [TestMethod]
         public void BorrowBooks_OutOfStock_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new YouthBook("Rare Book", "Author Z", "Publisher Z", "ISBN-600", 0);
             library.AddBook(book, quantity: 1); 
 
@@ -141,7 +144,7 @@ public class BorrowTest
         [TestMethod]
         public void BorrowBooks_InvalidMemberId_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new ScienceBook("Any", "Auth", "Pub", "ISBN-700", 0);
             library.AddBook(book, quantity: 1);
             
@@ -152,7 +155,7 @@ public class BorrowTest
         [TestMethod]
         public void BorrowBooks_InvalidIsbn_ShouldThrow()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var member = new Member("M-400", "NoBookUser", "Addr", DateTime.Now, DateTime.Now.AddDays(30));
             library.RegisterMember(member);
             

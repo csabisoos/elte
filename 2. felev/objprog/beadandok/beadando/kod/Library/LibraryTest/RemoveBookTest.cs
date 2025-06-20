@@ -1,3 +1,6 @@
+using Library.Books;
+using Library.Models;
+
 namespace TestLibrary;
 
 using Library;
@@ -8,7 +11,7 @@ public class RemoveBookTest
     [TestMethod]
     public void RemoveBook_DecreaseCopies_WhenQuantityLessThanCount()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var book = new ScienceBook("Test Science", "Author A", "Publisher A", "ISBN-100", 0);
         library.AddBook(book, quantity: 5);  
         
@@ -22,7 +25,7 @@ public class RemoveBookTest
     [TestMethod]
     public void RemoveBook_RemoveEntireBook_WhenQuantityEqualsCount()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var book = new LiteratureBook("Test Lit", "Author B", "Publisher B", "ISBN-101", 0);
         library.AddBook(book, quantity: 4);  
         
@@ -34,7 +37,7 @@ public class RemoveBookTest
     [TestMethod]
     public void RemoveBook_Throws_WhenBookIsOnLoan()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var book = new YouthBook("Test Youth", "Author C", "Publisher C", "ISBN-102", 0);
         library.AddBook(book, quantity: 2);  
 
@@ -52,7 +55,7 @@ public class RemoveBookTest
     [DataRow(-5)]
     public void RemoveBook_InvalidQuantity_ShouldThrow(int invalidQuantity)
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var book = new ScienceBook("Test Sci", "Author D", "Publisher D", "ISBN-103", 0);
         library.AddBook(book, quantity: 3);  
         
@@ -63,7 +66,7 @@ public class RemoveBookTest
     [TestMethod]
     public void RemoveBook_NonexistentISBN_ShouldThrow()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var book = new LiteratureBook("Test Lit2", "Author E", "Publisher E", "ISBN-104", 0);
         library.AddBook(book, quantity: 1);  
         

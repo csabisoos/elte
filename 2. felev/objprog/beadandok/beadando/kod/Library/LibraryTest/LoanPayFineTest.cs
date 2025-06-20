@@ -1,6 +1,9 @@
+using Library.Models;
+
 namespace TestLibrary;
 
 using Library;
+using Library.Books;
 
 [TestClass]
 public class LoanPayFineTest
@@ -9,7 +12,7 @@ public class LoanPayFineTest
         [TestMethod]
         public void PayFine_WhenNoOutstandingFine_ReturnsZero()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new YouthBook("No Fine Youth", "Author B", "Publisher B", "ISBN-PF2", 0);
             library.AddBook(book, quantity: 1);
 

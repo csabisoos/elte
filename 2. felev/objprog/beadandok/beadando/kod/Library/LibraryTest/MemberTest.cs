@@ -1,13 +1,16 @@
+using Library.Models;
+
 namespace TestLibrary;
 
 using Library;
+using Library.Books;
 
 [TestClass]
 public class MemberTest
 {
     [TestMethod] public void RegisterMember_NewMember_ShouldAddToLibrary()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var member = new Member( memberId: "M-100", name: "Test User", address: "123 Test St", registrationDate: DateTime.Now, membershipExpiry: DateTime.Now.AddDays(30));
 
         library.RegisterMember(member);
@@ -19,7 +22,7 @@ public class MemberTest
     
     [TestMethod] public void RegisterMember_DuplicateMember_ShouldThrow()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var member = new Member( memberId: "M-101", name: "Alice", address: "Alice Address", registrationDate: DateTime.Now, membershipExpiry: DateTime.Now.AddDays(30));
         
         library.RegisterMember(member);
@@ -29,7 +32,7 @@ public class MemberTest
     
     [TestMethod] public void DeregisterMember_NoLoansOrFines_ShouldRemoveMember()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
         var member = new Member( memberId: "M-102", name: "Bob", address: "Bob Address", registrationDate: DateTime.Now, membershipExpiry: DateTime.Now.AddDays(30));
         
         library.RegisterMember(member);
@@ -43,7 +46,7 @@ public class MemberTest
     [TestMethod] 
     public void DeregisterMember_WithActiveLoan_ShouldThrow()
     {
-        var library = new Library();
+        var library = new Library.Models.Library();
             
         var book = new ScienceBook( title: "Test Science", author: "Author X", publisher: "Publisher X", isbn: "ISBN-200", copyCount: 0);
         library.AddBook(book, quantity: 1);

@@ -1,6 +1,6 @@
 using Library.Books;
 
-namespace Library
+namespace Library.LoanStates
 {
     public interface ILoanState
     {

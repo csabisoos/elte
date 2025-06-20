@@ -1,6 +1,10 @@
+using Library.Models;
+
 namespace TestLibrary;
 
 using Library;
+using Library.Books;
+
 
 [TestClass]
 public class LoanFineTest
@@ -8,7 +12,7 @@ public class LoanFineTest
         [TestMethod]
         public void CalculateFine_ReturnBeforeDue_NoFine()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new YouthBook("Youth Book", "Author X", "Pub X", "ISBN-F10", 0);
             library.AddBook(book, quantity: 1);
 
@@ -32,7 +36,7 @@ public class LoanFineTest
         [TestMethod]
         public void CalculateFine_NotReturnedButOverdue_HasFine()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new ScienceBook("Science Late", "Author Z", "Pub Z", "ISBN-F12", 0);
             library.AddBook(book, quantity: 1);
 

@@ -2,7 +2,7 @@ using Library.Books;
 using Library.LoanStates;
 using Library.Visitors;
 
-namespace Library
+namespace Library.Models
 {
     public class Loan
     {

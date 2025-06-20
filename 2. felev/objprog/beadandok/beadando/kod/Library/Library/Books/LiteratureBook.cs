@@ -1,4 +1,6 @@
-namespace Library
+using Library.Visitors;
+
+namespace Library.Books
 {
     public class LiteratureBook : Book
     {

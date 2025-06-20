@@ -1,4 +1,6 @@
 
+using Library.Books;
+
 namespace TestLibrary
 {
     using Library;
@@ -8,7 +10,7 @@ namespace TestLibrary
         [TestMethod]
         public void AddBook_NewBook_DefaultQuantity_ShouldAddOneCopy()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new ScienceBook(title: "A Brief History of Time", author: "Stephen Hawking", publisher: "Bantam",
                 isbn: "ISBN-001", copyCount: 0);
 
@@ -23,7 +25,7 @@ namespace TestLibrary
         [TestMethod]
         public void AddBook_NewBook_WithQuantity3_ShouldAddThreeCopies()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new LiteratureBook("War and Peace", "Leo Tolstoy", "Vintage", "ISBN-002", 0);
             library.AddBook(book, quantity: 3);
             var books = library.GetAllBooks().ToList();
@@ -35,7 +37,7 @@ namespace TestLibrary
         [TestMethod]
         public void AddBook_ExistingBook_IncreaseCopies()
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book1 = new YouthBook("Harry Potter", "J.K. Rowling", "Bloomsbury", "ISBN-003", 0);
             library.AddBook(book1, 2);
             var book2 = new YouthBook("Harry Potter", "J.K. Rowling", "Bloomsbury", "ISBN-003", 2);
@@ -51,7 +53,7 @@ namespace TestLibrary
         [DataRow(-1)]
         public void AddBook_InvalidQuantity_ShouldThrow(int invalidQuantity)
         {
-            var library = new Library();
+            var library = new Library.Models.Library();
             var book = new ScienceBook("The Selfish Gene", "Richard Dawkins", "Oxford", "ISBN-004", 0);
             Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
                 library.AddBook(book, invalidQuantity));

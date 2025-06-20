@@ -1,6 +1,7 @@
 using Library.Books;
+using Library.Models;
 
-namespace Library
+namespace Library.LoanStates
 {
     public class EmptyState : ILoanState
     {
