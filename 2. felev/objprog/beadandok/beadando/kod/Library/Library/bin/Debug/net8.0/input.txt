@@ -1,0 +1,15 @@
+Library;Budapesti Egyetemi Könyvtár
+Member;M001;Kiss Anna;Budapest, Fő utca 1.;2022-01-01;2025-01-01
+Member;M002;Nagy Béla;Budapest, Duna utca 12.;2023-03-10;2024-12-31
+Book;Literature;Tüskevár;Fekete István;Móra;9789631181506;2
+Book;Science;A Világegyetem Rövid Története;Stephen Hawking;Gabo;9789636893060;1
+
+Library;Szegedi Városi Könyvtár
+Member;M003;Szabó Katalin;Szeged, Petőfi utca 8.;2022-06-15;2025-06-15
+Book;Youth;Harry Potter és a bölcsek köve;J. K. Rowling;Animus;9789633240003;5
+Book;Literature;Az arany ember;Jókai Mór;Franklin;9789631198757;1
+
+Library;Debreceni Tudományos Könyvtár
+Member;M004;Horváth Dániel;Debrecen, Egyetem sugárút 5.;2023-01-01;2025-01-01
+Book;Science;Csillagászat alapjai;Freedman & Kaufmann;Springer;9789639990018;1
+Book;Youth;Rumini;Berg Judit;Pagony;9789634103215;4
