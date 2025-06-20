@@ -1,3 +1,7 @@
+using Library.Books;
+using Library.LoanStates;
+using Library.Visitors;
+
 namespace Library
 {
     public class Loan

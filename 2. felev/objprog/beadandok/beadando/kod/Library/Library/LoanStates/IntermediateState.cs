@@ -1,3 +1,5 @@
+using Library.Books;
+
 namespace Library
 {
     public class IntermediateState : ILoanState

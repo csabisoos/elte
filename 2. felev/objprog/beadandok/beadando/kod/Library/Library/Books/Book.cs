@@ -1,4 +1,4 @@
-namespace Library
+namespace Library.Books
 {
     public abstract class Book
     {
