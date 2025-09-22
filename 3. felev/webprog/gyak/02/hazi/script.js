@@ -30,20 +30,43 @@ const books = [
   },
   {
     id: 4,
-    title: "Colleen McCullough",
-    author: "Tövismadarak",
+    author: "Colleen McCullough",
+    title: "Tövismadarak",
     year: 1977,
     read: false,
   },
 ];
 
+let activeElemIndex = 0;
+
 // == FELADATOK ==
 // Feladat 1: Jelenítsd meg a könyveket az oldalon!
 // - vedd be JS-be a "book-grid" id-val ellátott div elemet, ez lesz a szülő eleme a legenerált "article"-nek, ne felejtsd majd el hozzáfűzni a végén! (appendChild())
+const BookGridDiv = document.querySelector('#book-grid');
 // - menj végig a tömbön, minden egyes könyvre hozz létre egy "article" HTML elemet!
-// - add hozzá az elemhez a "card book-card" stílusosztályokat (használd a className propertyt!)
-// - minden elem esetén állítsd be a data-id-t a az adott elem id-jára (használd a dataset propertyt!)
-// - az elem belsejében található HTML (innerHTML) az alábbi legyen (ha nem "book" a ciklusváltozód, értelemszerűen módosítsd):
+books.forEach((book) => {
+    const article = document.createElement('article');
+    // - add hozzá az elemhez a "card book-card" stílusosztályokat (használd a className propertyt!)
+    article.className = 'card book-card';
+    // - minden elem esetén állítsd be a data-id-t a az adott elem id-jára (használd a dataset propertyt!)
+    article.dataset.id = book.id;
+    // - az elem belsejében található HTML (innerHTML) az alábbi legyen (ha nem "book" a ciklusváltozód, értelemszerűen módosítsd):
+    article.innerHTML = 
+        `<div class="badge ${book.read ? 'read' : 'unread'}">${book.read ? 'Elolvasva' : 'Várólista'}</div>
+        <h3>${book.title}</h3>
+        <div class="meta">
+            <span>👤 ${book.author}</span>
+            <span>📅 ${book.year}</span>
+            <span>📖 ${book.pages} oldal</span>
+        </div>`;
+
+    article.addEventListener('click', () => {
+        activeElemIndex = book.id;
+        showDetails();
+    });
+    
+    BookGridDiv.appendChild(article);
+});
 
 /* `<div class="badge ${book.read ? 'read' : 'unread'}">${book.read ? 'Elolvasva' : 'Várólista'}</div>
     <h3>${book.title}</h3>
@@ -66,7 +89,7 @@ const books = [
 const details = document.querySelector("#details");
 function showDetails() {
   // *********************
-
+  const book = books.find(b => b.id == activeElemIndex);
   // *********************
   if (!book) return;
   details.innerHTML = `
