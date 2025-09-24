@@ -1,12 +1,12 @@
-public class Hexagon extends Polygon {
+public class Square extends Polygon {
     // Constructors
-    public Hexagon(double x, double y, double side) {
+    public Square(double x, double y, double side) {
         super(x, y, side);
     }
 
     // Methods
     @Override
     protected int sideNum() {
-        return 6;
+        return 4;
     }
 }
