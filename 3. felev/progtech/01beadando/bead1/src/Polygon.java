@@ -18,7 +18,6 @@ public abstract class Polygon extends PlaneFigure{
 
     @Override
     protected double area() {
-        if (sideNum() <= 2) throw new IllegalArgumentException("n should be larger than 2.");
         if (side <= 0) throw new IllegalArgumentException("a should be larger than 0.");
 
         double angleDegrees = 180.0 / sideNum();
@@ -26,7 +25,7 @@ public abstract class Polygon extends PlaneFigure{
 
         double tan = Math.tan(angleRad);
         if (Math.abs(tan) < 1e-15) {
-            throw new IllegalArgumentException("cot(180/n) not interprtable (tan(180/n) too small).");
+            throw new IllegalArgumentException("cot(180/n) not interpretable (tan(180/n) too small).");
         }
         double cot = 1.0 / tan;
 

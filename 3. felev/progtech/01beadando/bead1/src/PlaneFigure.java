@@ -12,7 +12,13 @@ public abstract class PlaneFigure {
     // Methods
     protected abstract double circumference();
     protected abstract double area();
+
+    /**
+     * A terület és a kerület különbségének abszolút értéke.
+     *
+     * @return |circumference - area|
+     */
     public double difference() {
-        return circumference() - area();
+        return Math.abs(circumference() - area());
     }
 }

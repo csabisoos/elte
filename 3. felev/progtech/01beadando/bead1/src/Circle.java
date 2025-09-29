@@ -3,8 +3,17 @@ public class Circle extends  PlaneFigure {
     private double radius;
 
     // Constructors
+    /**
+     * @param x center x
+     * @param y center y
+     * @param r radius (positive)
+     * @throws IllegalArgumentException if r <= 0
+     */
     public Circle(double x, double y, double r) {
         super(x, y);
+        if (r <= 0) {
+            throw new IllegalArgumentException("The radius must be positive: " + r);
+        }
         this.radius = r;
     }
 
