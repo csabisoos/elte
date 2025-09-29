@@ -1,0 +1,168 @@
+:root {
+  --color-bg: #121212;
+  --color-panel: #1e1e1e;
+  --color-accent: #ffcc33;
+  --color-danger: #ff4d4f;
+  --color-text: #f2f2f2;
+  --color-muted: #999;
+  --color-favorite: #ffe599;
+  --color-selected: #2a3b55;
+  --radius: 6px;
+  --transition: 0.18s ease;
+  font-family: system-ui, Arial, sans-serif;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 2rem auto;
+  max-width: 900px;
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  letter-spacing: .5px;
+}
+
+#bands {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: grid;
+  gap: 1rem;
+}
+
+#bands > li {
+  background: var(--color-panel);
+  padding: 1rem 1.25rem 1.1rem;
+  border: 1px solid #2a2a2a;
+  border-radius: var(--radius);
+  position: relative;
+  transition: var(--transition);
+}
+
+#bands > li.selected {
+  outline: 2px solid var(--color-accent);
+  background: linear-gradient(135deg, var(--color-selected), #243246);
+}
+
+#bands > li:hover {
+  border-color: #3a3a3a;
+}
+
+.band-name {
+  margin: 0 0 .75rem;
+  font-size: 1.35rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  user-select: none;
+}
+
+.band-name::after {
+  content: "🎵";
+  font-size: .95rem;
+  opacity: .6;
+  transition: var(--transition);
+}
+
+.band-name:hover::after {
+  transform: rotate(15deg) scale(1.2);
+  opacity: .9;
+}
+
+.songs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .4rem;
+}
+
+.songs li {
+  padding: .45rem .65rem;
+  background: #272727;
+  border: 1px solid #343434;
+  border-radius: 4px;
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  font-size: .95rem;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
+}
+
+.songs li.favorite {
+  background: var(--color-favorite);
+  color: #222;
+  border-color: #d4b350;
+  font-weight: 600;
+}
+
+.songs li:not(.favorite):hover {
+  background: #303030;
+}
+
+.songs li button.delete {
+  margin-left: auto;
+  background: var(--color-danger);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: .85rem;
+  line-height: 1;
+  padding: .35rem .55rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.songs li button.delete:hover {
+  filter: brightness(1.1);
+}
+
+.meta {
+  margin-top: .5rem;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-muted);
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.empty {
+  font-style: italic;
+  color: var(--color-muted);
+  padding: .35rem .5rem;
+  background: #222;
+  border-radius: 4px;
+}
+
+.fade-out {
+  animation: fadeOut .28s ease forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(6px);
+    height: 0;
+    margin: 0;
+    padding: 0 .65rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #bands {
+    grid-template-columns: 1fr;
+  }
+  .band-name {
+    font-size: 1.15rem;
+  }
+}
