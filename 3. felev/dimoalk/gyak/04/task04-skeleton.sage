@@ -1,27 +1,25 @@
-import math
-
-def my_solve_mod(a, b, m):
-  if a == 0:
-        if b == 0:
-            return list(range(m))
-        else:
-            return []
-
+def my_solve_mod(a,b,m):
     g = math.gcd(a, m)
     if b % g != 0:
+        return []  
+    
+    a //= g
+    b //= g
+    m //= g
+    
+    inv = invmod(a, m)
+    if inv is None:
         return []
+    
+    x0 = (inv * b) % m
+    result = [(x0 + k * m) for k in range(g)]
+    return result
 
-    a_red = a // g
-    b_red = b // g
-    m_red = m // g 
-
-    inv = pow(a_red, -1, m_red)
-
-    x0 = (inv * b_red) % m_red
-
-    solutions = [x0 + k * m_red for k in range(g)]
-    solutions.sort()
-    return solutions
+def invmod(a, m):
+    for i in range(1, m):
+        if (a * i) % m == 1:
+            return i
+    return None
 
 if __name__ == "__main__":
   for _ in range(100):

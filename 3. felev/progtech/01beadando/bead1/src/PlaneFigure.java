@@ -14,7 +14,7 @@ public abstract class PlaneFigure {
     protected abstract double area();
 
     /**
-     * A terület és a kerület különbségének abszolút értéke.
+     * Calculates the absolute difference between the circumference and area.
      *
      * @return |circumference - area|
      */
