@@ -30,6 +30,6 @@ public class Circle extends  PlaneFigure {
 
     @Override
     public String toString() {
-        return "Circle(x:" + this.centerX + ", y:" + this.centerY + ", radius:" + this.radius + "circumference:" + this.circumference() + "area:" + this.area() + ")";
+        return "Circle(x:" + this.centerX + ", y:" + this.centerY + ", radius:" + this.radius + " circumference:" + Math.round(this.circumference()*100.0)/100.0 + " area:" + Math.round(this.area()*100.0)/100.0 + ")";
     }
 }

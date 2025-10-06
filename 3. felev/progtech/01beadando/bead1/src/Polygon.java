@@ -36,7 +36,7 @@ public abstract class Polygon extends PlaneFigure{
     public String toString() {
         return getClass().getSimpleName() +
                 " (x=" + centerX + ", y=" + centerY +
-                ", circumference=" + circumference() +
-                ", area=" + area() + ")";
+                ", circumference=" + Math.round(circumference()*100.0)/100.0 +
+                ", area=" + Math.round(area()*100.0)/100.0 + ")";
     }
 }
