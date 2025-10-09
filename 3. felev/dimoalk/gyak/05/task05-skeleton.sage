@@ -1,5 +1,11 @@
 def fermat_primality_test(p):
-  pass
+    for a in range(2, p-1):
+        if not gcd(a, p) == 1:
+            return False
+        mod=pow(a,p-1,p)
+        if not mod == 1:
+            return False
+        return True
 
 if __name__ == "__main__":
   primes = [97, 293, 487, 809, 983, 1609, 1787, 1987, 2671, 2939, 3169, 3319, 3917, 4229, 4349, 4639, 4663, 5483, 6007, 6691, 7151, 7477, 8291, 8429, 8929]
