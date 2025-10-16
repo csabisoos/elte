@@ -18,7 +18,7 @@ if data:
     op_b, a, b = struct.unpack(FORMAT, data)
     op = op_b.decode()
 
-    print(f"Kliens üzenete (struktúra): op={op!r}, a={a}, b={b}")
+    print(f"Kliens üzenete: op={op!r}, a={a}, b={b}")
 
     if op == "+":
         reply = str(a + b)
