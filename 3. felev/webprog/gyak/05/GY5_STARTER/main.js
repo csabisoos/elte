@@ -1,3 +1,9 @@
+class Utils {
+  static getKey(x, y) {
+    return `${x}-${y}`;
+  }
+}
+
 class Entity {
   constructor(x, y, icon, cssClass) {
     this.x = x;
@@ -20,19 +26,19 @@ class Entity {
 
 class Player extends Entity {
   constructor(x, y) {
-    super(x, y, "🐭", "player");
+    super(x, y, "🙀", "player");
   }
 }
 
 class Cop extends Entity {
   constructor(x, y) {
-    super(x, y, "😼", "cop");
+    super(x, y, "🚨", "cop");
   }
 }
 
 class Collectible extends Entity {
   constructor(x, y) {
-    super(x, y, "🧀", "collectible");
+    super(x, y, "🍯", "collectible");
   }
 }
 
@@ -101,7 +107,7 @@ class Game {
     if (this.cop && this.cop.x === x && this.cop.y === y) {
       return true;
     }
-    return this.collectibles.has(getKey(x, y));
+    return this.collectibles.has(Utils.getKey(x, y));
   }
 
   getRandomPositon() {
@@ -137,18 +143,17 @@ class Game {
   start() {
     this.running = true;
     this.collectibles.clear();
-    // const [x, y] = this.getRandomPositon();
-    // this.player = new Player(x, y);
     this.player = new Player(...this.getRandomPositon());
     this.cop = new Cop(...this.getRandomPositon());
     for (let i = 0; i < this.numOfCollectibles; i++) {
       const [x, y] = this.getRandomPositon();
-      this.collectibles.set(getKey(x, y), new Collectible(x, y));
+      this.collectibles.set(Utils.getKey(x, y), new Collectible(x, y));
     }
-    this._copTimer = setInterval(() => this.moveCop(), 1000);
 
+    this._copTimer = setInterval(() => this.moveCop(), 1000);
     window.addEventListener("keydown", this._onKeyDown);
 
+    this.statusEl.textContent = "A játék elkezdődött!";
     this.render();
   }
 
@@ -157,6 +162,10 @@ class Game {
   }
 
   moveCop() {
+    if (!this.running) {
+      return;
+    }
+
     const directions = [
       [-1, 0],
       [1, 0],
@@ -168,20 +177,32 @@ class Game {
     const [dx, dy] = directions[idx];
 
     const newX = this.cop.x + dx;
-    const newY = (this.cop.y = dy);
+    const newY = this.cop.y + dy;
     if (
       this.isValidPosition(newX, newY) &&
-      !this.collectibles.has(getKey(newX, newY))
+      !this.collectibles.has(Utils.getKey(newX, newY))
     ) {
       this.cop.setPosition(newX, newY);
       if (newX === this.player.x && newY === this.player.y) {
         this.endGame(false);
       }
     }
+
     this.render();
   }
 
+  endGame(win) {
+    this.statusEl.textContent = win ? "Győzelem" : "Vereség";
+    this.running = false;
+    clearInterval(this._copTimer);
+    window.removeEventListener("keydown", this._onKeyDown);
+  }
+
   _onKeyDown = (e) => {
+    if (!this.running) {
+      return;
+    }
+
     let dx = 0;
     let dy = 0;
     switch (e.key) {
@@ -198,13 +219,14 @@ class Game {
         dy = 1;
         break;
     }
+
     const newX = this.player.x + dx;
     const newY = this.player.y + dy;
     if (this.isValidPosition(newX, newY)) {
       this.player.setPosition(newX, newY);
 
-      if (this.collectibles.has(getKey(newX, newY))) {
-        this.collectibles.delete(getKey(newX, newY));
+      if (this.collectibles.has(Utils.getKey(newX, newY))) {
+        this.collectibles.delete(Utils.getKey(newX, newY));
         this.statusEl.textContent = `Maradék objektumok: ${this.collectibles.size}`;
 
         if (this.collectibles.size === 0) {
@@ -223,16 +245,6 @@ class Game {
 
     this.render();
   };
-}
-
-function endGame(win) {
-  this.statusEl.textContent = win ? "Győzelem" : "Vereség";
-  this.running = false;
-  clearInterval(this._copTimer);
-}
-
-function getKey(x, y) {
-  return `${x}-${y}`;
 }
 
 const gridRoot = document.querySelector("#grid");
